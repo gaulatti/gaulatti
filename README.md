@@ -1,6 +1,7 @@
 # 👋 Hey, I’m Javier Godoy Núñez
 
 🚀 Staff Software Engineer | 💡 Builder of Ideas | 🧠 Problem-Solver | 🩺 Advocate for Practical Tech
+> _"The adrenaline comes from being close to the problem. That’s where the real fun begins. Anfangen ist leicht, beharren eine Kunst."_
 
 ---
 
@@ -45,7 +46,6 @@ Built to replace fragmented tooling with one **fast, modular, and developer-frie
 ### 📊 GitHub Stats
 
 ![Javier's GitHub Stats](https://github-readme-stats.vercel.app/api?username=gaulatti&show_icons=true&theme=tokyonight&hide=issues)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gaulatti&layout=compact&theme=tokyonight)
 
 ---
 
@@ -57,5 +57,3 @@ Built to replace fragmented tooling with one **fast, modular, and developer-frie
 - 🌍 [https://autostrada.gaulatti.com](https://autostrada.gaulatti.com)
 
 ---
-
-> _"The adrenaline comes from being close to the problem. That’s where the real fun begins."_
