@@ -1,7 +1,7 @@
 # 👋 Hey, I’m Javier Godoy Núñez
 
 🚀 Staff Software Engineer | 💡 Builder of Ideas | 🧠 Problem-Solver | 🩺 Advocate for Practical Tech
-> _"The adrenaline comes from being close to the problem. That’s where the real fun begins. Anfangen ist leicht, beharren eine Kunst."_
+> _"Anfangen ist leicht, beharren eine Kunst."_
 
 ---
 
@@ -40,12 +40,6 @@ Built to replace fragmented tooling with one **fast, modular, and developer-frie
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white)
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-
----
-
-### 📊 GitHub Stats
-
-![Javier's GitHub Stats](https://github-readme-stats.vercel.app/api?username=gaulatti&show_icons=true&theme=tokyonight&hide=issues)
 
 ---
 
