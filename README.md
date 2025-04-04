@@ -42,13 +42,6 @@ Built to replace fragmented tooling with one **fast, modular, and developer-frie
 
 ---
 
-### 📌 Pinned Repos
-
-[![Autostrada](https://github-readme-stats.vercel.app/api/pin/?username=gaulatti&repo=autostrada&theme=tokyonight)](https://github.com/gaulatti/autostrada)
-[![Wiphala](https://github-readme-stats.vercel.app/api/pin/?username=gaulatti&repo=wiphala&theme=tokyonight)](https://github.com/gaulatti/wiphala)
-
----
-
 ### 📊 GitHub Stats
 
 ![Javier's GitHub Stats](https://github-readme-stats.vercel.app/api?username=gaulatti&show_icons=true&theme=tokyonight&hide=issues)
