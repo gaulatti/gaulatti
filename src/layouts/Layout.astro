@@ -1,3 +1,9 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import './src/styles/global.css';
+---
+
 <!doctype html>
 <html lang='en'>
   <head>
@@ -5,13 +11,15 @@
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <script>
-      window.location.href = 'https://musescore.com/user/57675224/sets';
-    </script>
     <title>Gaulatti</title>
   </head>
-  <body>
-    <slot />
+  <body class='flex flex-col h-full justify-between'>
+    <div class="flex flex-col flex-1 h-full">
+      <Header />
+      <slot />
+      <!-- <Contact /> -->
+    </div>
+    <Footer />
   </body>
 </html>
 
