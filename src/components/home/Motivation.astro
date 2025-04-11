@@ -1,4 +1,67 @@
 ---
-// Component Script (JavaScript)
+import { Image } from 'astro:assets';
 ---
-<div>motivation</div>
+
+<section class='py-24 relative'>
+  <!-- Decorative geometric shapes in Bauhaus style -->
+  <div class='absolute left-0 top-0 w-32 h-32 -translate-x-1/2 -translate-y-1/2'>
+    <div class='w-full h-full border-8 border-accent-red rotate-45'></div>
+  </div>
+  <div class='absolute right-0 bottom-0 w-24 h-24 translate-x-1/2 translate-y-1/2'>
+    <div class='w-full h-full bg-accent-blue rounded-full opacity-20'></div>
+  </div>
+
+  <div class='container relative'>
+    <div class='max-w-4xl mx-auto'>
+      <!-- Section Title with Bauhaus-inspired typography -->
+      <h2 class='text-4xl md:text-5xl font-bold mb-12 tracking-tight text-center'>Philosophy & Vision</h2>
+
+      <!-- Three-column values layout -->
+      <div class='grid md:grid-cols-3 gap-12 mb-16'>
+        <div class='space-y-4'>
+          <h3 class='text-xl font-bold'>Creative Innovation</h3>
+          <p class='text-gray-600'>Merging technical precision with artistic vision to craft unique digital experiences that resonate and inspire.</p>
+        </div>
+        <div class='space-y-4'>
+          <h3 class='text-xl font-bold'>Cross-Domain Mastery</h3>
+          <p class='text-gray-600'>Bridging software engineering, music composition, and storytelling to create harmonious, multi-dimensional solutions.</p>
+        </div>
+        <div class='space-y-4'>
+          <h3 class='text-xl font-bold'>Cultural Impact</h3>
+          <p class='text-gray-600'>Building experiences that contribute meaningfully to digital culture while pushing creative boundaries.</p>
+        </div>
+      </div>
+
+      <!-- Personal statement with dynamic highlight -->
+      <div class='relative bg-gray-50 p-8 md:p-12 rounded-sm'>
+        <div class='max-w-3xl mx-auto space-y-6'>
+          <p class='text-lg'>
+            I'm driven by the intersection of logic and creativity, where elegant code meets compelling storytelling. My work spans multiple disciplines because
+            I believe the most innovative solutions emerge when we bridge different worlds.
+          </p>
+          <p class='text-lg'>
+            Whether I'm architecting software systems, composing music, or crafting narratives, I approach each project with both technical rigor and creative
+            intuition. This dual perspective allows me to create experiences that are not just functional, but meaningful and memorable.
+          </p>
+          <div class='text-lg font-medium pt-4'>— Javier Godoy (@gaulatti)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Bauhaus-inspired decorative elements animation */
+  .rotate-45 {
+    animation: gentleRotate 20s linear infinite;
+  }
+
+  @keyframes gentleRotate {
+    from {
+      transform: rotate(45deg);
+    }
+    to {
+      transform: rotate(405deg);
+    }
+  }
+</style>

@@ -5,107 +5,97 @@ import Logo from '../../assets/icons/gaulatti.svg';
 import GitHub from '../../assets/icons/github.svg';
 import Instagram from '../../assets/icons/instagram.svg';
 import LinkedIn from '../../assets/icons/linkedin.svg';
-import {Mail} from '@lucide/astro'
+import { Mail } from '@lucide/astro';
 
-/**
- * Footer component for the website.
- */
 const now = moment().format('YYYY');
 ---
 
-<footer class='bg-[#222222] text-[#ffffff] py-16'>
-  <!-- Internal Links -->
-  <div class='container mx-auto px-4'>
-    <div class='grid grid-cols-1 md:grid-cols-4 gap-8'>
-        <Logo class="h-40 fill-current text-white"/>
-
-
-      <!-- <div class='md:col-span-1'>
-        <h2 class='text-2xl font-bold mb-4'>Logo</h2>
-        <p class='text-sm mb-4'>Join our newsletter to stay up to date on features and releases.</p>
-        <form class='flex flex-col gap-4'>
-          <input
-            type='email'
-            name='email'
-            placeholder='Enter your email'
-            class='bg-transparent border border-[#bbbbbb] text-[#ffffff] placeholder:text-[#bbbbbb] px-4 py-2 rounded'
-            required
-          />
-          <button type='submit' class='border border-[#ffffff] text-[#ffffff] hover:bg-[#ffffff] hover:text-[#222222] w-fit px-4 py-2 rounded'>
-            Subscribe
-          </button>
-        </form>
-        <p class='text-xs mt-4 text-[#bbbbbb]'>By subscribing you agree to our Privacy Policy and consent to receive updates from us.</p> -->
-
-    <!-- Column One -->
-    <!-- <div>
-        <h3 class='font-medium mb-4'>Column One</h3>
-        <ul class='space-y-3 text-sm'>
-          <li><a href='#' class='hover:underline'>Link One</a></li>
-          <li><a href='#' class='hover:underline'>Link Two</a></li>
-          <li><a href='#' class='hover:underline'>Link Three</a></li>
-          <li><a href='#' class='hover:underline'>Link Four</a></li>
-        </ul>
-      </div> -->
-
-    <!-- Column Two -->
-    <!-- <div>
-        <h3 class='font-medium mb-4'>Column Two</h3>
-        <ul class='space-y-3 text-sm'>
-          <li><a href='#' class='hover:underline'>Link One</a></li>
-          <li><a href='#' class='hover:underline'>Link Two</a></li>
-          <li><a href='#' class='hover:underline'>Link Three</a></li>
-          <li><a href='#' class='hover:underline'>Link Four</a></li>
-        </ul>
-      </div> -->
-    <div>
-      <h3 class='font-medium mb-4'>Follow me!</h3>
-      <ul class='space-y-3 text-sm fill-current text-white'>
-        <li>
-          <a href='https://github.com/gaulatti' class='flex items-center gap-2 hover:underline' target='_blank' rel='noopener noreferrer'>
-            <GitHub class='w-5 h-5' />
-            <span>@gaulatti</span>
-          </a>
-        </li>
-        <li>
-          <a href='https://bsky.app/profile/gaulatti.com' class='flex items-center gap-2 hover:underline' target='_blank' rel='noopener noreferrer'>
-            <Bluesky class='w-5 h-5' />
-            <span>@gaulatti.com</span>
-          </a>
-        </li>
-        <li>
-          <a href='https://instagram.com/gaulatti' class='flex items-center gap-2 hover:underline' target='_blank' rel='noopener noreferrer'>
-            <Instagram class='w-5 h-5' />
-            <span>gaulatti</span>
-          </a>
-        </li>
-        <li>
-          <a href='https://linkedin.com/in/gaulatti' class='flex items-center gap-2 hover:underline' target='_blank' rel='noopener noreferrer'>
-            <LinkedIn class='w-5 h-5' />
-            <span>gaulatti</span>
-          </a>
-        </li>
-        <li>
-          <a href='mailto:javier@oxozon.io' class='flex items-center gap-2 hover:underline' target='_blank' rel='noopener noreferrer'>
-            <Mail class='w-5 h-5' />
-            <span>javier@oxozon.io</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-</div>
-
+<footer class='bg-black text-white'>
+  <!-- Geometric Bauhaus-inspired decorative element -->
+  <div class='h-2 w-full grid grid-cols-3'>
+    <div class='bg-accent-red'></div>
+    <div class='bg-accent-blue'></div>
+    <div class='bg-accent-yellow'></div>
   </div>
 
-  <!-- Copyright -->
-  <div class='border-t border-[#333333] mt-12 flex justify-around'>
-    <div class='container mx-auto px-4 p-6 flex flex-col md:flex-row justify-between items-center'>
-      <div class='text-sm text-[#bbbbbb] mb-4 md:mb-0'>© {now} Javier Godoy Nú&ntilde;ez. All rights reserved.</div>
-      <div class='flex gap-6'>
-        <!-- Not yet! -->
-        <!-- <a href='#' class='text-sm text-[#bbbbbb] hover:underline'>Privacy Policy</a> -->
-        <!-- <a href='#' class='text-sm text-[#bbbbbb] hover:underline'>Terms of Service</a> -->
-        <!-- <a href='#' class='text-sm text-[#bbbbbb] hover:underline'>Cookies Settings</a> -->
+  <div class='container mx-auto px-4 py-16'>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12'>
+      <!-- Brand Column -->
+      <div class='lg:col-span-2'>
+        <Logo class='h-12 w-auto fill-current text-white mb-6' />
+        <p class='text-gray-400 max-w-md'>
+          Crafting digital experiences at the intersection of code, sound, and storytelling. Let's create something remarkable together.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class='font-bold mb-6'>Navigation</h3>
+        <ul class='space-y-3'>
+          <li><a href='/' class='text-gray-400 hover:text-white transition-colors'>Home</a></li>
+          <li><a href='/blog' class='text-gray-400 hover:text-white transition-colors'>Blog</a></li>
+          <li><a href='/portfolio' class='text-gray-400 hover:text-white transition-colors'>Portfolio</a></li>
+          <li><a href='/contact' class='text-gray-400 hover:text-white transition-colors'>Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class='font-bold mb-6'>Connect</h3>
+        <ul class='space-y-3 fill-current text-gray-400'>
+          <li>
+            <a href='https://github.com/gaulatti' class='flex items-center gap-2 hover:text-white transition-colors' target='_blank' rel='noopener noreferrer'>
+              <GitHub class='w-5 h-5' />
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://bsky.app/profile/gaulatti.com'
+              class='flex items-center gap-2 hover:text-white transition-colors'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Bluesky class='w-5 h-5' />
+              <span>Bluesky</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://instagram.com/gaulatti'
+              class='flex items-center gap-2 hover:text-white transition-colors'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Instagram class='w-5 h-5' />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://linkedin.com/in/gaulatti'
+              class='flex items-center gap-2 hover:text-white transition-colors'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <LinkedIn class='w-5 h-5' />
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href='mailto:javier@oxozon.io' class='flex items-center gap-2 hover:text-white transition-colors' target='_blank' rel='noopener noreferrer'>
+              <Mail class='w-5 h-5' />
+              <span>Email</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class='border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center'>
+      <div class='text-sm text-gray-400 mb-4 md:mb-0'>
+        © {now} Javier Godoy Núñez. All rights reserved.
       </div>
     </div>
   </div>

@@ -1,0 +1,70 @@
+---
+interface Props {
+  type: 'whitney' | 'autostrada' | 'wiphala' | 'pompeii' | 'monitor';
+  class?: string;
+}
+
+const { type, class: className = '' } = Astro.props;
+
+const patterns = {
+  whitney: {
+    bgClass: 'bg-accent-blue',
+    pattern: 'circles',
+  },
+  autostrada: {
+    bgClass: 'bg-accent-red',
+    pattern: 'lines',
+  },
+  wiphala: {
+    bgClass: 'bg-accent-yellow',
+    pattern: 'squares',
+  },
+  pompeii: {
+    bgClass: 'bg-accent-blue',
+    pattern: 'squares',
+  },
+  monitor: {
+    bgClass: 'bg-accent-red',
+    pattern: 'circles',
+  },
+};
+
+const { bgClass, pattern } = patterns[type];
+---
+
+<div class:list={['w-full h-full relative overflow-hidden', className]}>
+  <div class:list={['absolute inset-0 opacity-10', bgClass]}>
+    {
+      pattern === 'circles' && (
+        <div class='absolute inset-0'>
+          <div class='absolute top-1/4 left-1/4 w-1/2 h-1/2 border-8 border-white rounded-full shape-rotate' />
+          <div class='absolute top-1/3 left-1/3 w-1/3 h-1/3 border-4 border-white rounded-full shape-rotate' style='animation-direction: reverse;' />
+        </div>
+      )
+    }
+
+    {
+      pattern === 'lines' && (
+        <div class='absolute inset-0'>
+          <div class='grid grid-cols-6 h-full'>
+            {[...Array(6)].map((_, i) => (
+              <div class='border-l-2 border-white h-full transform hover-rotate' style={`transition-delay: ${i * 100}ms`} />
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      pattern === 'squares' && (
+        <div class='absolute inset-0'>
+          <div class='grid grid-cols-3 grid-rows-3 h-full gap-4 p-4'>
+            {[...Array(9)].map(() => (
+              <div class='border-2 border-white hover-rotate' />
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</div>

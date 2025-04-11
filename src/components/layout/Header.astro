@@ -1,9 +1,66 @@
 ---
-// Component Script (JavaScript)
+import { Image } from 'astro:assets';
+import gaulatti from '../../assets/icons/gaulatti.svg';
 ---
 
-<section class='text-white py-16' style=`background-image: url(/backgrounds/hero.avif); background-size: cover; background-position: center;` '>
+<header class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/10'>
   <div class='container mx-auto px-4'>
-    <div class='flex p-4 justify-center flex-col gap-4 h-[600px] rounded-2xl'></div>
+    <nav class='flex items-center justify-between h-16'>
+      <!-- Logo -->
+      <a href='/' class='hover-lift'>
+        <Image src={gaulatti} alt='gaulatti' class='h-8 w-auto' />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class='hidden md:flex items-center space-x-8'>
+        <a href='/' class='hover-lift font-medium'>Home</a>
+        <a href='/blog' class='hover-lift font-medium'>Blog</a>
+        <a href='/portfolio' class='hover-lift font-medium'>Portfolio</a>
+        <a href='/journey' class='hover-lift font-medium'>Journey</a>
+        <a href='https://musescore.com/user/57675224/sets' target='_blank' class='hover-lift font-medium'>Music</a>
+        <a href='/contact' class='hover-lift font-medium px-4 py-2 bg-black text-white rounded-sm'>Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class='md:hidden' aria-label='Toggle menu' id='menuButton'>
+        <div class='w-6 h-5 flex flex-col justify-between'>
+          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
+          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
+          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
+        </div>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class='md:hidden hidden' id='mobileMenu'>
+      <div class='py-4 space-y-4'>
+        <a href='/' class='block hover-lift font-medium'>Home</a>
+        <a href='/blog' class='block hover-lift font-medium'>Blog</a>
+        <a href='/portfolio' class='block hover-lift font-medium'>Portfolio</a>
+        <a href='/journey' class='block hover-lift font-medium'>Journey</a>
+        <a href='/contact' class='block hover-lift font-medium'>Contact</a>
+      </div>
+    </div>
   </div>
-</section>
+</header>
+
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuBars = menuButton?.querySelectorAll('span');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuBars?.forEach((bar, index) => {
+      if (index === 0) {
+        bar.classList.toggle('-translate-y-[6px]');
+        bar.classList.toggle('-rotate-45');
+      }
+      if (index === 1) bar.classList.toggle('opacity-0');
+      if (index === 2) {
+        bar.classList.toggle('translate-y-[6px]');
+        bar.classList.toggle('rotate-45');
+      }
+    });
+  });
+</script>
