@@ -1,0 +1,134 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { calculateReadingTime } from '../../utils/readingTime';
+import { Clock, ArrowLeft } from '@lucide/astro';
+import type { GetStaticPaths } from 'astro';
+
+interface BlogPost extends CollectionEntry<'blog'> {
+  id: string;
+  body: string;
+  data: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    tags: string[];
+    image?: string;
+  };
+}
+
+export const getStaticPaths = (async () => {
+  const posts = (await getCollection('blog')) as BlogPost[];
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = (await post.render?.()) ?? {};
+const readingTime = post.body ? calculateReadingTime(post.body) : 0;
+const title = `${post.data.title} — Gaulatti`;
+---
+
+<Layout title={title} description={post.data.description}>
+  <main class='pt-32 pb-24'>
+    <article class='container'>
+      <div class='max-w-3xl mx-auto'>
+        <!-- Back to blog link -->
+        <a href='/blog' class='inline-flex items-center gap-2 text-accent-blue hover:underline mb-12'>
+          <ArrowLeft class='w-4 h-4' />
+          <span>Back to Blog</span>
+        </a>
+
+        <!-- Header -->
+        <header class='mb-16'>
+          <h1 class='text-4xl md:text-5xl font-bold mb-6 tracking-tight'>
+            {post.data.title}
+          </h1>
+          <div class='flex flex-wrap items-center gap-6 text-gray-600 mb-8'>
+            <time>
+              {
+                post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })
+              }
+            </time>
+            <div class='flex items-center gap-1'>
+              <Clock class='w-4 h-4' />
+              <span>{readingTime} min read</span>
+            </div>
+            <div class='flex gap-2 flex-wrap'>
+              {
+                post.data.tags.map((tag) => (
+                  <a href={`/blog?tag=${tag}`} class='text-sm px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded-sm transition-colors'>
+                    {tag}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+          {post.data.image && <img src={post.data.image} alt={post.data.title} class='w-full aspect-[2/1] object-cover rounded-sm' />}
+        </header>
+
+        <!-- Content -->
+        <div class='prose prose-lg max-w-none'>
+          <Content />
+        </div>
+
+        <!-- Footer -->
+        <footer class='mt-16 pt-8 border-t'>
+          <div class='flex flex-col sm:flex-row justify-between items-center gap-4'>
+            <a href='/blog' class='flex items-center gap-2 text-accent-blue hover:underline'>
+              <ArrowLeft class='w-4 h-4' />
+              Back to Blog
+            </a>
+            <a href='/contact' class='text-accent-blue hover:underline'> Discuss this post → </a>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  /* Enhance typography for blog posts */
+  :global(.prose) {
+    --tw-prose-body: theme('colors.gray.700');
+    --tw-prose-headings: theme('colors.gray.900');
+    --tw-prose-links: theme('colors.accent-blue');
+    --tw-prose-bold: theme('colors.gray.900');
+    --tw-prose-code: theme('colors.gray.900');
+    --tw-prose-quotes: theme('colors.gray.900');
+  }
+
+  :global(.prose h2) {
+    @apply text-3xl font-bold mb-6 tracking-tight;
+  }
+
+  :global(.prose h3) {
+    @apply text-2xl font-bold mb-4;
+  }
+
+  :global(.prose a) {
+    @apply text-accent-blue hover:underline;
+  }
+
+  :global(.prose code) {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded-sm text-sm;
+  }
+
+  :global(.prose pre) {
+    @apply bg-gray-900 text-white p-4 rounded-sm;
+  }
+
+  :global(.prose pre code) {
+    @apply bg-transparent text-inherit p-0;
+  }
+
+  :global(.prose blockquote) {
+    @apply border-l-4 border-accent-blue pl-4 italic;
+  }
+</style>
