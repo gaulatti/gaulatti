@@ -8,6 +8,8 @@ interface Props {
   description?: string;
 }
 
+const gaTrackingId = import.meta.env.PUBLIC_GA_TRACKING_ID;
+
 const {
   title = 'Gaulatti — Creative Developer, Composer & Storyteller',
   description = 'Digital portfolio of Javier Godoy — where software engineering, music composition, and storytelling converge.',
@@ -47,6 +49,19 @@ const {
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet' />
+    <!-- Load GA (Offloaded by Partytown) -->
+    <script define:vars={{ gaTrackingId }}>
+      window.gaTrackingId = gaTrackingId;
+    </script>
+    <script type='text/partytown' async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}></script>
+    <script type='text/partytown'>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', window.gaTrackingId);
+    </script>
   </head>
   <body class='flex flex-col min-h-screen antialiased'>
     <Header />

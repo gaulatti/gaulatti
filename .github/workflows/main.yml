@@ -28,6 +28,7 @@ jobs:
     - name: Build Astro site
       env:
         PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
+        PUBLIC_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
       run: npm run build
 
     - name: Configure AWS credentials
