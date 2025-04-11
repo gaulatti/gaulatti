@@ -1,1 +1,168 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Bauhaus-inspired Design System */
+:root {
+  /* Primary Colors */
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent-red: #FF0000;
+  --color-accent-blue: #0000FF;
+  --color-accent-yellow: #FFD700;
+
+  /* Typography Scale */
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Animation Durations */
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* Base Typography */
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-black;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Geometric Typography for Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight;
+}
+
+/* Container width and spacing */
+.container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Enhanced Animation System */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+  transform: translateY(0);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  @apply shadow-sm;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-rotate {
+  @apply transition-transform duration-500 ease-out;
+}
+
+.hover-rotate:hover {
+  transform: rotate(2deg);
+}
+
+/* Text animations */
+.text-fade-in {
+  @apply opacity-0 transition-opacity duration-500;
+  animation: fadeIn 500ms ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Geometric shapes animations */
+.shape-rotate {
+  animation: rotateShape 20s linear infinite;
+}
+
+@keyframes rotateShape {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subtle Grid Background */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
+}
+
+/* Focus states */
+.focus-accent {
+  @apply transition-all duration-300;
+}
+
+.focus-accent:focus-visible {
+  @apply outline-none ring-2 ring-accent-blue ring-offset-2;
+}
+
+/* Loading states */
+.loading-dots::after {
+  content: '...';
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40%,
+  60% {
+    content: '..';
+  }
+
+  80%,
+  100% {
+    content: '...';
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

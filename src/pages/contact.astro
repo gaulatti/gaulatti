@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon, Mail } from '@lucide/astro';
+import { Image } from 'astro:assets';
+import Bluesky from '../assets/icons/bluesky.svg';
+import GitHub from '../assets/icons/github.svg';
+import Instagram from '../assets/icons/instagram.svg';
+import LinkedIn from '../assets/icons/linkedin.svg';
+
+const title = 'Contact — Gaulatti';
+const description =
+  'Get in touch with Javier Godoy for collaboration opportunities in software development, music composition, or media production.';
+
+const formId = import.meta.env.PUBLIC_FORMSPREE_FORM_ID;
+
+const socials = [
+  {
+    name: 'GitHub',
+    Icon: GitHub,
+    url: 'https://github.com/gaulatti',
+    username: '@gaulatti',
+  },
+  {
+    name: 'LinkedIn',
+    Icon: LinkedIn,
+    url: 'https://linkedin.com/in/gaulatti',
+    username: 'gaulatti',
+  },
+  {
+    name: 'Instagram',
+    Icon: Instagram,
+    url: 'https://instagram.com/gaulatti',
+    username: '@gaulatti',
+  },
+  {
+    name: 'Bluesky',
+    Icon: Bluesky,
+    url: 'https://bsky.app/profile/gaulatti.com',
+    username: '@gaulatti.com',
+  },
+  {
+    name: 'Bluesky',
+    Icon: Mail,
+    url: 'https://bsky.app/profile/gaulatti.com',
+    username: '@gaulatti.com',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <main class='pt-32 pb-24'>
+    <div class='container'>
+      <div class='max-w-4xl mx-auto'>
+        <div class='grid lg:grid-cols-2 gap-16'>
+          <!-- Contact Info -->
+          <div>
+            <h1 class='text-5xl md:text-6xl font-bold mb-8 tracking-tight'>Let's Create Together</h1>
+            <p class='text-xl text-gray-600 mb-12'>
+              Whether you're interested in collaboration, have a project in mind, or just want to say hello, I'd love to hear from you.
+            </p>
+
+            <!-- Social Links -->
+            <div class='space-y-6'>
+              <h2 class='text-xl font-bold'>Connect With Me</h2>
+              <ul class='space-y-4'>
+                {
+                  socials.map((social) => (
+                    <li>
+                      <a
+                        href={social.url}
+                        class='group flex items-center gap-4 p-4 bg-gray-50 hover:bg-gray-100 rounded-sm transition-colors'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        <social.Icon class='w-6 h-6' />
+                        <div>
+                          <div class='font-medium'>{social.name}</div>
+                          <div class='text-sm text-gray-600'>{social.username}</div>
+                        </div>
+                      </a>
+                    </li>
+                  ))
+                }
+                <li>
+                  <a href='mailto:javier@oxozon.io' class='group flex items-center gap-4 p-4 bg-gray-50 hover:bg-gray-100 rounded-sm transition-colors'>
+                    <Icon name='mail' class='w-6 h-6' />
+                    <div>
+                      <div class='font-medium'>Email</div>
+                      <div class='text-sm text-gray-600'>javier@oxozon.io</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <div class='bg-gray-50 p-8 rounded-sm'>
+              <h2 class='text-2xl font-bold mb-6'>Send a Message</h2>
+              <form action={`https://formspree.io/f/${formId}`} method='POST' class='space-y-6' id='contact-form'>
+                <div>
+                  <label for='name' class='block text-sm font-medium text-gray-700 mb-1'> Name </label>
+                  <input
+                    type='text'
+                    name='name'
+                    id='name'
+                    required
+                    minlength='2'
+                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                  />
+                </div>
+                <div>
+                  <label for='email' class='block text-sm font-medium text-gray-700 mb-1'> Email </label>
+                  <input
+                    type='email'
+                    name='email'
+                    id='email'
+                    required
+                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                  />
+                </div>
+                <div>
+                  <label for='subject' class='block text-sm font-medium text-gray-700 mb-1'> Subject </label>
+                  <input
+                    type='text'
+                    name='subject'
+                    id='subject'
+                    required
+                    minlength='2'
+                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                  />
+                </div>
+                <div>
+                  <label for='message' class='block text-sm font-medium text-gray-700 mb-1'> Message </label>
+                  <textarea
+                    name='message'
+                    id='message'
+                    rows='6'
+                    required
+                    minlength='10'
+                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                  ></textarea>
+                </div>
+                <button
+                  type='submit'
+                  class='w-full px-8 py-3 bg-black text-white hover-lift font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed relative'
+                  id='submit-button'
+                >
+                  <span class='inline-flex items-center'>
+                    <span id='button-text'>Send Message</span>
+                    <span id='loading-spinner' class='hidden ml-2'>
+                      <svg class='animate-spin h-5 w-5' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
+                        <circle class='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' stroke-width='4'></circle>
+                        <path
+                          class='opacity-75'
+                          fill='currentColor'
+                          d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path>
+                      </svg>
+                    </span>
+                  </span>
+                </button>
+                <div id='form-status' class='text-center hidden'>
+                  <p class='text-accent-blue'>Thank you! Your message has been sent.</p>
+                </div>
+                <div id='form-error' class='text-center hidden'>
+                  <p class='text-accent-red'>Sorry, there was an error sending your message. Please try again.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+  const buttonText = document.getElementById('button-text');
+  const loadingSpinner = document.getElementById('loading-spinner');
+  const formStatus = document.getElementById('form-status');
+  const formError = document.getElementById('form-error');
+
+  if (form && submitButton && buttonText && loadingSpinner && formStatus && formError) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset states
+      submitButton.disabled = true;
+      formStatus.classList.add('hidden');
+      formError.classList.add('hidden');
+      buttonText.textContent = 'Sending...';
+      loadingSpinner.classList.remove('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            Accept: 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          form.reset();
+          formStatus.classList.remove('hidden');
+          buttonText.textContent = 'Message Sent';
+          loadingSpinner.classList.add('hidden');
+
+          // Reset button after delay
+          setTimeout(() => {
+            buttonText.textContent = 'Send Message';
+            formStatus.classList.add('hidden');
+            submitButton.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        formError.classList.remove('hidden');
+        buttonText.textContent = 'Try Again';
+        loadingSpinner.classList.add('hidden');
+
+        // Reset error state after delay
+        setTimeout(() => {
+          formError.classList.add('hidden');
+          buttonText.textContent = 'Send Message';
+          submitButton.disabled = false;
+        }, 3000);
+      }
+    });
+  }
+
+  // Client-side validation enhancement
+  const inputs = form?.querySelectorAll('input, textarea');
+  inputs?.forEach((input) => {
+    input.addEventListener('invalid', (e) => {
+      e.preventDefault();
+      input.classList.add('border-accent-red');
+    });
+
+    input.addEventListener('input', () => {
+      input.classList.remove('border-accent-red');
+    });
+  });
+</script>
