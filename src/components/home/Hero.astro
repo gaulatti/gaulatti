@@ -10,7 +10,7 @@ import { Image } from 'astro:assets';
     <div class='max-w-4xl mx-auto text-center'>
       <!-- Main Heading with Dynamic Text Effect -->
       <h1 class='text-6xl md:text-7xl font-bold mb-6 tracking-tight'>
-        <span class='block' id='dynamicText'>Hi! I'm Javier</span>
+        <span class='block' id='dynamicText'>It's me, Javier!</span>
       </h1>
 
       <!-- Roles Subheading -->
@@ -49,7 +49,7 @@ import { Image } from 'astro:assets';
 
     constructor(el: HTMLElement) {
       this.el = el;
-      this.chars = '!<>-_\\/[]{}—=+*^?#';
+      this.chars = '@&%$#ß¢£¥€×÷Ω∆∏∑';  // Using block elements and wider symbols
       this.queue = [];
       this.frame = 0;
       this.frameRequest = 0;
@@ -117,6 +117,6 @@ import { Image } from 'astro:assets';
   const textElement = document.getElementById('dynamicText');
   if (textElement) {
     const fx = new TextScramble(textElement);
-    fx.setText('Hi! Im Javier');
+    // fx.setText('It\'s me, Javier');
   }
 </script>
