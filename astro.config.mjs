@@ -1,14 +1,19 @@
 // @ts-check
+import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
 export default defineConfig({
-  experimental:{
+  site: 'https://gaulatti.com',
+  integrations: [
+    tailwind({
+      configFile: './tailwind.config.js',
+    }),
+  ],
+  compressHTML: true,
+  build: {
+    assets: 'assets',
+  },
+  experimental: {
     svg: true,
   },
-  vite: {
-    plugins: [tailwindcss()]
-  }
 });
