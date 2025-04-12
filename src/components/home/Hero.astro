@@ -1,30 +1,46 @@
 ---
-import { Image } from 'astro:assets';
+
 ---
 
-<section class='pt-32 pb-24 relative overflow-hidden'>
-  <!-- Geometric Background Pattern -->
-  <div class='absolute inset-0 grid-bg opacity-50'></div>
+<section class='py-32 relative overflow-hidden'>
+  <!-- Natural Background Pattern -->
+  <div class='absolute inset-0 opacity-20'>
+    <div class='absolute inset-0 bg-gradient-to-b from-sand/10 via-transparent to-transparent'></div>
+  </div>
+
+  <!-- Sunset Accent Line -->
+  <div class='absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-24 bg-gradient-to-b from-sunset/0 via-sunset to-sunset/0'></div>
 
   <div class='container relative'>
     <div class='max-w-4xl mx-auto text-center'>
-      <!-- Main Heading with Dynamic Text Effect -->
-      <h1 class='text-6xl md:text-7xl font-bold mb-6 tracking-tight'>
-        <span class='block' id='dynamicText'>It's me, Javier!</span>
+      <!-- Main Heading -->
+      <h1 class='font-display text-6xl md:text-7xl font-medium mb-8 tracking-tight leading-tight'>
+        <span class='block text-fade-in' id='dynamicText'>It's me, Javier!</span>
       </h1>
 
-      <!-- Roles Subheading -->
-      <p class='text-xl md:text-2xl mb-8 text-gray-700'>Creative Developer, Composer & Storyteller</p>
+      <!-- Role Description -->
+      <p class='font-display text-2xl md:text-3xl mb-6 text-sea tracking-refined font-normal'>Creative Developer, Composer & Storyteller</p>
 
-      <!-- Brief Introduction -->
-      <p class='text-lg mb-12 max-w-2xl mx-auto text-gray-600'>
-        Crafting digital experiences where code meets creativity, sound shapes stories, and innovation drives impact.
+      <!-- Personal Philosophy -->
+      <p class='text-lg md:text-xl mb-12 max-w-2xl mx-auto text-text-secondary leading-relaxed font-light'>
+        From the sunsets of Antofagasta's coast to the vibrant pulse of New York City — I craft digital experiences that give people more time to embrace life's
+        beautiful moments.
       </p>
 
       <!-- CTA Buttons -->
-      <div class='flex justify-center gap-4 flex-wrap'>
-        <a href='/portfolio' class='px-8 py-3 bg-black text-white hover-lift font-medium'> View Portfolio </a>
-        <a href='/contact' class='px-8 py-3 border-2 border-black hover-lift font-medium'> Get in Touch </a>
+      <div class='flex justify-center gap-6 flex-wrap'>
+        <a
+          href='/portfolio'
+          class='px-8 py-3.5 bg-sea text-white hover:bg-desert transition-all duration-400 tracking-elegant text-base font-medium border border-transparent hover:border-desert/20'
+        >
+          View Portfolio
+        </a>
+        <a
+          href='/contact'
+          class='px-8 py-3.5 border border-dusk hover:border-desert text-dusk hover:text-desert transition-all duration-400 tracking-elegant text-base font-medium'
+        >
+          Get in Touch
+        </a>
       </div>
     </div>
   </div>
@@ -49,7 +65,7 @@ import { Image } from 'astro:assets';
 
     constructor(el: HTMLElement) {
       this.el = el;
-      this.chars = '@&%$#ß¢£¥€×÷Ω∆∏∑';  // Using block elements and wider symbols
+      this.chars = '⚜︎†‡§¶★≈∆∏∑'; // More elegant special characters
       this.queue = [];
       this.frame = 0;
       this.frameRequest = 0;
@@ -67,7 +83,7 @@ import { Image } from 'astro:assets';
         const from = oldText[i] || '';
         const to = newText[i] || '';
         const start = Math.floor(Math.random() * 40);
-        const end = start + Math.floor(Math.random() * 40);
+        const end = Math.floor(Math.random() * 40) + start;
         this.queue.push({ from, to, start, end });
       }
 
@@ -113,10 +129,15 @@ import { Image } from 'astro:assets';
     }
   }
 
-  // Initialize text effect
-  const textElement = document.getElementById('dynamicText');
-  if (textElement) {
-    const fx = new TextScramble(textElement);
-    // fx.setText('It\'s me, Javier');
-  }
+  /**
+   * Commenting by now, to avoid unneeded CLS drama.
+   * By now.
+   */
+  // const textElement = document.getElementById('dynamicText');
+  // if (textElement) {
+  //   const fx = new TextScramble(textElement);
+  //   setTimeout(() => {
+  //     fx.setText(textElement.innerText);
+  //   }, 800);
+  // }
 </script>

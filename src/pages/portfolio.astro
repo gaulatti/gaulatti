@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BauhausBackground from '../components/BauhausBackground.astro';
+import Github from '../assets/icons/github.svg';
 
 const title = 'Portfolio — Gaulatti';
 const description = 'Selected works across software engineering, music composition, and broadcasting by Javier Godoy (Gaulatti).';
@@ -11,37 +12,71 @@ interface Project {
   type: 'autostrada' | 'wiphala' | 'pompeii' | 'monitor';
   tags: string[];
   link: string;
+  imageUrl?: string;
+  repos: {
+    infra: string;
+    service: string;
+    frontend: string;
+  };
 }
 
 const personalProjects: Project[] = [
   {
-    title: "Autostrada",
-    description: "An all-in-one frontend observability platform unifying Lighthouse audits, real user monitoring (RUM) data, and PageSpeed Insights to track performance, accessibility, SEO, and aesthetics in production. Built to replace fragmented tools with a fast, modular solution that can run standalone or as a Wiphala plugin for continuous performance governance.",
-    type: "autostrada",
-    tags: ["TypeScript", "React", "NestJS", "AWS", "Lighthouse"],
-    link: "https://autostrada.gaulatti.com"
+    title: 'Autostrada',
+    description:
+      'An all-in-one frontend observability platform unifying Lighthouse audits, real user monitoring (RUM) data, and PageSpeed Insights to track performance, accessibility, SEO, and aesthetics in production. Built to replace fragmented tools with a fast, modular solution that can run standalone or as a Wiphala plugin for continuous performance governance.',
+    type: 'autostrada',
+    tags: ['TypeScript', 'React', 'NestJS', 'AWS', 'Lighthouse'],
+    link: 'https://autostrada.gaulatti.com',
+    imageUrl: 'https://autostrada.gaulatti.com/login.background.png',
+    repos: {
+      infra: 'https://github.com/gaulatti/autostrada',
+      service: 'https://github.com/gaulatti/autostrada-service',
+      frontend: 'https://github.com/gaulatti/autostrada-frontend',
+    },
   },
   {
-    title: "Wiphala",
-    description: "A self-hosted, plugin-driven workflow orchestrator for automating complex pipelines across multiple runtimes (Java, Node.js, Go, etc). It coordinates tasks via gRPC-based worker services and serves as the backbone of the ecosystem, integrating tools like Autostrada to streamline end-to-end processes.",
-    type: "wiphala",
-    tags: ["TypeScript", "NestJS", "gRPC", "AWS", "Docker"],
-    link: "https://wiphala.gaulatti.com"
+    title: 'Wiphala',
+    description:
+      'A self-hosted, plugin-driven workflow orchestrator for automating complex pipelines across multiple runtimes (Java, Node.js, Go, etc). It coordinates tasks via gRPC-based worker services and serves as the backbone of the ecosystem, integrating tools like Autostrada to streamline end-to-end processes.',
+    type: 'wiphala',
+    tags: ['TypeScript', 'NestJS', 'gRPC', 'AWS', 'Docker'],
+    link: 'https://wiphala.gaulatti.com',
+    imageUrl: 'https://wiphala.gaulatti.com/login.background.png',
+    repos: {
+      infra: 'https://github.com/gaulatti/wiphala',
+      service: 'https://github.com/gaulatti/wiphala-service',
+      frontend: 'https://github.com/gaulatti/wiphala-frontend',
+    },
   },
   {
-    title: "Pompeii",
-    description: "A centralized user-management service providing single sign-on across applications. It offers a unified user database with support for OAuth2 providers (e.g., Google) to eliminate duplicate authentication code in every service.",
-    type: "pompeii",
-    tags: ["TypeScript", "NestJS", "OAuth2", "MySQL", "AWS"],
-    link: "https://pompeii.gaulatti.com"
+    title: 'Pompeii',
+    description:
+      'A centralized user-management service providing single sign-on across applications. It offers a unified user database with support for OAuth2 providers (e.g., Google) to eliminate duplicate authentication code in every service.',
+    type: 'pompeii',
+    tags: ['TypeScript', 'NestJS', 'OAuth2', 'MySQL', 'AWS'],
+    link: 'https://pompeii.gaulatti.com',
+    imageUrl: 'https://pompeii.gaulatti.com/login.background.png',
+    repos: {
+      infra: 'https://github.com/gaulatti/pompeii',
+      service: 'https://github.com/gaulatti/pompeii-service',
+      frontend: 'https://github.com/gaulatti/pompeii-frontend',
+    },
   },
   {
-    title: "Monitor",
-    description: "An AI-powered monitoring platform that tracks websites and online sources, sending real-time alerts when something important happens. It combines custom web scraping with natural language processing to ensure you're notified only about events that truly matter.",
-    type: "monitor",
-    tags: ["TypeScript", "NestJS", "Web Scraping", "AI", "AWS"],
-    link: "https://monitor.gaulatti.com"
-  }
+    title: 'Monitor',
+    description:
+      "An AI-powered monitoring platform that tracks websites and online sources, sending real-time alerts when something important happens. It combines custom web scraping with natural language processing to ensure you're notified only about events that truly matter.",
+    type: 'monitor',
+    tags: ['TypeScript', 'NestJS', 'Web Scraping', 'AI', 'AWS'],
+    link: 'https://monitor.gaulatti.com',
+    imageUrl: 'https://monitor.gaulatti.com/login.background.png',
+    repos: {
+      infra: 'https://github.com/gaulatti/monitor',
+      service: 'https://github.com/gaulatti/monitor-service',
+      frontend: 'https://github.com/gaulatti/monitor-frontend',
+    },
+  },
 ];
 
 const professionalWork = [
@@ -78,24 +113,57 @@ const professionalWork = [
             {
               personalProjects.map((project, index) => (
                 <article class='group text-fade-in' style={`animation-delay: ${(index + 2) * 100}ms`}>
-                  <a href={project.link} class='block' target='_blank' rel='noopener noreferrer'>
-                    <div class='grid md:grid-cols-2 gap-8 items-center'>
-                      <div class='order-2 md:order-1'>
-                        <h3 class='text-2xl font-bold mb-4 group-hover:text-accent-blue transition-colors'>{project.title}</h3>
-                        <p class='text-gray-600 mb-4'>{project.description}</p>
+                  <div class='grid md:grid-cols-2 gap-8 items-center'>
+                    <div class='order-2 md:order-1'>
+                      <a href={project.link} class='block group/title' target='_blank' rel='noopener noreferrer'>
+                        <h3 class='text-2xl font-bold mb-4 group-hover/title:text-accent-blue transition-colors'>{project.title}</h3>
+                      </a>
+                      <p class='text-gray-600 mb-4'>{project.description}</p>
+                      <div class='space-y-4'>
                         <div class='flex gap-2 flex-wrap'>
                           {project.tags.map((tag) => (
                             <span class='text-sm px-2 py-1 bg-gray-100 rounded-sm'>{tag}</span>
                           ))}
                         </div>
-                      </div>
-                      <div class='order-1 md:order-2'>
-                        <div class='aspect-video bg-gray-100 rounded-sm overflow-hidden hover-lift'>
-                          <BauhausBackground type={project.type} />
+                        <div class='flex flex-wrap gap-4'>
+                          <a
+                            href={project.repos.infra}
+                            class='inline-flex items-center gap-2 text-sm text-gray-600 hover:text-accent-blue transition-colors'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <Github class='w-4 h-4' />
+                            <span>Infrastructure</span>
+                          </a>
+                          <a
+                            href={project.repos.service}
+                            class='inline-flex items-center gap-2 text-sm text-gray-600 hover:text-accent-blue transition-colors'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <Github class='w-4 h-4' />
+                            <span>Service</span>
+                          </a>
+                          <a
+                            href={project.repos.frontend}
+                            class='inline-flex items-center gap-2 text-sm text-gray-600 hover:text-accent-blue transition-colors'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <Github class='w-4 h-4' />
+                            <span>Frontend</span>
+                          </a>
                         </div>
                       </div>
                     </div>
-                  </a>
+                    <div class='order-1 md:order-2'>
+                      <a href={project.link} class='block' target='_blank' rel='noopener noreferrer'>
+                        <div class='aspect-video bg-gray-100 rounded-sm overflow-hidden hover-lift'>
+                          <BauhausBackground type={project.type} imageUrl={project.imageUrl} />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </article>
               ))
             }

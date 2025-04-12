@@ -4,12 +4,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        'accent-red': 'var(--color-accent-red)',
-        'accent-blue': 'var(--color-accent-blue)',
-        'accent-yellow': 'var(--color-accent-yellow)',
+        'accent-gold': 'var(--color-accent-gold)',
+        'accent-oxblood': 'var(--color-accent-oxblood)',
+        'accent-bronze': 'var(--color-accent-bronze)',
+        sand: 'var(--color-sand)',
+        desert: 'var(--color-desert)',
+        terracotta: 'var(--color-terracotta)',
+        dusk: 'var(--color-dusk)',
+        sea: 'var(--color-sea)',
+        'deep-sea': 'var(--color-deep-sea)',
+        'light-sand': 'var(--color-light-sand)',
+        'dark-sand': 'var(--color-dark-sand)',
+        sunset: 'var(--color-sunset)',
+        'text-primary': 'var(--color-text-primary)',
+        'text-secondary': 'var(--color-text-secondary)',
+        'accent-blue': 'var(--color-sea)', // Using the existing sea color as accent-blue
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
+      spacing: {
+        128: '32rem',
+        144: '36rem',
+      },
+      letterSpacing: {
+        refined: '-0.02em',
+        elegant: '0.05em',
       },
       container: {
         center: true,
@@ -20,6 +41,13 @@ export default {
           xl: '5rem',
           '2xl': '6rem',
         },
+      },
+      transitionDuration: {
+        400: '400ms',
+        600: '600ms',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },

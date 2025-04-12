@@ -1,27 +1,60 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Bauhaus-inspired Design System */
+/* Desert & Sea Color System */
 :root {
-  /* Primary Colors */
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --color-accent-red: #FF0000;
-  --color-accent-blue: #0000FF;
-  --color-accent-yellow: #FFD700;
+  /* Core Colors - inspired by global journey */
+  --color-sand: #e6d5b8;
+  --color-desert: #c1814d;
+  --color-terracotta: #a65d57;
+  --color-dusk: #694f5d;
+  --color-sea: #2c5784;
+  --color-deep-sea: #1a374d;
 
-  /* Typography Scale */
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
+  /* Supporting Colors */
+  --color-light-sand: #f9f6f2;
+  --color-dark-sand: #d4c4a9;
+  --color-sunset: #ff9677;
+  --color-ny-gray: #505764;
 
-  /* Animation Durations */
-  --transition-fast: 150ms;
-  --transition-base: 300ms;
-  --transition-slow: 500ms;
+  /* Accent Colors */
+  --color-accent-blue: var(--color-sea);
+  --color-accent-gold: #c6a760;
+  --color-accent-oxblood: #76323f;
+  --color-accent-bronze: #cd7f32;
+
+  /* Text Colors */
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #595959;
+
+  /* Elegant Typography Scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.375;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
 }
 
-/* Base Typography */
+/* Enhanced Typography */
 html {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -31,28 +64,41 @@ html {
 }
 
 body {
-  @apply bg-white text-black;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  @apply bg-light-sand text-text-primary;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Geometric Typography for Headings */
+/* Refined Typography */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply font-bold tracking-tight;
+  font-family: 'Cabinet Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  @apply font-medium;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-/* Container width and spacing */
+.display-text {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  @apply font-medium tracking-tight;
+}
+
+.body-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  @apply font-normal;
+}
+
+/* Elegant Container Spacing */
 .container {
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Enhanced Animation System */
+/* Sophisticated Hover Effects */
 .hover-lift {
-  @apply transition-all duration-300 ease-out;
+  @apply transition-all duration-400 ease-out;
   transform: translateY(0);
 }
 
@@ -62,7 +108,7 @@ h6 {
 }
 
 .hover-scale {
-  @apply transition-transform duration-300 ease-out;
+  @apply transition-transform duration-400 ease-out;
 }
 
 .hover-scale:hover {
@@ -70,23 +116,23 @@ h6 {
 }
 
 .hover-rotate {
-  @apply transition-transform duration-500 ease-out;
+  @apply transition-transform duration-600 ease-out;
 }
 
 .hover-rotate:hover {
-  transform: rotate(2deg);
+  transform: rotate(1deg);
 }
 
-/* Text animations */
+/* Refined Text Animations */
 .text-fade-in {
-  @apply opacity-0 transition-opacity duration-500;
-  animation: fadeIn 500ms ease-out forwards;
+  @apply opacity-0 transition-opacity duration-600;
+  animation: elegantFadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes fadeIn {
+@keyframes elegantFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
 
   to {
@@ -95,42 +141,25 @@ h6 {
   }
 }
 
-/* Geometric shapes animations */
-.shape-rotate {
-  animation: rotateShape 20s linear infinite;
-}
-
-@keyframes rotateShape {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Subtle Grid Background */
+/* Sophisticated Grid Background */
 .grid-bg {
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-image: linear-gradient(to right, rgb(0 0 0 / 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgb(0 0 0 / 0.03) 1px, transparent 1px);
 }
 
-/* Focus states */
+/* Refined Focus States */
 .focus-accent {
   @apply transition-all duration-300;
 }
 
 .focus-accent:focus-visible {
-  @apply outline-none ring-2 ring-accent-blue ring-offset-2;
+  @apply outline-none ring-2 ring-accent-gold ring-offset-2;
 }
 
-/* Loading states */
+/* Loading States */
 .loading-dots::after {
   content: '...';
-  animation: loadingDots 1.5s infinite;
+  animation: loadingDots 2s infinite;
 }
 
 @keyframes loadingDots {
@@ -151,7 +180,7 @@ h6 {
   }
 }
 
-/* Reduced Motion */
+/* Accessibility Considerations */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -165,4 +194,9 @@ h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Natural Transitions */
+.transition-natural {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
