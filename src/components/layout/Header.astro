@@ -3,42 +3,53 @@ import { Image } from 'astro:assets';
 import gaulatti from '../../assets/icons/gaulatti.svg';
 ---
 
-<header class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/10'>
+<header class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sand/5 shadow-[0_1px_3px_0_rgb(0,0,0,0.02)]'>
   <div class='container mx-auto px-4'>
-    <nav class='flex items-center justify-between h-16'>
+    <nav class='flex items-center justify-between h-20'>
       <!-- Logo -->
-      <a href='/' class='hover-lift'>
-        <Image src={gaulatti} alt='gaulatti' class='h-8 w-auto' />
+      <a href='/' class='group transition-all duration-400'>
+        <Image src={gaulatti} alt='gaulatti' class='h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-400' />
       </a>
 
       <!-- Desktop Navigation -->
-      <div class='hidden md:flex items-center space-x-8'>
-        <a href='/' class='hover-lift font-medium'>Home</a>
-        <a href='/blog' class='hover-lift font-medium'>Blog</a>
-        <a href='/portfolio' class='hover-lift font-medium'>Portfolio</a>
-        <a href='/journey' class='hover-lift font-medium'>Journey</a>
-        <a href='https://musescore.com/user/57675224/sets' target='_blank' class='hover-lift font-medium'>Music</a>
-        <a href='/contact' class='hover-lift font-medium px-4 py-2 bg-black text-white rounded-sm'>Contact</a>
+      <div class='hidden md:flex items-center space-x-12'>
+        <a href='/' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Home </a>
+        <a href='/blog' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Blog </a>
+        <a href='/portfolio' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Portfolio </a>
+        <a href='/journey' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Journey </a>
+        <a
+          href='https://musescore.com/user/57675224/sets'
+          target='_blank'
+          class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'
+        >
+          Music
+        </a>
+        <a
+          href='/contact'
+          class='px-6 py-2.5 bg-sea text-white hover:bg-desert tracking-elegant text-base font-medium transition-all duration-400 border border-transparent hover:border-desert/20 shadow-sm hover:shadow'
+        >
+          Contact
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class='md:hidden' aria-label='Toggle menu' id='menuButton'>
+      <button class='md:hidden group' aria-label='Toggle menu' id='menuButton'>
         <div class='w-6 h-5 flex flex-col justify-between'>
-          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
-          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
-          <span class='w-full h-0.5 bg-black transform transition-all duration-300'></span>
+          <span class='w-full h-[1px] bg-text-primary transform transition-all duration-400 opacity-90 group-hover:opacity-100'></span>
+          <span class='w-full h-[1px] bg-text-primary transform transition-all duration-400 opacity-90 group-hover:opacity-100'></span>
+          <span class='w-full h-[1px] bg-text-primary transform transition-all duration-400 opacity-90 group-hover:opacity-100'></span>
         </div>
       </button>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class='md:hidden hidden' id='mobileMenu'>
-      <div class='py-4 space-y-4'>
-        <a href='/' class='block hover-lift font-medium'>Home</a>
-        <a href='/blog' class='block hover-lift font-medium'>Blog</a>
-        <a href='/portfolio' class='block hover-lift font-medium'>Portfolio</a>
-        <a href='/journey' class='block hover-lift font-medium'>Journey</a>
-        <a href='/contact' class='block hover-lift font-medium'>Contact</a>
+    <div class='md:hidden hidden bg-light-sand/95 backdrop-blur-md border-t border-sand/10' id='mobileMenu'>
+      <div class='py-6 space-y-6'>
+        <a href='/' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Home </a>
+        <a href='/blog' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Blog </a>
+        <a href='/portfolio' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Portfolio </a>
+        <a href='/journey' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Journey </a>
+        <a href='/contact' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Contact </a>
       </div>
     </div>
   </div>
@@ -53,12 +64,12 @@ import gaulatti from '../../assets/icons/gaulatti.svg';
     mobileMenu?.classList.toggle('hidden');
     menuBars?.forEach((bar, index) => {
       if (index === 0) {
-        bar.classList.toggle('-translate-y-[6px]');
+        bar.classList.toggle('-translate-y-[5px]');
         bar.classList.toggle('-rotate-45');
       }
       if (index === 1) bar.classList.toggle('opacity-0');
       if (index === 2) {
-        bar.classList.toggle('translate-y-[6px]');
+        bar.classList.toggle('translate-y-[5px]');
         bar.classList.toggle('rotate-45');
       }
     });

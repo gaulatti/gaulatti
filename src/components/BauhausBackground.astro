@@ -2,38 +2,55 @@
 interface Props {
   type: 'whitney' | 'autostrada' | 'wiphala' | 'pompeii' | 'monitor';
   class?: string;
+  imageUrl?: string;
 }
 
-const { type, class: className = '' } = Astro.props;
+const { type, class: className = '', imageUrl } = Astro.props;
 
 const patterns = {
   whitney: {
-    bgClass: 'bg-accent-blue',
+    bgClass: 'bg-accent-bronze',
     pattern: 'circles',
   },
   autostrada: {
-    bgClass: 'bg-accent-red',
+    bgClass: 'bg-accent-oxblood',
     pattern: 'lines',
   },
   wiphala: {
-    bgClass: 'bg-accent-yellow',
+    bgClass: 'bg-accent-gold',
     pattern: 'squares',
   },
   pompeii: {
-    bgClass: 'bg-accent-blue',
+    bgClass: 'bg-accent-bronze',
     pattern: 'squares',
   },
   monitor: {
-    bgClass: 'bg-accent-red',
+    bgClass: 'bg-accent-oxblood',
     pattern: 'circles',
   },
 };
 
 const { bgClass, pattern } = patterns[type];
+
+/**
+ * Default to Pompeii background if no image is provided
+ */
+const defaultImage = 'https://pompeii.gaulatti.com/login.background.png';
 ---
 
 <div class:list={['w-full h-full relative overflow-hidden', className]}>
-  <div class:list={['absolute inset-0 opacity-10', bgClass]}>
+  {/* Image Layer */}
+  {
+    (imageUrl || defaultImage) && (
+      <div class='absolute inset-0'>
+        <img src={imageUrl || defaultImage} alt='' class='w-full h-full object-cover' />
+        <div class='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent mix-blend-multiply' />
+      </div>
+    )
+  }
+
+  {/* Bauhaus Pattern Layer */}
+  <div class:list={['absolute inset-0 mix-blend-soft-light', bgClass]}>
     {
       pattern === 'circles' && (
         <div class='absolute inset-0'>
@@ -68,3 +85,26 @@ const { bgClass, pattern } = patterns[type];
     }
   </div>
 </div>
+
+<style>
+  .shape-rotate {
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hover-rotate {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-rotate:hover {
+    transform: rotate(3deg);
+  }
+</style>

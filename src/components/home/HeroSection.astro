@@ -1,0 +1,285 @@
+---
+interface HeroItem {
+  type: 'post' | 'project';
+  title: string;
+  description: string;
+  image?: string;
+  link: string;
+  tags?: string[];
+}
+
+interface Props {
+  items: HeroItem[];
+}
+
+const { items } = Astro.props;
+
+/**
+ * Default gradient for fallback background
+ */
+const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-violet-900';
+---
+
+<section class='relative w-full overflow-hidden'>
+  {
+    items.length > 0 ? (
+      <div class='hero-carousel flex w-full h-[600px]'>
+        {items.map((item, index) => (
+          <div class={`hero-slide absolute inset-0 w-full transition-opacity duration-500 ${index === 0 ? 'opacity-100' : 'opacity-0'}`} data-index={index}>
+            {/* Background Layer with enhanced overlay */}
+            <div class='absolute inset-0 w-full h-full'>
+              {item.image ? (
+                <>
+                  <img src={item.image} alt='' class='w-full h-full object-cover' loading='eager' />
+                  <div class='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30' />
+                  <div class='absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40' />
+                </>
+              ) : (
+                <div class={`w-full h-full ${defaultBackground}`} />
+              )}
+            </div>
+
+            {/* Content Layer with enhanced text protection */}
+            <div class='relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+              <div class='flex items-center h-full pt-16 pb-8'>
+                <div class='max-w-2xl mx-auto text-center'>
+                  <div class='relative z-10 text-shadow-lg'>
+                    <div class='opacity-75 flex flex-col items-center'>
+                      <span class='text-sm uppercase tracking-widest text-white font-light'>{item.type === 'post' ? 'From the Blog' : 'Featured Project'}</span>
+                      <div class='w-12 h-px bg-white/30 mt-4 mb-6' />
+                    </div>
+
+                    {item.type === 'project' && item.tags && (
+                      <div class='mb-4 space-x-2'>
+                        {item.tags.map((tag) => (
+                          <span class='inline-block px-3 py-1 text-sm bg-white/15 backdrop-blur-sm rounded-full text-white border border-white/10'>{tag}</span>
+                        ))}
+                      </div>
+                    )}
+
+                    <h1 class='text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 [text-wrap:balance] text-white'>{item.title}</h1>
+
+                    <p class='text-base sm:text-lg mb-6 text-gray-100'>{item.description}</p>
+
+                    <a
+                      href={item.link}
+                      class='inline-block px-6 py-2 bg-white/90 backdrop-blur-sm text-gray-900 rounded-full font-medium hover:bg-white transition-colors border border-white/20'
+                    >
+                      {item.type === 'post' ? 'Read More' : 'View Project'}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Navigation arrows + dots */}
+        {items.length > 1 && (
+          <>
+            {/* Left Arrow */}
+            <button
+              class='absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors'
+              data-carousel-prev
+              aria-label='Previous slide'
+            >
+              <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' class='w-5 h-5'>
+                <path stroke-linecap='round' stroke-linejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
+              </svg>
+            </button>
+
+            {/* Right Arrow */}
+            <button
+              class='absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors'
+              data-carousel-next
+              aria-label='Next slide'
+            >
+              <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' class='w-5 h-5'>
+                <path stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
+              </svg>
+            </button>
+
+            <div class='absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 p-2 rounded-full bg-black/20 backdrop-blur-sm'>
+              {items.map((_, index) => (
+                <button class='w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors' data-dot={index} aria-label={`Go to slide ${index + 1}`}>
+                  <span class='sr-only'>Slide {index + 1}</span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    ) : (
+      <div class={`w-full h-[600px] ${defaultBackground} flex items-center justify-center pt-16`}>
+        <p class='text-white text-xl'>No featured content available</p>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .text-shadow-lg {
+    text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+  }
+
+  /* Fade in/out animation for arrows on hover */
+  @media (min-width: 768px) {
+    [data-carousel-prev],
+    [data-carousel-next] {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .hero-carousel:hover [data-carousel-prev],
+    .hero-carousel:hover [data-carousel-next] {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  function setupCarousel() {
+    const carousel = document.querySelector('.hero-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.hero-slide');
+    const dots = carousel.querySelectorAll('[data-dot]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+
+    if (slides.length <= 1) return;
+
+    let currentSlide = 0;
+    let interval: number;
+    let isTransitioning = false;
+
+    function showSlide(index: number) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      slides.forEach((slide) => {
+        slide.classList.add('opacity-0');
+        slide.classList.remove('opacity-100');
+      });
+      slides[index].classList.remove('opacity-0');
+      slides[index].classList.add('opacity-100');
+
+      dots.forEach((dot) => {
+        dot.classList.remove('bg-white');
+        dot.classList.add('bg-white/50');
+      });
+      dots[index].classList.add('bg-white');
+      dots[index].classList.remove('bg-white/50');
+
+      // Reset transition lock after animation completes
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    }
+
+    function nextSlide() {
+      if (isTransitioning) return;
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      if (isTransitioning) return;
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    /**
+     * Initial Carousel
+     */
+    showSlide(0);
+    interval = setInterval(nextSlide, 5000);
+
+    /**
+     * Setup button navigation
+     */
+    if (prevButton && nextButton) {
+      prevButton.addEventListener('click', () => {
+        clearInterval(interval);
+        prevSlide();
+        interval = setInterval(nextSlide, 5000);
+      });
+
+      nextButton.addEventListener('click', () => {
+        clearInterval(interval);
+        nextSlide();
+        interval = setInterval(nextSlide, 5000);
+      });
+    }
+
+    /**
+     * Setup dot navigation
+     */
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        if (isTransitioning || currentSlide === index) return;
+        clearInterval(interval);
+        currentSlide = index;
+        showSlide(currentSlide);
+        interval = setInterval(nextSlide, 5000);
+      });
+    });
+
+    /**
+     * Setup keyboard navigation
+     */
+    function handleKeydown(event: KeyboardEvent) {
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft') {
+        clearInterval(interval);
+        prevSlide();
+        interval = setInterval(nextSlide, 5000);
+      } else if (event.key === 'ArrowRight') {
+        clearInterval(interval);
+        nextSlide();
+        interval = setInterval(nextSlide, 5000);
+      }
+    }
+
+    document.addEventListener('keydown', handleKeydown);
+
+    /**
+     * Pause on hover
+     */
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(interval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      interval = setInterval(nextSlide, 5000);
+    });
+
+    /**
+     * Cleanup function
+     */
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('keydown', handleKeydown);
+    };
+  }
+
+  /**
+   * Setup on page load
+   */
+  let cleanup = setupCarousel();
+
+  /**
+   * Setup on view transitions
+   */
+  document.addEventListener('astro:page-load', () => {
+    if (cleanup) cleanup();
+    cleanup = setupCarousel();
+  });
+
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanup) cleanup();
+  });
+</script>
