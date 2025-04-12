@@ -9,6 +9,7 @@ interface Props {
 }
 
 const gaTrackingId = import.meta.env.PUBLIC_GA_TRACKING_ID;
+const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 
 const {
   title = 'Gaulatti — Creative Developer, Composer & Storyteller',
@@ -57,19 +58,24 @@ const {
     <!-- Font Loading -->
     <link href='https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,300&display=swap' rel='stylesheet' />
     <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap' rel='stylesheet' />
+
     <!-- Load GA (Offloaded by Partytown) -->
-    <script define:vars={{ gaTrackingId }}>
-      window.gaTrackingId = gaTrackingId;
-    </script>
-    <script type='text/partytown' async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}></script>
-    <script type='text/partytown'>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', window.gaTrackingId);
-    </script>
+    {!isLocalhost && (
+      <>
+        <script define:vars={{ gaTrackingId }}>
+          window.gaTrackingId = gaTrackingId;
+        </script>
+        <script type='text/partytown' async src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}></script>
+        <script type='text/partytown'>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', window.gaTrackingId);
+        </script>
+      </>
+    )}
   </head>
   <body class='flex flex-col min-h-screen antialiased'>
     <Header />
