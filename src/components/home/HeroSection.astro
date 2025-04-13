@@ -75,12 +75,12 @@ const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-viol
           </div>
         ))}
 
-        {/* Navigation arrows + dots */}
+        {/* Navigation controls */}
         {items.length > 1 && (
-          <>
+          <div class='absolute bottom-8 left-4 right-4 flex items-center justify-between'>
             {/* Left Arrow */}
             <button
-              class='absolute left-4 bottom-2 md:bottom-auto md:top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors z-50'
+              class='p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors'
               data-carousel-prev
               aria-label='Previous slide'
             >
@@ -89,9 +89,23 @@ const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-viol
               </svg>
             </button>
 
+            {/* Dots */}
+            <div class='flex gap-2 p-2 rounded-full bg-black/20 backdrop-blur-sm'>
+              {items.map((_, index) => (
+                <button 
+                  class='relative w-10 h-10 flex items-center justify-center touch-manipulation' 
+                  data-dot={index} 
+                  aria-label={`Go to slide ${index + 1}`}
+                >
+                  <span class='block w-2 h-2 rounded-full bg-white/50 transition-colors dot-indicator' />
+                  <span class='sr-only'>Slide {index + 1}</span>
+                </button>
+              ))}
+            </div>
+
             {/* Right Arrow */}
             <button
-              class='absolute right-4 bottom-2 md:bottom-auto md:top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors z-50'
+              class='p-2 rounded-full bg-black/20 backdrop-blur-sm text-white/75 hover:text-white hover:bg-black/30 transition-colors'
               data-carousel-next
               aria-label='Next slide'
             >
@@ -99,15 +113,7 @@ const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-viol
                 <path stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
               </svg>
             </button>
-
-            <div class='absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 p-2 rounded-full bg-black/20 backdrop-blur-sm'>
-              {items.map((_, index) => (
-                <button class='w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors' data-dot={index} aria-label={`Go to slide ${index + 1}`}>
-                  <span class='sr-only'>Slide {index + 1}</span>
-                </button>
-              ))}
-            </div>
-          </>
+          </div>
         )}
       </div>
     ) : (
@@ -135,6 +141,19 @@ const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-viol
     .hero-carousel:hover [data-carousel-next] {
       opacity: 1;
     }
+  }
+
+  .dot-indicator {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  button:hover .dot-indicator {
+    transform: scale(1.5);
+    background-color: rgb(255 255 255 / 0.8);
+  }
+
+  button[data-dot].active .dot-indicator {
+    background-color: rgb(255 255 255 / 1);
   }
 </style>
 
@@ -166,11 +185,9 @@ const defaultBackground = 'bg-gradient-to-r from-gray-900 via-purple-900 to-viol
       slides[index].classList.add('opacity-100');
 
       dots.forEach((dot) => {
-        dot.classList.remove('bg-white');
-        dot.classList.add('bg-white/50');
+        dot.classList.remove('active');
       });
-      dots[index].classList.add('bg-white');
-      dots[index].classList.remove('bg-white/50');
+      dots[index].classList.add('active');
 
       // Reset transition lock after animation completes
       setTimeout(() => {
