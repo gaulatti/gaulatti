@@ -12,6 +12,15 @@ interface HeroItem {
  */
 export const featuredItems: HeroItem[] = [
   {
+    type: 'post',
+    title: 'Nobody can agree on how to estimate story points, so here’s my approach.',
+    description:
+      "Struggling with story points? Here's a fresh, grounded approach to estimation that embraces complexity, team dynamics, and practical planning strategies.",
+    image: '/hero/points.avif',
+    link: 'https://medium.com/http418/nobody-can-agree-on-how-to-estimate-story-points-so-heres-my-approach-e2f499324103',
+    tags: ['Agile', 'Planning', 'Estimation'],
+  },
+  {
     type: 'project',
     title: 'Autostrada',
     description:
@@ -28,15 +37,6 @@ export const featuredItems: HeroItem[] = [
     image: '/hero/catastrophes.avif',
     link: 'https://medium.com/http418/engineering-in-software-catastrophes-8cd08266059c',
     tags: ['Engineering', 'Resilience', 'Culture'],
-  },
-  {
-    type: 'project',
-    title: 'Wiphala',
-    description:
-      'A plugin-based workflow orchestrator built for flexibility and speed. Coordinates tasks across services, runtimes, and clouds — no lock-in, no drag.',
-    image: '/hero/wiphala.avif',
-    link: '/portfolio',
-    tags: ['Workflow', 'Orchestration', 'gRPC'],
   },
   {
     type: 'post',
