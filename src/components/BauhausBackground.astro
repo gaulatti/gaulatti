@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'whitney' | 'autostrada' | 'wiphala' | 'pompeii' | 'monitor';
+  type: 'whitney' | 'autostrada'  | 'pompeii' | 'monitor';
   class?: string;
   imageUrl?: string;
 }
@@ -15,10 +15,6 @@ const patterns = {
   autostrada: {
     bgClass: 'bg-accent-oxblood',
     pattern: 'lines',
-  },
-  wiphala: {
-    bgClass: 'bg-accent-gold',
-    pattern: 'squares',
   },
   pompeii: {
     bgClass: 'bg-accent-bronze',
