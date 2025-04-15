@@ -9,7 +9,7 @@ const description = 'Selected works across software engineering, music compositi
 interface Project {
   title: string;
   description: string;
-  type: 'autostrada' | 'wiphala' | 'pompeii' | 'monitor';
+  type: 'autostrada' | 'pompeii' | 'monitor';
   tags: string[];
   link: string;
   imageUrl?: string;
@@ -24,7 +24,7 @@ const personalProjects: Project[] = [
   {
     title: 'Autostrada',
     description:
-      'An all-in-one frontend observability platform unifying Lighthouse audits, real user monitoring (RUM) data, and PageSpeed Insights to track performance, accessibility, SEO, and aesthetics in production. Built to replace fragmented tools with a fast, modular solution that can run standalone or as a Wiphala plugin for continuous performance governance.',
+      'An all-in-one frontend observability platform unifying Lighthouse audits, real user monitoring (RUM) data, and PageSpeed Insights to track performance, accessibility, SEO, and aesthetics in production. Built to replace fragmented tools with a fast, modular solution that can run standalone or as an automation plugin for continuous performance governance.',
     type: 'autostrada',
     tags: ['TypeScript', 'React', 'NestJS', 'AWS', 'Lighthouse'],
     link: 'https://autostrada.gaulatti.com',
@@ -33,20 +33,6 @@ const personalProjects: Project[] = [
       infra: 'https://github.com/gaulatti/autostrada',
       service: 'https://github.com/gaulatti/autostrada-service',
       frontend: 'https://github.com/gaulatti/autostrada-frontend',
-    },
-  },
-  {
-    title: 'Wiphala',
-    description:
-      'A self-hosted, plugin-driven workflow orchestrator for automating complex pipelines across multiple runtimes (Java, Node.js, Go, etc). It coordinates tasks via gRPC-based worker services and serves as the backbone of the ecosystem, integrating tools like Autostrada to streamline end-to-end processes.',
-    type: 'wiphala',
-    tags: ['TypeScript', 'NestJS', 'gRPC', 'AWS', 'Docker'],
-    link: 'https://wiphala.gaulatti.com',
-    imageUrl: '/hero/wiphala.avif',
-    repos: {
-      infra: 'https://github.com/gaulatti/wiphala',
-      service: 'https://github.com/gaulatti/wiphala-service',
-      frontend: 'https://github.com/gaulatti/wiphala-frontend',
     },
   },
   {
