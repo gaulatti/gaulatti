@@ -13,7 +13,7 @@ interface HeroItem {
 export const featuredItems: HeroItem[] = [
   {
     type: 'post',
-    title: 'From Problem to Product: How Nazca Turned Live Streaming into Real-Time Earthquake Monitoring Innovation.',
+    title: 'From Problem to Product: How Nazca turned into Live Streaming for Real-Time Earthquake Monitoring.',
     description:
       "Typically, technological products arise from an existing need. Ideas don't appear spontaneously; they don't emerge from nothing.",
     image: '/hero/nazca.avif',
