@@ -1,6 +1,6 @@
 ---
 interface Props {
-  type: 'whitney' | 'autostrada'  | 'pompeii' | 'monitor';
+  type: 'nazca' | 'autostrada'  | 'pompeii' | 'monitor';
   class?: string;
   imageUrl?: string;
 }
@@ -8,7 +8,7 @@ interface Props {
 const { type, class: className = '', imageUrl } = Astro.props;
 
 const patterns = {
-  whitney: {
+  nazca: {
     bgClass: 'bg-accent-bronze',
     pattern: 'circles',
   },

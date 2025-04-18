@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BauhausBackground from '../components/BauhausBackground.astro';
 import Github from '../assets/icons/github.svg';
-
+import YouTube from '../assets/icons/youtube.svg';
+import BauhausBackground from '../components/BauhausBackground.astro';
+import Layout from '../layouts/Layout.astro';
 const title = 'Portfolio — Gaulatti';
 const description = 'Selected works across software engineering, music composition, and broadcasting by Javier Godoy (Gaulatti).';
 
@@ -18,9 +18,31 @@ interface Project {
     service: string;
     frontend: string;
   };
+  other?: { link: string; text: string; icon: any }[];
 }
 
 const personalProjects: Project[] = [
+  {
+    title: 'Nazca',
+    description:
+      'An innovative seismic monitoring platform that integrates real-time earthquake data from global sources. Leveraging server-side rendering, React, and automated streaming technology, Nazca broadcasts dynamic visualizations directly to YouTube without human intervention or local software.',
+    type: 'autostrada',
+    tags: ['TypeScript', 'React', 'NestJS', 'AWS', 'YouTube', 'n8n', 'FFMPEG', 'Docker'],
+    link: 'https://nazca.gaulatti.com',
+    imageUrl: '/hero/nazca-ss.avif',
+    repos: {
+      infra: 'https://github.com/gaulatti/nazca',
+      service: 'https://github.com/gaulatti/nazca-service',
+      frontend: 'https://github.com/gaulatti/nazca-frontend',
+    },
+    other: [
+      {
+        link: 'https://www.youtube.com/watch?v=2oW7_GF6-pI',
+        text: 'YouTube Demo',
+        icon: YouTube,
+      },
+    ],
+  },
   {
     title: 'Autostrada',
     description:
@@ -139,6 +161,17 @@ const professionalWork = [
                             <Github class='w-4 h-4' />
                             <span>Frontend</span>
                           </a>
+                          {project.other?.map((item) => (
+                            <a
+                              href={item.link}
+                              class='inline-flex items-center gap-2 text-sm text-gray-600 hover:text-accent-blue transition-colors'
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              <item.icon class='w-4 h-4'/>
+                              <span>{ item.text }</span>
+                            </a>
+                          ))}
                         </div>
                       </div>
                     </div>
