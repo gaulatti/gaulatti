@@ -13,6 +13,15 @@ interface HeroItem {
 export const featuredItems: HeroItem[] = [
   {
     type: 'post',
+    title: 'From Problem to Product: How Nazca Turned Live Streaming into Real-Time Earthquake Monitoring Innovation.',
+    description:
+      "Typically, technological products arise from an existing need. Ideas don't appear spontaneously; they don't emerge from nothing.",
+    image: '/hero/nazca.avif',
+    link: 'https://blog.gaulatti.com/from-problem-to-product-how-nazca-turned-live-streaming-into-real-time-earthquake-monitoring-722428121737',
+    tags: ['Streaming', 'Innovation', 'Monitoring', 'Automation'],
+  },
+  {
+    type: 'post',
     title: 'Nobody can agree on how to estimate story points, so here’s my approach.',
     description:
       "Struggling with story points? Here's a fresh, grounded approach to estimation that embraces complexity, team dynamics, and practical planning strategies.",
