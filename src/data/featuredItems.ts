@@ -13,6 +13,14 @@ interface HeroItem {
 export const featuredItems: HeroItem[] = [
   {
     type: 'post',
+    title: 'Beach Heading: The Urgency of Getting There.',
+    description: 'From Normandy to product launches: why speed, not polish, wins the first battle..',
+    image: '/hero/normandy.avif',
+    link: 'https://medium.com/http418/beach-heading-the-urgency-of-getting-there-f9577507b57f',
+    tags: ['Product Management', 'Agile', 'Software Development', 'Business Strategy'],
+  },
+  {
+    type: 'post',
     title: 'Alphabetical Acceleration: From Atacama to Zurich, One Sprint at a Time.',
     description: 'How this simple alphabetic rule turns routine cycles into a motivating narrative and breaks the monotony of sprints.',
     image: '/hero/sprints.avif',
