@@ -94,6 +94,6 @@ Built to replace fragmented tooling with one **fast, modular, and developer-frie
 
 - 🧠 [Portfolio](https://gaulatti.com)
 - 🔗 [LinkedIn](https://linkedin.com/in/gaulatti)
-- 💌 javier@oxozon.io
+- 💌 jack@gaulatti.com
 
 ---
