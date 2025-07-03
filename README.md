@@ -14,10 +14,8 @@ I'm most alive when I'm **bridging leadership with engineers on the ground**, re
 
 ### 🔨 What I'm Building
 
-#### 🛣️ [Autostrada](https://autostrada.gaulatti.com)
-A frontend observability platform that unifies **Lighthouse, RUM, and PageSpeed** insights to track **performance, accessibility, SEO, and aesthetics** in production.
-
-Built to replace fragmented tooling with one **fast, modular, and developer-friendly** solution.
+#### 🛣️ [Monitor](https://monitor.gaulatti.com)
+An automated tool that monitors news sources around the world, helping newsrooms to be quick and react to breaking news as soon (and fast) as possible with all datapoints on the table.
 
 ---
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=for-the-badge)
