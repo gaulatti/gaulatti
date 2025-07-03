@@ -1,7 +1,6 @@
 # 👋 Hey, I’m Javier!
 
-🚀 Staff Software Engineer | 💡 Builder of Ideas | 🧠 Problem-Solver | 🩺 Advocate for Practical Tech
-> _"Anfangen ist leicht, beharren eine Kunst."_
+> _"A king without scars is not a King."_
 
 ---
 
@@ -19,8 +18,6 @@ I'm most alive when I'm **bridging leadership with engineers on the ground**, re
 A frontend observability platform that unifies **Lighthouse, RUM, and PageSpeed** insights to track **performance, accessibility, SEO, and aesthetics** in production.
 
 Built to replace fragmented tooling with one **fast, modular, and developer-friendly** solution.
-
-> 💡 Tech Stack: `Node.js` · `TypeScript` · `React` · `NestJS` · `MySQL` · `CDK` · `Docker` · `AWS`
 
 ---
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=for-the-badge)
