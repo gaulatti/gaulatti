@@ -1,14 +1,17 @@
 ---
-import { Image } from 'astro:assets';
 import gaulatti from '../../assets/icons/gaulatti.svg';
 ---
 
-<header class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sand/5 shadow-[0_1px_3px_0_rgb(0,0,0,0.02)]'>
+<header
+  transition:name='site-header'
+  transition:animate='none'
+  class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sand/5 shadow-[0_1px_3px_0_rgb(0,0,0,0.02)]'
+>
   <div class='container mx-auto px-4'>
     <nav class='flex items-center justify-between h-20'>
       <!-- Logo -->
       <a href='/' class='group transition-all duration-400'>
-        <Image src={gaulatti} alt='gaulatti' class='h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-400' />
+        <img src={gaulatti.src} alt='gaulatti' class='h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-400' />
       </a>
 
       <!-- Desktop Navigation -->
@@ -56,22 +59,30 @@ import gaulatti from '../../assets/icons/gaulatti.svg';
 </header>
 
 <script>
-  const menuButton = document.getElementById('menuButton');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuBars = menuButton?.querySelectorAll('span');
+  function setupMenu() {
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBars = menuButton?.querySelectorAll('span');
 
-  menuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-    menuBars?.forEach((bar, index) => {
-      if (index === 0) {
-        bar.classList.toggle('-translate-y-[5px]');
-        bar.classList.toggle('-rotate-45');
-      }
-      if (index === 1) bar.classList.toggle('opacity-0');
-      if (index === 2) {
-        bar.classList.toggle('translate-y-[5px]');
-        bar.classList.toggle('rotate-45');
-      }
+    menuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+      menuBars?.forEach((bar, index) => {
+        if (index === 0) {
+          bar.classList.toggle('-translate-y-[5px]');
+          bar.classList.toggle('-rotate-45');
+        }
+        if (index === 1) bar.classList.toggle('opacity-0');
+        if (index === 2) {
+          bar.classList.toggle('translate-y-[5px]');
+          bar.classList.toggle('rotate-45');
+        }
+      });
     });
-  });
+  }
+
+  // Run on initial load
+  setupMenu();
+
+  // Re-run after view transitions
+  document.addEventListener('astro:after-swap', setupMenu);
 </script>
