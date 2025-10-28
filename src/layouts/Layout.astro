@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
 import '../styles/global.css';
@@ -51,6 +52,9 @@ const {
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link rel='preload' href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&display=swap' as='style' />
 
+    <!-- View Transitions -->
+    <ViewTransitions fallback='none' />
+
     <!-- Load GA (Offloaded by Partytown) -->
     {!isLocalhost && (
       <>
@@ -71,7 +75,7 @@ const {
   </head>
   <body class='flex flex-col min-h-screen antialiased'>
     <Header />
-    <main class='flex-1'>
+    <main class='flex-1' transition:name='main-content'>
       <slot />
     </main>
     <Footer />
@@ -91,6 +95,38 @@ const {
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+  }
+
+  /* View Transition Animations */
+  ::view-transition-old(main-content),
+  ::view-transition-new(main-content) {
+    animation-duration: 0.2s;
+  }
+
+  ::view-transition-old(main-content) {
+    animation-name: fade-out;
+  }
+
+  ::view-transition-new(main-content) {
+    animation-name: fade-in;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 </style>
