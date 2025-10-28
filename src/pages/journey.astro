@@ -3,34 +3,36 @@ import { Building2 } from '@lucide/astro';
 import Layout from '../layouts/Layout.astro';
 import Amazon from '../assets/icons/amazon.svg';
 import CNN from '../assets/icons/cnn.svg';
-const title = "Experience — Javier Godoy (Gaulatti)";
-const description = "A journey through design systems, team leadership, and scalable architecture - from an early career engineer to a cross-functional leader at Warner Bros. Discovery.";
+import Narmi from '../assets/icons/narmi.svg';
+const title = 'Experience — Javier Godoy (Gaulatti)';
+const description =
+  'A journey through design systems, team leadership, and scalable architecture - from an early career engineer to a cross-functional leader at Warner Bros. Discovery.';
 ---
 
 <Layout title={title} description={description}>
-  <main class="pt-32 pb-24">
-    <div class="container">
-      <div class="max-w-4xl mx-auto">
+  <main class='pt-32 pb-24'>
+    <div class='container'>
+      <div class='max-w-4xl mx-auto'>
         <!-- Header -->
-        <header class="mb-16">
-          <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">My Journey</h1>
-          <p class="text-xl text-gray-600 max-w-2xl">
-            From writing my first lines of production code to leading cross-functional teams, 
-            my path has been shaped by a passion for building great software and empowering others.
+        <header class='mb-16'>
+          <h1 class='text-5xl md:text-6xl font-bold tracking-tight mb-6'>My Journey</h1>
+          <p class='text-xl text-gray-600 max-w-2xl'>
+            From writing my first lines of production code to leading cross-functional teams, my path has been shaped by a passion for building great software
+            and empowering others.
           </p>
         </header>
 
         <!-- Skills Section -->
-        <section class="mb-20">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="h-1 w-12 bg-accent-blue"></div>
-            <h2 class="text-3xl font-bold">Technical Skills</h2>
+        <section class='mb-20'>
+          <div class='flex items-center gap-4 mb-8'>
+            <div class='h-1 w-12 bg-accent-blue'></div>
+            <h2 class='text-3xl font-bold'>Technical Skills</h2>
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div class="space-y-4">
-              <h3 class="font-bold text-lg">Cloud & Infrastructure</h3>
-              <ul class="space-y-2 text-gray-600">
+          <div class='grid grid-cols-2 md:grid-cols-3 gap-6'>
+            <div class='space-y-4'>
+              <h3 class='font-bold text-lg'>Cloud & Infrastructure</h3>
+              <ul class='space-y-2 text-gray-600'>
                 <li>AWS (CDK, Lambda, DynamoDB)</li>
                 <li>AWS (API Gateway, Cognito)</li>
                 <li>AWS (S3, CloudFront, Route53)</li>
@@ -39,9 +41,9 @@ const description = "A journey through design systems, team leadership, and scal
               </ul>
             </div>
 
-            <div class="space-y-4">
-              <h3 class="font-bold text-lg">Frontend & UI</h3>
-              <ul class="space-y-2 text-gray-600">
+            <div class='space-y-4'>
+              <h3 class='font-bold text-lg'>Frontend & UI</h3>
+              <ul class='space-y-2 text-gray-600'>
                 <li>React, Redux, TypeScript</li>
                 <li>Angular, Astro, Tailwind</li>
                 <li>HTML5, CSS3, GraphQL</li>
@@ -50,9 +52,9 @@ const description = "A journey through design systems, team leadership, and scal
               </ul>
             </div>
 
-            <div class="space-y-4">
-              <h3 class="font-bold text-lg">Backend & Tools</h3>
-              <ul class="space-y-2 text-gray-600">
+            <div class='space-y-4'>
+              <h3 class='font-bold text-lg'>Backend & Tools</h3>
+              <ul class='space-y-2 text-gray-600'>
                 <li>NestJS, Express, Spring</li>
                 <li>PostgreSQL, DynamoDB</li>
                 <li>gRPC, REST APIs</li>
@@ -64,116 +66,175 @@ const description = "A journey through design systems, team leadership, and scal
         </section>
 
         <!-- Experience Section -->
-        <section class="mb-20">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="h-1 w-12 bg-accent-blue"></div>
-            <h2 class="text-3xl font-bold">Experience & Growth</h2>
+        <section class='mb-20'>
+          <div class='flex items-center gap-4 mb-8'>
+            <div class='h-1 w-12 bg-accent-blue'></div>
+            <h2 class='text-3xl font-bold'>Experience & Growth</h2>
           </div>
 
-          <!-- WBD -->
-          <div class="space-y-12">
-            <div class="group">
-                <div class="flex flex-col md:flex-row md:items-start gap-6 mb-6">
-                    <div class="shrink-0">
-                      <div class="w-16 h-16 bg-black flex items-center justify-center">
-                        <CNN class="w-8 h-8 fill-current text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 class="text-2xl font-bold mb-2">Warner Bros. Discovery (CNN)</h3>
-                      <p class="text-xl text-gray-600 mb-4">Staff Software Engineer / Acting GM</p>
-                      <p class="text-gray-600">2023 - Present</p>
-                    </div>
+          <div class='space-y-12'>
+            <!-- Narmi -->
+            <div class='group'>
+              <div class='flex flex-col md:flex-row md:items-start gap-6 mb-6'>
+                <div class='shrink-0'>
+                  <div class='w-16 h-16 bg-black flex items-center justify-center'>
+                    <Narmi class='w-8 h-8 fill-current text-white' />
                   </div>
-              <div class="pl-0 md:pl-22 space-y-4">
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Design Systems Team Lead</h4>
-                  <p class="text-gray-600">Lead and architect the design systems initiative, providing technical direction and mentorship to the team. Drive collaboration between engineering and design to translate design tokens and components into performant, scalable code libraries. Focus on developer experience and system adoption across teams.</p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Site Performance Platform Lead</h4>
-                  <p class="text-gray-600">Lead development and team direction for the performance assessment platform, integrating Lighthouse, Datadog RUM, and Google PageSpeed Insights. Guide team strategy and implementation while maintaining direct contribution to architecture and development. Platform provides comprehensive metrics for performance, SEO, accessibility, and visual consistency.</p>
+                <div>
+                  <h3 class='text-2xl font-bold mb-2'>Narmi</h3>
+                  <p class='text-xl text-gray-600 mb-4'>Senior Software Engineer II</p>
+                  <p class='text-gray-600'>2025 - Present</p>
+                </div>
+              </div>
+              <div class='pl-0 md:pl-22 space-y-4'>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Grow Team - Account Opening Platform</h4>
+                  <p class='text-gray-600'>
+                    Leading architecture and implementation of Account Opening features for both business and consumer accounts. Driving technical decisions and
+                    mentoring team members while building scalable solutions that enable financial institutions to streamline their onboarding processes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- WBD -->
+            <div class='group'>
+              <div class='flex flex-col md:flex-row md:items-start gap-6 mb-6'>
+                <div class='shrink-0'>
+                  <div class='w-16 h-16 bg-black flex items-center justify-center'>
+                    <CNN class='w-8 h-8 fill-current text-white' />
+                  </div>
+                </div>
+                <div>
+                  <h3 class='text-2xl font-bold mb-2'>Warner Bros. Discovery (CNN)</h3>
+                  <p class='text-xl text-gray-600 mb-4'>Staff Software Engineer / Acting GM</p>
+                  <p class='text-gray-600'>2023 - 2025</p>
+                </div>
+              </div>
+              <div class='pl-0 md:pl-22 space-y-4'>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Design Systems Team Lead</h4>
+                  <p class='text-gray-600'>
+                    Lead and architect the design systems initiative, providing technical direction and mentorship to the team. Drive collaboration between
+                    engineering and design to translate design tokens and components into performant, scalable code libraries. Focus on developer experience and
+                    system adoption across teams.
+                  </p>
+                </div>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Site Performance Platform Lead</h4>
+                  <p class='text-gray-600'>
+                    Lead development and team direction for the performance assessment platform, integrating Lighthouse, Datadog RUM, and Google PageSpeed
+                    Insights. Guide team strategy and implementation while maintaining direct contribution to architecture and development. Platform provides
+                    comprehensive metrics for performance, SEO, accessibility, and visual consistency.
+                  </p>
                 </div>
               </div>
             </div>
 
             <!-- Amazon -->
-            <div class="group">
-              <div class="flex flex-col md:flex-row md:items-start gap-6 mb-6">
-                <div class="shrink-0">
-                  <div class="w-16 h-16 bg-black flex items-center justify-center">
-                    <Amazon class="w-8 h-8 fill-current text-white" />
+            <div class='group'>
+              <div class='flex flex-col md:flex-row md:items-start gap-6 mb-6'>
+                <div class='shrink-0'>
+                  <div class='w-16 h-16 bg-black flex items-center justify-center'>
+                    <Amazon class='w-8 h-8 fill-current text-white' />
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-2xl font-bold mb-2">Amazon</h3>
-                  <p class="text-xl text-gray-600 mb-4">Software Development Engineer</p>
-                  <p class="text-gray-600">2017 - 2022 • Seattle, WA / New York, NY</p>
+                  <h3 class='text-2xl font-bold mb-2'>Amazon</h3>
+                  <p class='text-xl text-gray-600 mb-4'>Software Development Engineer</p>
+                  <p class='text-gray-600'>2017 - 2022 • Seattle, WA / New York, NY</p>
                 </div>
               </div>
-              <div class="pl-0 md:pl-22 space-y-4">
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Advertiser Experience (2020-2022)</h4>
-                  <p class="text-gray-600">Enhanced self-service campaign builder features and expanded to EU and FE markets. Led Observability efforts meeting SRE goals through automation and monitoring. As Single-threaded owner of Defect Reduction program, resolved critical bottlenecks, reducing Catastrophic Defect Rate from 40% to 1.3% through systematic analysis and improvements.</p>
+              <div class='pl-0 md:pl-22 space-y-4'>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Advertiser Experience</h4>
+                  <p class='text-gray-600'>
+                    Enhanced self-service campaign builder features and expanded to EU and FE markets. Led Observability efforts meeting SRE goals through
+                    automation and monitoring. As Single-threaded owner of Defect Reduction program, resolved critical bottlenecks, reducing Catastrophic Defect
+                    Rate from 40% to 1.3% through systematic analysis and improvements.
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Amazon Explore (2019-2020)</h4>
-                  <p class="text-gray-600">Early member of the Amazon Explore team, helping build the virtual experiences platform from the ground up. Developed core streaming infrastructure and host-side experience features.</p>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Amazon Explore</h4>
+                  <p class='text-gray-600'>
+                    Early member of the Amazon Explore team, helping build the virtual experiences platform from the ground up. Developed core streaming
+                    infrastructure and host-side experience features.
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Alexa Shopping & Infrastructure</h4>
-                  <p class="text-gray-600">Led Peak Readiness program ensuring infrastructure readiness for Prime Day. Coordinated with 15 global teams to verify infrastructure, scaling, and SOPs/Runbooks. Spearheaded migration from third-party safety management service in Fulfillment Centers.</p>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Alexa Shopping & Infrastructure</h4>
+                  <p class='text-gray-600'>
+                    Led Peak Readiness program ensuring infrastructure readiness for Prime Day. Coordinated with 15 global teams to verify infrastructure,
+                    scaling, and SOPs/Runbooks. Spearheaded migration from third-party safety management service in Fulfillment Centers.
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Payments Services</h4>
-                  <p class="text-gray-600">Developed and integrated new payment services focusing on eligibility and tax allocation. Enabled multi-tender purchases including tax-free options with EBT (2017) and HSA/FSA (2018) payment methods.</p>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Payments Services</h4>
+                  <p class='text-gray-600'>
+                    Developed and integrated new payment services focusing on eligibility and tax allocation. Enabled multi-tender purchases including tax-free
+                    options with EBT (2017) and HSA/FSA (2018) payment methods.
+                  </p>
                 </div>
               </div>
             </div>
 
             <!-- Earlier Experience -->
-            <div class="group">
-              <div class="flex flex-col md:flex-row md:items-start gap-6 mb-6">
-                <div class="shrink-0">
-                  <div class="w-16 h-16 bg-black flex items-center justify-center">
-                    <Building2 class="w-8 h-8 text-white" />
+            <div class='group'>
+              <div class='flex flex-col md:flex-row md:items-start gap-6 mb-6'>
+                <div class='shrink-0'>
+                  <div class='w-16 h-16 bg-black flex items-center justify-center'>
+                    <Building2 class='w-8 h-8 text-white' />
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-2xl font-bold mb-2">Earlier Experience</h3>
-                  <p class="text-xl text-gray-600 mb-4">Growing from Engineer to Leader</p>
-                  <p class="text-gray-600">2010 - 2016 • Chile & Remote</p>
+                  <h3 class='text-2xl font-bold mb-2'>Earlier Experience</h3>
+                  <p class='text-xl text-gray-600 mb-4'>Growing from Engineer to Leader</p>
+                  <p class='text-gray-600'>2010 - 2016 • Chile & Remote</p>
                 </div>
               </div>
-              <div class="pl-0 md:pl-22 space-y-4">
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Waggl (2016) - Senior Web Developer</h4>
-                  <p class="text-gray-600">Translated business requirements into specifications, created design documents, and supported junior engineers while implementing features. (Remote from Santiago, Chile)</p>
+              <div class='pl-0 md:pl-22 space-y-4'>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Waggl (2016) - Senior Web Developer</h4>
+                  <p class='text-gray-600'>
+                    Translated business requirements into specifications, created design documents, and supported junior engineers while implementing features.
+                    (Remote from Santiago, Chile)
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">DesertPoint (2016) - Lead Software Developer</h4>
-                  <p class="text-gray-600">Built startup's PoC for monitoring truck drivers' work hours in mining industry, preventing fatigue through ETL process and data handling.</p>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>DesertPoint (2016) - Lead Software Developer</h4>
+                  <p class='text-gray-600'>
+                    Built startup's PoC for monitoring truck drivers' work hours in mining industry, preventing fatigue through ETL process and data handling.
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6">
-                  <h4 class="font-bold mb-3">Maxis SpA (2013) - CTO & Cofounder</h4>
-                  <p class="text-gray-600">Led website and platform development, managing team of five developers while collaborating with clients and refining specifications.</p>
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Maxis SpA (2013) - CTO & Cofounder</h4>
+                  <p class='text-gray-600'>
+                    Led website and platform development, managing team of five developers while collaborating with clients and refining specifications.
+                  </p>
                 </div>
-                <div class="bg-gray-50 p-6 border-l-4 border-accent-blue">
-                  <h4 class="font-bold mb-3">Scrum S.A. (2010-2013) - From IT Support to Multi-Role Leader</h4>
-                  <p class="text-gray-600 mb-3">Initially hired for basic IT support and infrastructure management, I organically grew into multiple crucial roles as the company evolved. As team members departed, I stepped up to fill critical gaps, ultimately handling:</p>
-                  <ul class="list-disc pl-6 mb-3 text-gray-600">
+                <div class='bg-gray-50 p-6'>
+                  <h4 class='font-bold mb-3'>Scrum S.A. (2010-2013) - From IT Support to Multi-Role Leader</h4>
+                  <p class='text-gray-600 mb-3'>
+                    Initially hired for basic IT support and infrastructure management, I organically grew into multiple crucial roles as the company evolved.
+                    As team members departed, I stepped up to fill critical gaps, ultimately handling:
+                  </p>
+                  <ul class='list-disc pl-6 mb-3 text-gray-600'>
                     <li>Product Management: Gathering requirements and planning features for our mining software Antara</li>
                     <li>Project Management: Coordinating deliverables and timelines across teams</li>
                     <li>Software Engineering: Developing core components in .NET</li>
                     <li>QA: Establishing testing protocols and quality standards</li>
                     <li>Infrastructure: Maintaining systems and network architecture</li>
                   </ul>
-                  <p class="text-gray-600 italic mb-3">"What started as basic IT support became a crash course in wearing multiple hats - this role taught me how to adapt quickly and take ownership of whatever needed to be done."</p>
-                  <div class="mt-4 flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm">Multi-role Leadership</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm">Product Management</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm">Software Development</span>
-                    <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm">Quality Assurance</span>
+                  <p class='text-gray-600 italic mb-3'>
+                    "What started as basic IT support became a crash course in wearing multiple hats - this role taught me how to adapt quickly and take
+                    ownership of whatever needed to be done."
+                  </p>
+                  <div class='mt-4 flex flex-wrap gap-2'>
+                    <span class='px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm'>Multi-role Leadership</span>
+                    <span class='px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm'>Product Management</span>
+                    <span class='px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm'>Software Development</span>
+                    <span class='px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm'>Quality Assurance</span>
                   </div>
                 </div>
               </div>
@@ -183,16 +244,14 @@ const description = "A journey through design systems, team leadership, and scal
 
         <!-- Contact -->
         <section>
-          <div class="flex items-center gap-4 mb-8">
-            <div class="h-1 w-12 bg-accent-blue"></div>
-            <h2 class="text-3xl font-bold">Let's Connect</h2>
+          <div class='flex items-center gap-4 mb-8'>
+            <div class='h-1 w-12 bg-accent-blue'></div>
+            <h2 class='text-3xl font-bold'>Let's Connect</h2>
           </div>
 
-          <div class="bg-persgray-50 p-8">
-            <p class="text-xl mb-6">Have an interesting project or opportunity? I'd love to hear about it.</p>
-            <a href="/contact" class="inline-block px-8 py-3 bg-black text-white hover:translate-y-[-4px] transition-transform">
-              Start a Conversation
-            </a>
+          <div class='bg-persgray-50 p-8'>
+            <p class='text-xl mb-6'>Have an interesting project or opportunity? I'd love to hear about it.</p>
+            <a href='/contact' class='inline-block px-8 py-3 bg-black text-white hover:translate-y-[-4px] transition-transform'> Start a Conversation </a>
           </div>
         </section>
       </div>
