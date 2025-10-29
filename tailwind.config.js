@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'media', // Enable automatic dark mode based on system preference
   theme: {
     extend: {
       colors: {
@@ -18,19 +19,19 @@ export default {
         sunset: 'var(--color-sunset)',
         'text-primary': 'var(--color-text-primary)',
         'text-secondary': 'var(--color-text-secondary)',
-        'accent-blue': 'var(--color-sea)', // Using the existing sea color as accent-blue
+        'accent-blue': 'var(--color-sea)' // Using the existing sea color as accent-blue
       },
       fontFamily: {
         display: ['Cabinet Grotesk', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
       },
       spacing: {
         128: '32rem',
-        144: '36rem',
+        144: '36rem'
       },
       letterSpacing: {
         refined: '-0.02em',
-        elegant: '0.05em',
+        elegant: '0.05em'
       },
       container: {
         center: true,
@@ -39,17 +40,17 @@ export default {
           sm: '2rem',
           lg: '4rem',
           xl: '5rem',
-          '2xl': '6rem',
-        },
+          '2xl': '6rem'
+        }
       },
       transitionDuration: {
         400: '400ms',
-        600: '600ms',
+        600: '600ms'
       },
       backdropBlur: {
-        xs: '2px',
-      },
-    },
+        xs: '2px'
+      }
+    }
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')]
 };

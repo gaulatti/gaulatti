@@ -18,8 +18,8 @@
 @font-face {
   font-family: 'Cabinet Grotesk';
   src: url('//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2'),
-       url('//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff') format('woff'),
-       url('//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.ttf') format('truetype');
+    url('//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff') format('woff'),
+    url('//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -72,6 +72,43 @@
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.05em;
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode palette - sophisticated navy and sea tones */
+    --color-light-sand: #0d1821;
+    /* Deepest navy - main background */
+    --color-sand: #1a2332;
+    /* Very dark slate - card backgrounds */
+    --color-dark-sand: #243447;
+    /* Dark slate - elevated elements */
+    --color-desert: #e0ac69;
+    /* Warm gold - accents */
+    --color-terracotta: #d47b75;
+    /* Warm coral - secondary accents */
+    --color-sunset: #ff9677;
+    /* Bright coral - highlights */
+
+    /* Sea colors - brighter for contrast */
+    --color-sea: #5ba3f5;
+    /* Bright blue - primary actions */
+    --color-deep-sea: #182533;
+    /* Darker slate - sections */
+
+    /* Text colors */
+    --color-text-primary: #f0f4f8;
+    /* Off-white - main text */
+    --color-text-secondary: #b8c5d6;
+    /* Cool gray - secondary text */
+
+    /* Accent colors */
+    --color-accent-gold: #d4af37;
+    /* Bright gold */
+    --color-accent-blue: #5ba3f5;
+    /* Bright blue */
+  }
 }
 
 /* Enhanced Typography */

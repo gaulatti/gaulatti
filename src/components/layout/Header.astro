@@ -5,31 +5,41 @@ import gaulatti from '../../assets/icons/gaulatti.svg';
 <header
   transition:name='site-header'
   transition:animate='none'
-  class='fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sand/5 shadow-[0_1px_3px_0_rgb(0,0,0,0.02)]'
+  class='fixed w-full top-0 z-50 light:bg-white/90 dark:bg-dark-sand/95 backdrop-blur-md border-b light:border-sand/5 dark:border-dark-sand light:shadow-[0_1px_3px_0_rgb(0,0,0,0.02)] dark:shadow-[0_1px_3px_0_rgb(0,0,0,0.3)]'
 >
   <div class='container mx-auto px-4'>
     <nav class='flex items-center justify-between h-20'>
       <!-- Logo -->
       <a href='/' class='group transition-all duration-400'>
-        <img src={gaulatti.src} alt='gaulatti' class='h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-400' />
+        <img src={gaulatti.src} alt='gaulatti' class='h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-400 dark:invert' />
       </a>
 
       <!-- Desktop Navigation -->
       <div class='hidden md:flex items-center space-x-12'>
-        <a href='/' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Home </a>
-        <a href='/portfolio' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Portfolio </a>
-        <a href='/journey' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Journey </a>
-        <a href='//blog.gaulatti.com' target='_blank' class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'> Blog </a>
+        <a href='/' class='text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined font-medium'> Home </a>
+        <a href='/portfolio' class='text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined font-medium'>
+          Portfolio
+        </a>
+        <a href='/journey' class='text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined font-medium'>
+          Journey
+        </a>
+        <a
+          href='//blog.gaulatti.com'
+          target='_blank'
+          class='text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined font-medium'
+        >
+          Blog
+        </a>
         <a
           href='//musescore.com/user/57675224/sets'
           target='_blank'
-          class='text-base hover:text-sea transition-colors duration-400 tracking-refined font-medium'
+          class='text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined font-medium'
         >
           Music
         </a>
         <a
           href='/contact'
-          class='px-6 py-2.5 bg-sea text-white hover:bg-desert tracking-elegant text-base font-medium transition-all duration-400 border border-transparent hover:border-desert/20 shadow-sm hover:shadow'
+          class='px-6 py-2.5 light:bg-sea dark:bg-accent-blue light:text-white light:hover:bg-desert dark:light:hover:bg-desert tracking-elegant text-base font-medium transition-all duration-400 border border-transparent light:hover:border-desert/20 shadow-sm hover:shadow'
         >
           Contact
         </a>
@@ -46,13 +56,26 @@ import gaulatti from '../../assets/icons/gaulatti.svg';
     </nav>
 
     <!-- Mobile Menu -->
-    <div class='md:hidden hidden bg-light-sand/95 backdrop-blur-md border-t border-sand/10' id='mobileMenu'>
+    <div class='md:hidden hidden bg-light-sand/95 dark:bg-sand/95 backdrop-blur-md border-t border-sand/10' id='mobileMenu'>
       <div class='py-6 space-y-6'>
-        <a href='/' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Home </a>
-        <a href='/blog' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Blog </a>
-        <a href='/portfolio' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Portfolio </a>
-        <a href='/journey' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Journey </a>
-        <a href='/contact' class='block text-base hover:text-sea transition-colors duration-400 tracking-refined px-4 font-medium'> Contact </a>
+        <a href='/' class='block text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined px-4 font-medium'>
+          Home
+        </a>
+        <a href='/blog' class='block text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined px-4 font-medium'>
+          Blog
+        </a>
+        <a
+          href='/portfolio'
+          class='block text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined px-4 font-medium'
+        >
+          Portfolio
+        </a>
+        <a href='/journey' class='block text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined px-4 font-medium'>
+          Journey
+        </a>
+        <a href='/contact' class='block text-base light:hover:text-sea dark:hover:text-accent-blue transition-colors duration-400 tracking-refined px-4 font-medium'>
+          Contact
+        </a>
       </div>
     </div>
   </div>
