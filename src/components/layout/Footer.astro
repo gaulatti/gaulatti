@@ -10,7 +10,7 @@ import { Mail } from '@lucide/astro';
 const now = moment().format('YYYY');
 ---
 
-<footer transition:name='site-footer' transition:animate='none' class='bg-deep-sea text-white'>
+<footer transition:name='site-footer' transition:animate='none' class='bg-deep-sea dark:bg-sand text-white'>
   <!-- Natural Decorative Element -->
   <div class='h-[1px] w-full bg-gradient-to-r from-transparent via-sunset/30 to-transparent'></div>
 
@@ -18,7 +18,7 @@ const now = moment().format('YYYY');
     <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16'>
       <!-- Brand Column -->
       <div class='lg:col-span-2'>
-        <Logo class='h-12 w-auto fill-current text-white opacity-90 mb-8' />
+        <Logo class='h-12 w-auto fill-current light:text-white opacity-90 mb-8' />
         <p class='text-sand/90 max-w-md leading-relaxed tracking-refined'>
           Crafting digital experiences that blend precision with poetry. Where engineering meets artistry, creating spaces for reflection, innovation, and the
           quiet appreciation of life's remarkable moments.
@@ -27,19 +27,19 @@ const now = moment().format('YYYY');
 
       <!-- Quick Links -->
       <div>
-        <h3 class='font-medium tracking-elegant text-sm text-sand mb-8 uppercase'>Navigation</h3>
+        <h3 class='font-medium tracking-elegant text-sm light:text-sand dark:text-desert mb-8 uppercase'>Navigation</h3>
         <ul class='space-y-4'>
-          <li><a href='/' class='text-sand/80 hover:text-sunset transition-colors duration-400'>Home</a></li>
-          <li><a href='/blog' class='text-sand/80 hover:text-sunset transition-colors duration-400'>Blog</a></li>
-          <li><a href='/portfolio' class='text-sand/80 hover:text-sunset transition-colors duration-400'>Portfolio</a></li>
-          <li><a href='/contact' class='text-sand/80 hover:text-sunset transition-colors duration-400'>Contact</a></li>
+          <li><a href='/' class='text-sand/80 dark:text-text-secondary hover:text-sunset transition-colors duration-400'>Home</a></li>
+          <li><a href='/blog' class='text-sand/80 dark:text-text-secondary hover:text-sunset transition-colors duration-400'>Blog</a></li>
+          <li><a href='/portfolio' class='text-sand/80 dark:text-text-secondary hover:text-sunset transition-colors duration-400'>Portfolio</a></li>
+          <li><a href='/contact' class='text-sand/80 dark:text-text-secondary hover:text-sunset transition-colors duration-400'>Contact</a></li>
         </ul>
       </div>
 
       <!-- Social Links -->
       <div>
-        <h3 class='font-medium tracking-elegant text-sm text-sand mb-8 uppercase'>Connect</h3>
-        <ul class='space-y-4 fill-current text-sand/80'>
+        <h3 class='font-medium tracking-elegant text-sm light:text-sand dark:text-desert mb-8 uppercase'>Connect</h3>
+        <ul class='space-y-4 fill-current text-sand/80 dark:text-text-secondary'>
           <li>
             <a
               href='https://github.com/gaulatti'

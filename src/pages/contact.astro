@@ -8,8 +8,7 @@ import Instagram from '../assets/icons/instagram.svg';
 import LinkedIn from '../assets/icons/linkedin.svg';
 
 const title = 'Contact — Gaulatti';
-const description =
-  'Get in touch with Javier Godoy for collaboration opportunities in software development, music composition, or media production.';
+const description = 'Get in touch with Javier Godoy for collaboration opportunities in software development, music composition, or media production.';
 
 const formId = import.meta.env.PUBLIC_FORMSPREE_FORM_ID;
 
@@ -18,32 +17,32 @@ const socials = [
     name: 'GitHub',
     Icon: GitHub,
     url: 'https://github.com/gaulatti',
-    username: '@gaulatti',
+    username: '@gaulatti'
   },
   {
     name: 'LinkedIn',
     Icon: LinkedIn,
     url: 'https://linkedin.com/in/gaulatti',
-    username: 'gaulatti',
+    username: 'gaulatti'
   },
   {
     name: 'Instagram',
     Icon: Instagram,
     url: 'https://instagram.com/gaulatti',
-    username: '@gaulatti',
+    username: '@gaulatti'
   },
   {
     name: 'Bluesky',
     Icon: Bluesky,
     url: 'https://bsky.app/profile/gaulatti.com',
-    username: '@gaulatti.com',
+    username: '@gaulatti.com'
   },
   {
     name: 'Email',
     Icon: Mail,
     url: 'mailto:jack@gaulatti.com',
-    username: 'jack@gaulatti.com',
-  },
+    username: 'jack@gaulatti.com'
+  }
 ];
 ---
 
@@ -55,7 +54,7 @@ const socials = [
           <!-- Contact Info -->
           <div>
             <h1 class='text-5xl md:text-6xl font-bold mb-8 tracking-tight'>Let's Create Together</h1>
-            <p class='text-xl text-gray-600 mb-12'>
+            <p class='text-xl light:text-gray-600 dark:text-text-secondary mb-12'>
               Whether you're interested in collaboration, have a project in mind, or just want to say hello, I'd love to hear from you.
             </p>
 
@@ -68,14 +67,14 @@ const socials = [
                     <li>
                       <a
                         href={social.url}
-                        class='group flex items-center gap-4 p-4 bg-gray-50 hover:bg-gray-100 rounded-sm transition-colors'
+                        class='group flex items-center gap-4 p-4 light:bg-gray-50 dark:bg-sand light:hover:bg-gray-100 dark:hover:bg-[#253548] rounded-sm transition-colors'
                         target='_blank'
                         rel='noopener noreferrer'
                       >
-                        <social.Icon class='w-6 h-6' />
+                        <social.Icon class='w-6 h-6 light:text-gray-900 dark:text-white [&>path]:dark:fill-white [&>path]:dark:stroke-white' />
                         <div>
                           <div class='font-medium'>{social.name}</div>
-                          <div class='text-sm text-gray-600'>{social.username}</div>
+                          <div class='text-sm light:text-gray-600 dark:text-text-secondary'>{social.username}</div>
                         </div>
                       </a>
                     </li>
@@ -87,56 +86,56 @@ const socials = [
 
           <!-- Contact Form -->
           <div>
-            <div class='bg-gray-50 p-8 rounded-sm'>
+            <div class='bg-gray-50 dark:bg-sand p-8 rounded-sm'>
               <h2 class='text-2xl font-bold mb-6'>Send a Message</h2>
               <form action={`https://formspree.io/f/${formId}`} method='POST' class='space-y-6' id='contact-form'>
                 <div>
-                  <label for='name' class='block text-sm font-medium text-gray-700 mb-1'> Name </label>
+                  <label for='name' class='block text-sm font-medium light:text-gray-700 dark:text-text-secondary mb-1'> Name </label>
                   <input
                     type='text'
                     name='name'
                     id='name'
                     required
                     minlength='2'
-                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                    class='w-full p-2 border light:border-gray-300 dark:border-sand/20 dark:bg-light-sand dark:text-white rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
                   />
                 </div>
                 <div>
-                  <label for='email' class='block text-sm font-medium text-gray-700 mb-1'> Email </label>
+                  <label for='email' class='block text-sm font-medium light:text-gray-700 dark:text-text-secondary mb-1'> Email </label>
                   <input
                     type='email'
                     name='email'
                     id='email'
                     required
                     pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
-                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                    class='w-full p-2 border light:border-gray-300 dark:border-sand/20 dark:bg-light-sand dark:text-white rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
                   />
                 </div>
                 <div>
-                  <label for='subject' class='block text-sm font-medium text-gray-700 mb-1'> Subject </label>
+                  <label for='subject' class='block text-sm font-medium light:text-gray-700 dark:text-text-secondary mb-1'> Subject </label>
                   <input
                     type='text'
                     name='subject'
                     id='subject'
                     required
                     minlength='2'
-                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                    class='w-full p-2 border light:border-gray-300 dark:border-sand/20 dark:bg-light-sand dark:text-white rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
                   />
                 </div>
                 <div>
-                  <label for='message' class='block text-sm font-medium text-gray-700 mb-1'> Message </label>
+                  <label for='message' class='block text-sm font-medium light:text-gray-700 dark:text-text-secondary mb-1'> Message </label>
                   <textarea
                     name='message'
                     id='message'
                     rows='6'
                     required
                     minlength='10'
-                    class='w-full p-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
+                    class='w-full p-2 border light:border-gray-300 dark:border-sand/20 dark:bg-light-sand dark:text-white rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent'
                   ></textarea>
                 </div>
                 <button
                   type='submit'
-                  class='w-full px-8 py-3 bg-black text-white hover-lift font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed relative'
+                  class='w-full px-8 py-3 light:bg-black dark:bg-accent-blue light:text-white hover-lift font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed relative'
                   id='submit-button'
                 >
                   <span class='inline-flex items-center'>
@@ -191,8 +190,8 @@ const socials = [
           method: 'POST',
           body: new FormData(form),
           headers: {
-            Accept: 'application/json',
-          },
+            Accept: 'application/json'
+          }
         });
 
         if (response.ok) {
