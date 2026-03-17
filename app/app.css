@@ -1,0 +1,229 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant light (@media (prefers-color-scheme: light));
+
+@theme {
+  --color-sand: #e6d5b8;
+  --color-desert: #c1814d;
+  --color-terracotta: #a65d57;
+  --color-dusk: #694f5d;
+  --color-sea: #2c5784;
+  --color-deep-sea: #1a374d;
+  --color-light-sand: #f9f6f2;
+  --color-dark-sand: #d4c4a9;
+  --color-sunset: #ff9677;
+  --color-accent-gold: #c6a760;
+  --color-accent-oxblood: #76323f;
+  --color-accent-bronze: #cd7f32;
+  --color-accent-blue: var(--color-sea);
+  --color-accent-red: #d94f4f;
+  --color-accent-yellow: #d4af37;
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #595959;
+  --color-persgray-50: #f9fafb;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Cabinet Grotesk", system-ui, -apple-system, sans-serif;
+
+  --tracking-refined: -0.02em;
+  --tracking-elegant: 0.05em;
+
+  --spacing-22: 5.5rem;
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  --duration-400: 400ms;
+  --duration-600: 600ms;
+
+  --blur-xs: 2px;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src:
+    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff2")
+      format("woff2"),
+    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff")
+      format("woff"),
+    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src:
+    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2")
+      format("woff2"),
+    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff")
+      format("woff"),
+    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.ttf")
+      format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light-sand: #0d1821;
+    --color-sand: #1a2332;
+    --color-dark-sand: #243447;
+    --color-desert: #e0ac69;
+    --color-terracotta: #d47b75;
+    --color-sunset: #ff9677;
+    --color-sea: #5ba3f5;
+    --color-deep-sea: #182533;
+    --color-text-primary: #f0f4f8;
+    --color-text-secondary: #b8c5d6;
+    --color-accent-gold: #d4af37;
+    --color-accent-blue: #5ba3f5;
+  }
+}
+
+html {
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-light-sand text-text-primary;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cabinet Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  @apply font-medium;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.hover-lift {
+  @apply transition-all duration-400 ease-out;
+  transform: translateY(0);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  @apply shadow-sm;
+}
+
+.hover-scale {
+  @apply transition-transform duration-400 ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.text-fade-in {
+  @apply opacity-0 transition-opacity duration-600;
+  animation: elegantFadeIn 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes elegantFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.focus-accent {
+  @apply transition-all duration-300;
+}
+
+.focus-accent:focus-visible {
+  @apply ring-accent-gold ring-offset-light-sand outline-none ring-2 ring-offset-2;
+}
+
+.shape-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.rotate-45 {
+  animation: gentleRotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gentleRotate {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+.text-shadow-lg {
+  text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+}
+
+.dot-indicator {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+button:hover .dot-indicator {
+  transform: scale(1.5);
+  background-color: rgb(255 255 255 / 80%);
+}
+
+button[data-dot].active .dot-indicator {
+  background-color: rgb(255 255 255);
+}
+
+@media (min-width: 768px) {
+  [data-carousel-prev],
+  [data-carousel-next] {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .hero-carousel:hover [data-carousel-prev],
+  .hero-carousel:hover [data-carousel-next] {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
