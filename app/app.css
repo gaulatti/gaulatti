@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500;700&family=Libre+Franklin:wght@400;500;700&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -23,8 +24,8 @@
   --color-text-secondary: #595959;
   --color-persgray-50: #f9fafb;
 
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Cabinet Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: "Libre Franklin", system-ui, -apple-system, sans-serif;
+  --font-display: "Encode Sans", system-ui, -apple-system, sans-serif;
 
   --tracking-refined: -0.02em;
   --tracking-elegant: 0.05em;
@@ -37,34 +38,6 @@
   --duration-600: 600ms;
 
   --blur-xs: 2px;
-}
-
-@font-face {
-  font-family: "Cabinet Grotesk";
-  src:
-    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff2")
-      format("woff2"),
-    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff")
-      format("woff"),
-    url("//cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.ttf")
-      format("truetype");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cabinet Grotesk";
-  src:
-    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2")
-      format("woff2"),
-    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff")
-      format("woff"),
-    url("//cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.ttf")
-      format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -94,7 +67,7 @@ html {
 
 body {
   @apply bg-light-sand text-text-primary;
-  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h1,
@@ -103,7 +76,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Cabinet Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Encode Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   @apply font-medium;
   line-height: 1.2;
   letter-spacing: -0.02em;

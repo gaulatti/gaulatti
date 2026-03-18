@@ -1,9 +1,8 @@
 import { Link } from 'react-router';
-import type { Route } from './+types/engineering';
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
-    { title: 'Engineering — Gaulatti' },
+    { title: 'fifthbell Media Systems — Platform Engineering & Infrastructure' },
     {
       name: 'description',
       content:
@@ -12,13 +11,20 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Engineering() {
+export default function Fifthbell() {
   return (
     <main className='flex flex-col pt-24'>
       <section className='relative py-16'>
         <div className='container'>
           <div className='mx-auto max-w-4xl'>
-            <h1 className='mb-6 text-5xl font-bold tracking-tight md:text-6xl'>Engineering</h1>
+            <Link to='/success-cases' className='text-accent-blue mb-6 inline-flex items-center gap-1 text-sm font-medium hover:underline'>
+              <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M15 19l-7-7 7-7' />
+              </svg>
+              Case Studies
+            </Link>
+            <p className='text-accent-blue mb-4 mt-4 text-sm font-medium tracking-wide uppercase'>Platform Engineering</p>
+            <h1 className='mb-6 text-5xl font-bold tracking-tight md:text-6xl'>fifthbell Media Systems</h1>
             <p className='light:text-gray-600 dark:text-text-secondary max-w-3xl text-xl'>
               I design, build, and operate production systems. This page documents the architecture of fifthbell — a personal media infrastructure platform
               I&apos;ve built to power real-world broadcast operations, automated content production, and newsroom monitoring.
@@ -415,8 +421,8 @@ export default function Engineering() {
               <Link to='/contact' className='light:bg-sea dark:bg-accent-blue px-8 py-3 font-medium text-white transition-all duration-400'>
                 Get in Touch
               </Link>
-              <Link to='/portfolio' className='light:border-dusk dark:border-white border px-8 py-3 font-medium transition-all duration-400'>
-                View Projects
+              <Link to='/success-cases/sanremo' className='light:border-dusk dark:border-white border px-8 py-3 font-medium transition-all duration-400'>
+                See Sanremo Case Study
               </Link>
             </div>
           </div>

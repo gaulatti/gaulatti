@@ -25,8 +25,8 @@ jobs:
 
       - name: Build static site
         env:
-          VITE_FORMSPREE_FORM_ID: ${{ secrets.VITE_FORMSPREE_FORM_ID }}
-          VITE_GA_TRACKING_ID: ${{ secrets.VITE_GA_TRACKING_ID }}
+          VITE_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
+          VITE_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
           PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
           PUBLIC_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
         run: npm run build

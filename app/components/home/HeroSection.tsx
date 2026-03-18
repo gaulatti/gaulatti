@@ -106,8 +106,24 @@ export function HeroSection({ items }: HeroSectionProps) {
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+                  <div className="absolute inset-0 bg-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/25 to-black/85" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
+                  <div
+                    className="absolute inset-0 opacity-45 mix-blend-soft-light"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(120% 90% at 50% 55%, rgba(26,55,77,0.9) 0%, rgba(193,129,77,0.45) 45%, rgba(0,0,0,0) 75%)",
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0 opacity-[0.07] mix-blend-overlay"
+                    style={{
+                      backgroundImage:
+                        "repeating-linear-gradient(90deg, rgba(255,255,255,0.28) 0px, rgba(255,255,255,0.28) 1px, transparent 1px, transparent 3px)",
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.44)_55%,rgba(0,0,0,0.72)_100%)]" />
                 </>
               ) : (
                 <div className={`h-full w-full ${defaultBackground}`} />
@@ -124,8 +140,8 @@ export function HeroSection({ items }: HeroSectionProps) {
                     : `View project: ${item.title}`
                 }
               >
-                <div className="mx-auto max-w-2xl text-center">
-                  <div className="text-shadow-lg relative z-10">
+                <div className="mx-auto max-w-3xl px-4 text-center">
+                  <div className="text-shadow-lg relative z-10 px-2 sm:px-6">
                     <div className="flex flex-col items-center opacity-75">
                       <span className="light:text-white text-sm font-light tracking-widest uppercase">
                         {item.type === "post" ? "From the Blog" : "Featured Project"}
@@ -146,15 +162,15 @@ export function HeroSection({ items }: HeroSectionProps) {
                       </div>
                     ) : null}
 
-                    <h1 className="light:text-white group-hover:text-white/90 mb-4 text-3xl font-bold [text-wrap:balance] transition-colors sm:text-4xl lg:text-5xl">
+                    <h1 className="light:text-white group-hover:text-white/90 mb-4 text-3xl font-bold [text-wrap:balance] drop-shadow-[0_0_14px_rgba(0,0,0,0.5)] transition-colors sm:text-4xl lg:text-5xl">
                       {item.title}
                     </h1>
 
-                    <p className="mb-6 text-base text-gray-100 transition-colors group-hover:text-gray-200 sm:text-lg">
+                    <p className="mb-6 text-base text-gray-100 drop-shadow-[0_0_10px_rgba(0,0,0,0.45)] transition-colors group-hover:text-gray-200 sm:text-lg">
                       {item.description}
                     </p>
 
-                    <div className="light:text-gray-900 dark:bg-sand/90 inline-block rounded-full border border-white/20 bg-white/90 px-6 py-2 font-medium backdrop-blur-sm transition-colors group-hover:bg-white">
+                    <div className="inline-block rounded-full border px-6 py-2 font-medium backdrop-blur-sm transition-colors light:border-white/20 dark:border-sand/35 light:bg-white/90 dark:bg-sand/90 light:text-gray-900 dark:text-text-primary light:group-hover:bg-white dark:group-hover:bg-dark-sand/90">
                       {item.type === "post" ? "Read Article" : "View Project"}
                     </div>
                   </div>

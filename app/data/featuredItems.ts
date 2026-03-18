@@ -9,6 +9,15 @@ export interface HeroItem {
 
 export const featuredItems: HeroItem[] = [
   {
+    type: "project",
+    title: "Sanremo Festival Coverage",
+    description:
+      "Executive production and live operations leadership for a distributed media venture during Sanremo 2026, including crisis response and production redesign under real-time pressure.",
+    image: "/hero/sanremo.avif",
+    link: "/success-cases/sanremo",
+    tags: ["Live Operations", "Executive Production", "Crisis Response"],
+  },
+  {
     type: "post",
     title: "Beach Heading: The Urgency of Getting There.",
     description:

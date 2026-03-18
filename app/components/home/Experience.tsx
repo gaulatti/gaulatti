@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function Experience() {
   return (
     <section className="light:bg-gray-50 dark:bg-deep-sea py-24">
@@ -12,68 +14,7 @@ export function Experience() {
             </p>
           </div>
 
-          <div className="space-y-8">
-            <div className="hover-lift dark:bg-sand bg-white p-8">
-              <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold">Amazon</h3>
-                  <p className="text-sea dark:text-accent-blue font-medium">
-                    Software Development Engineer
-                  </p>
-                </div>
-                <span className="dark:text-text-secondary mt-2 text-gray-500 md:mt-0">
-                  Seattle, WA
-                </span>
-              </div>
-              <ul className="light:text-gray-600 dark:text-text-secondary space-y-2">
-                <li>
-                  • Architected and operated distributed systems serving
-                  millions of requests
-                </li>
-                <li>
-                  • Designed event-driven workflows using AWS Lambda, Step
-                  Functions, and DynamoDB
-                </li>
-                <li>
-                  • Led cross-functional initiatives across multiple engineering
-                  teams
-                </li>
-              </ul>
-            </div>
-
-            <div className="hover-lift dark:bg-sand bg-white p-8">
-              <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold">
-                    Warner Bros. Discovery / CNN
-                  </h3>
-                  <p className="text-sea dark:text-accent-blue font-medium">
-                    Staff Software Engineer
-                  </p>
-                </div>
-                <span className="dark:text-text-secondary mt-2 text-gray-500 md:mt-0">
-                  Atlanta, GA
-                </span>
-              </div>
-              <ul className="light:text-gray-600 dark:text-text-secondary space-y-2">
-                <li>• Led design system architecture across CNN Digital properties</li>
-                <li>
-                  • Built real-time content delivery systems for breaking news
-                  coverage
-                </li>
-                <li>
-                  • Owned frontend performance monitoring and optimization
-                  initiatives
-                </li>
-                <li>
-                  • Mentored engineers and drove technical excellence across
-                  teams
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="light:bg-sea dark:bg-accent-blue mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white">
                 <svg
@@ -140,6 +81,15 @@ export function Experience() {
                 Operating low-latency event-driven architectures
               </p>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/journey"
+              className="light:bg-black dark:bg-accent-blue inline-block px-8 py-3 font-medium text-white"
+            >
+              View Full Resume
+            </Link>
           </div>
         </div>
       </div>

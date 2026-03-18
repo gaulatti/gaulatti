@@ -95,12 +95,12 @@ export function Architecture() {
                 <h3 className="mb-6 text-2xl font-bold">Beyond Engineering</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="mb-2 font-bold">Photography</h4>
+                    <h4 className="mb-2 font-bold">Photojournalism</h4>
                     <p className="dark:text-text-secondary text-gray-600">
-                      Documentary and street photography
+                      Event coverage and documentary reporting
                     </p>
                     <a
-                      href="https://flickr.com/gaulatti"
+                      href="https://www.flickr.com/photos/gaulatti/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-accent-blue mt-1 inline-block text-sm hover:underline"
