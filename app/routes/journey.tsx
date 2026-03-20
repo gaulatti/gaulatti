@@ -321,63 +321,76 @@ export default function Journey() {
                     </IconBadge>
                   </div>
                   <div>
-                    <h3 className='mb-2 text-2xl font-bold'>Earlier Experience</h3>
-                    <p className='light:text-gray-600 dark:text-text-secondary mb-4 text-xl'>Growing from Engineer to Leader</p>
-                    <p className='dark:text-text-secondary text-gray-600'>2010 - 2016 • Chile & Remote</p>
+                    <h3 className='mb-2 text-2xl font-bold'>Prior Experience</h3>
+                    <p className='light:text-gray-600 dark:text-text-secondary mb-4 text-xl'>Backfilled from LinkedIn resume</p>
+                    <p className='dark:text-text-secondary text-gray-600'>2010 - 2016 • Chile, Peru & United States</p>
                   </div>
                 </div>
                 <div className='space-y-4 pl-0 md:pl-22'>
                   <div className='dark:bg-sand bg-gray-50 p-6'>
-                    <h4 className='mb-3 font-bold'>Waggl (2016) - Senior Web Developer</h4>
+                    <h4 className='mb-3 font-bold'>Tecla Labs — Senior Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Sep 2016 - Dec 2016 • Lima, Peru</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Contract role focused on web delivery and cross-team execution.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>Waggl, Inc — Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Sep 2016 - Dec 2016 • San Francisco Bay Area, United States</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Built and shipped product features as part of the web engineering team.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>CyberCenter — Senior Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>May 2016 - Sep 2016 • Santiago, Chile</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Senior development role across multiple web initiatives.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>Capitalizarme — Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Mar 2016 - May 2016 • Santiago, Chile</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Stack: Ruby, Rails 5, PostgreSQL, Linux, AWS/Linode.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>Desert Point Technologies — Lead Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Jan 2016 - Mar 2016 • Santiago, Chile</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Stack: PHP, Ruby, Rails 5, MySQL, Linux, AWS.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>IdoSoft — Lead Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Nov 2015 - Dec 2015 • Santiago, Chile</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Stack: PHP, Laravel 5, MySQL, Linux, Angular, SASS. Main client: Servel.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>Cumplo — Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Aug 2015 - Nov 2015 • Santiago, Chile</p>
                     <p className='dark:text-text-secondary text-gray-600'>
-                      Translated business requirements into specifications, created design documents, and supported junior engineers while implementing
-                      features. (Remote from Santiago, Chile)
+                      Stack: PHP, Ruby, Python, JavaScript, Bottle, Rails, Meteor, MySQL, MongoDB, Linux, AWS, Ember, AngularJS.
                     </p>
                   </div>
                   <div className='dark:bg-sand bg-gray-50 p-6'>
-                    <h4 className='mb-3 font-bold'>DesertPoint (2016) - Lead Software Developer</h4>
+                    <h4 className='mb-3 font-bold'>Arca Comunicaciones — Lead Web Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Nov 2014 - Jul 2015 • Santiago, Chile</p>
+                    <p className='dark:text-text-secondary text-gray-600'>Stack: PHP, Laravel 5, MySQL, Linux, DigitalOcean. Main client: Bayer Conosur.</p>
+                  </div>
+                  <div className='dark:bg-sand bg-gray-50 p-6'>
+                    <h4 className='mb-3 font-bold'>LINETS — Senior PHP Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Jan 2014 - Oct 2014 • Santiago, Chile</p>
                     <p className='dark:text-text-secondary text-gray-600'>
-                      Built startup&apos;s PoC for monitoring truck drivers&apos; work hours in mining industry, preventing fatigue through ETL process and data
-                      handling.
+                      Developed web applications with Symfony2 + Doctrine and executed projects from requirements through client delivery.
                     </p>
                   </div>
                   <div className='dark:bg-sand bg-gray-50 p-6'>
-                    <h4 className='mb-3 font-bold'>Maxis SpA (2013) - CTO & Cofounder</h4>
+                    <h4 className='mb-3 font-bold'>Maxis Ltda. — Lead Developer</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Jun 2013 - Oct 2013 • Antofagasta, Chile</p>
                     <p className='dark:text-text-secondary text-gray-600'>
-                      Led website and platform development, managing team of five developers while collaborating with clients and refining specifications.
+                      Led a multidisciplinary software team, improving delivery speed and development/deploy processes while maintaining strong team culture.
                     </p>
                   </div>
                   <div className='dark:bg-sand bg-gray-50 p-6'>
-                    <h4 className='mb-3 font-bold'>Scrum S.A. (2010-2013) - From IT Support to Multi-Role Leader</h4>
-                    <p className='dark:text-text-secondary mb-3 text-gray-600'>
-                      Initially hired for basic IT support and infrastructure management, I organically grew into multiple crucial roles as the company evolved.
-                      As team members departed, I stepped up to fill critical gaps, ultimately handling:
-                    </p>
+                    <h4 className='mb-3 font-bold'>Scrum S.A. — IT Manager / .NET Developer / QA Tester</h4>
+                    <p className='dark:text-text-secondary mb-2 text-gray-600'>Oct 2010 - Jun 2013 • Antofagasta, Chile</p>
                     <ul className='dark:text-text-secondary mb-3 list-disc pl-6 text-gray-600'>
-                      <li>Product Management: Gathering requirements and planning features for our mining software Antara</li>
-                      <li>Project Management: Coordinating deliverables and timelines across teams</li>
-                      <li>Software Engineering: Developing core components in .NET</li>
-                      <li>QA: Establishing testing protocols and quality standards</li>
-                      <li>Infrastructure: Maintaining systems and network architecture</li>
+                      <li>IT Manager (Oct 2010 - Jun 2013): managed local infrastructure, servers, hosting, Exchange, VoIP, OCS, and Lync.</li>
+                      <li>.NET Developer (Sep 2011 - Jun 2013): built and deployed features for existing and new systems.</li>
+                      <li>QA Tester (Dec 2011 - Mar 2012): executed testing plans for production software releases.</li>
                     </ul>
-                    <p className='dark:text-text-secondary mb-3 text-gray-600 italic'>
-                      &quot;What started as basic IT support became a crash course in wearing multiple hats - this role taught me how to adapt quickly and take
-                      ownership of whatever needed to be done.&quot;
-                    </p>
-                    <div className='mt-4 flex flex-wrap gap-2'>
-                      <span className='light:bg-gray-100 dark:bg-sand dark:text-text-primary rounded-sm px-3 py-1 text-sm light:text-gray-700'>
-                        Multi-role Leadership
-                      </span>
-                      <span className='light:bg-gray-100 dark:bg-sand dark:text-text-primary rounded-sm px-3 py-1 text-sm light:text-gray-700'>
-                        Product Management
-                      </span>
-                      <span className='light:bg-gray-100 dark:bg-sand dark:text-text-primary rounded-sm px-3 py-1 text-sm light:text-gray-700'>
-                        Software Development
-                      </span>
-                      <span className='light:bg-gray-100 dark:bg-sand dark:text-text-primary rounded-sm px-3 py-1 text-sm light:text-gray-700'>
-                        Quality Assurance
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
