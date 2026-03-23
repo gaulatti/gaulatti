@@ -1,5 +1,5 @@
+import { BauhausBackground } from '@gaulatti/bleecker';
 import { Link } from 'react-router';
-import { BauhausBackground } from '~/components/BauhausBackground';
 import type { Route } from './+types/portfolio';
 
 interface Project {

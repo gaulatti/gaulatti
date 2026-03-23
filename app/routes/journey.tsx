@@ -1,3 +1,4 @@
+import { IconBadge } from '@gaulatti/bleecker';
 import { Bell, Building2, RadioTower } from 'lucide-react';
 import { Link } from 'react-router';
 import type { Route } from './+types/journey';
@@ -11,10 +12,6 @@ export function meta({}: Route.MetaArgs) {
         'A journey through design systems, team leadership, and scalable architecture - from an early career engineer to a cross-functional leader at Narmi.'
     }
   ];
-}
-
-function IconBadge({ children }: { children: React.ReactNode }) {
-  return <div className='light:bg-black dark:bg-white flex h-16 w-16 items-center justify-center'>{children}</div>;
 }
 
 export default function Journey() {

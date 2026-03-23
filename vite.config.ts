@@ -4,5 +4,8 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  ssr: {
+    noExternal: ["@gaulatti/bleecker"],
+  },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
 });
