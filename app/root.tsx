@@ -37,7 +37,7 @@ const footerSections: Array<{ title: string; items: NavItem[] }> = [
       { href: 'https://instagram.com/gaulatti', label: 'Instagram', external: true },
       { href: 'https://blog.gaulatti.com', label: 'Medium', external: true },
       { href: 'https://music.gaulatti.com', label: 'Music', external: true },
-      { href: 'https://www.flickr.com/photos/gaulatti/', label: 'Flickr', external: true },
+      { href: 'https://photos.gaulatti.com', label: 'Flickr', external: true },
       { href: 'mailto:jack@gaulatti.com', label: 'Email', external: true }
     ]
   }
@@ -94,7 +94,7 @@ function MusescoreIcon({ className }: IconProps) {
 const headerIconLinks: Array<{ href: string; icon: (props: IconProps) => React.ReactNode; label: string }> = [
   { href: 'https://blog.gaulatti.com', label: 'Medium', icon: MediumIcon },
   { href: 'https://music.gaulatti.com', label: 'Music', icon: MusescoreIcon },
-  { href: 'https://www.flickr.com/photos/gaulatti/', label: 'Flickr', icon: FlickrIcon }
+  { href: 'https://photos.gaulatti.com', label: 'Flickr', icon: FlickrIcon }
 ];
 
 function HeaderActions({ mobile = false }: { mobile?: boolean }) {
@@ -197,7 +197,7 @@ gtag('config', '${gaTrackingId}');`
                 logoSrc: '/icons/gaulatti.svg',
                 name: 'gaulatti',
                 description:
-                  'Crafting digital experiences that blend precision with poetry. Where engineering meets artistry, creating spaces for reflection, innovation, and the quiet appreciation of life\'s remarkable moments.'
+                  "Crafting digital experiences that blend precision with poetry. Where engineering meets artistry, creating spaces for reflection, innovation, and the quiet appreciation of life's remarkable moments."
               }}
               sections={footerSections}
               bottomLeft={`© ${new Date().getFullYear()} Javier Godoy Núñez. All rights reserved.`}
