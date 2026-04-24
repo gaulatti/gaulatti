@@ -15,6 +15,16 @@ interface Project {
 
 const personalProjects: Project[] = [
   {
+    title: 'Colombo',
+    description:
+      'Multi-tenant FTP server for live photo ingestion in newsroom workflows. Authenticates with CMS-issued assignment keys, receives short-lived AWS STS credentials, uploads to S3, and posts photo callbacks so editors can publish in seconds.',
+    type: 'monitor',
+    tags: ['Java 21', 'Spring Boot 4', 'Apache FTP Server', 'AWS S3', 'PostgreSQL'],
+    link: 'https://github.com/gaulatti/colombo',
+    imageUrl: '/hero/colombo.avif',
+    repos: [{ label: 'GitHub', link: 'https://github.com/gaulatti/colombo' }]
+  },
+  {
     title: 'Monitor',
     description:
       "AI-powered news monitoring system that aggregates global sources, clusters stories into events, and sends real-time alerts. Originally built for fifthbell's newsroom operations. Combines web scraping with NLP to filter signal from noise in breaking news scenarios.",
