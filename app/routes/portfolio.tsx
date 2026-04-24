@@ -27,25 +27,16 @@ const personalProjects: Project[] = [
   {
     title: 'Monitor',
     description:
-      "AI-powered news monitoring system that aggregates global sources, clusters stories into events, and sends real-time alerts. Originally built for fifthbell's newsroom operations. Combines web scraping with NLP to filter signal from noise in breaking news scenarios.",
+      'AI-powered news monitoring system that aggregates global sources, clusters stories into events, and sends real-time alerts. Combines web scraping with NLP to filter signal from noise in breaking news scenarios.',
     type: 'monitor',
     tags: ['TypeScript', 'NestJS', 'AI/ML', 'AWS'],
-    link: 'https://monitor.fifthbell.com',
+    link: 'https://monitor.gaulatti.com',
     imageUrl: '/hero/monitor.avif',
     repos: []
   }
 ];
 
 const mediaProjects: Project[] = [
-  {
-    title: 'Cronkite',
-    description:
-      'Core publishing engine for fifthbell. Transforms CMS content into static HTML pages and automated short-form video clips via FFMPEG. Event-driven builds deploy to S3 with CloudFront invalidation in under a second.',
-    type: 'autostrada',
-    tags: ['TypeScript', 'NestJS', 'FFMPEG', 'AWS S3', 'CloudFront'],
-    imageUrl: '/hero/design.avif',
-    repos: []
-  },
   {
     title: 'Alcántara',
     description:

@@ -18,25 +18,27 @@ Currently at **Narmi** (Senior Software Engineer II), leading Account Opening Pl
 
 ### Experience
 
-| Period | Company | Role |
-|--------|---------|------|
-| 2025 – Present | **Narmi** | Senior Software Engineer II |
-| Feb 2026 | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival |
-| 2025 – Present | **fifthbell** | Founder & Lead Engineer |
-| 2023 – 2025 | **Warner Bros. Discovery (CNN)** | Staff Software Engineer / Acting GM |
-| 2017 – 2022 | **Amazon** | Software Development Engineer |
-| 2010 – 2016 | Various roles | Lead/Senior Developer (Chile, Peru, US) |
+| Period         | Company                              | Role                                    |
+| -------------- | ------------------------------------ | --------------------------------------- |
+| 2025 – Present | **Narmi**                            | Senior Software Engineer II             |
+| Feb 2026       | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival   |
+| 2025 – Present | **fifthbell**                        | Founder & Lead Engineer                 |
+| 2023 – 2025    | **Warner Bros. Discovery (CNN)**     | Staff Software Engineer / Acting GM     |
+| 2017 – 2022    | **Amazon**                           | Software Development Engineer           |
+| 2010 – 2016    | Various roles                        | Lead/Senior Developer (Chile, Peru, US) |
 
 #### Highlights
 
 **Narmi (2025 – Present)**  
 Leading architecture and implementation of Account Opening features for business and consumer accounts on the Grow Team. Driving technical decisions and mentoring engineers while building scalable onboarding solutions for financial institutions.
 
-**Warner Bros. Discovery / CNN (2023 – 2025)**  
+**Warner Bros. Discovery / CNN (2023 – 2025)**
+
 - **Design Systems Team Lead** — Architected CNN's design systems initiative; drove collaboration between engineering and design to produce performant, scalable component libraries with strong cross-team adoption.
 - **Site Performance Platform Lead** — Led development of a comprehensive performance assessment platform integrating Lighthouse, Datadog RUM, and Google PageSpeed Insights. Delivered metrics covering performance, SEO, accessibility, and visual consistency at CNN scale.
 
-**Amazon (2017 – 2022)**  
+**Amazon (2017 – 2022)**
+
 - **Amazon Explore** — Built core streaming infrastructure and host-side experience features. As single-threaded owner of the Defect Reduction program, reduced Catastrophic Defect Rate from **40% to 1.3%** through systematic root-cause analysis.
 - **Alexa Shopping** — Led Prime Day Readiness across **15 global teams** (Seattle, NYC, Dublin, Israel, India). Coordinated infrastructure verification, scaling reviews, and SOP/Runbook validation under deadline pressure.
 - **Payments** — Integrated EBT (2017) and HSA/FSA (2018) payment methods, enabling multi-tender and tax-free purchase flows for millions of customers.
@@ -48,14 +50,14 @@ Built and operate a full-stack media platform for live broadcast, content publis
 
 ### Projects
 
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **[Monitor](https://monitor.fifthbell.com)** | AI-powered news monitoring — ingests 40+ global sources, clusters stories via semantic embeddings, applies NLP translation & classification | TypeScript, NestJS, Qdrant, AWS |
-| **Cronkite** | Core publishing engine — transforms CMS content into static HTML and short-form video via FFMPEG; deploys to S3/CloudFront in under a second | TypeScript, NestJS, FFMPEG, AWS |
-| **Alcántara** | Professional broadcast overlay control — manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080 via SSE | React, NestJS, SSE, Prisma |
-| **[Alana](https://github.com/gaulatti/alana)** | Dockerized OBS Studio for 24/7 automated streaming with Intel QSV GPU encoding and VNC monitoring | Docker, OBS, Intel QSV |
-| **[Broadway](https://broadway.gaulatti.com)** | Story template studio — live preview + 1080×1920 PNG export for social media content pipelines | React Router 7, TypeScript, Tailwind CSS 4 |
-| **Celesti** | Stream routing platform — Go backend with Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE | Go, Echo, Kotlin, Jetpack Compose |
+| Project                                        | Description                                                                                                                                  | Stack                                      |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| **[Monitor](https://monitor.gaulatti.com)**    | AI-powered news monitoring — ingests 40+ global sources, clusters stories via semantic embeddings, applies NLP translation & classification  | TypeScript, NestJS, Qdrant, AWS            |
+| **Cronkite**                                   | Core publishing engine — transforms CMS content into static HTML and short-form video via FFMPEG; deploys to S3/CloudFront in under a second | TypeScript, NestJS, FFMPEG, AWS            |
+| **Alcántara**                                  | Professional broadcast overlay control — manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080 via SSE              | React, NestJS, SSE, Prisma                 |
+| **[Alana](https://github.com/gaulatti/alana)** | Dockerized OBS Studio for 24/7 automated streaming with Intel QSV GPU encoding and VNC monitoring                                            | Docker, OBS, Intel QSV                     |
+| **[Broadway](https://broadway.gaulatti.com)**  | Story template studio — live preview + 1080×1920 PNG export for social media content pipelines                                               | React Router 7, TypeScript, Tailwind CSS 4 |
+| **Celesti**                                    | Stream routing platform — Go backend with Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE                              | Go, Echo, Kotlin, Jetpack Compose          |
 
 ---
 
