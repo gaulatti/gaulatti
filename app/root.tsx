@@ -1,4 +1,3 @@
-import { Button } from '@gaulatti/bleecker/components/button';
 import type { NavItem, RenderLinkProps } from '@gaulatti/bleecker/components/nav-menu';
 import { AppShell } from '@gaulatti/bleecker/layout/app-shell';
 import { Footer as BleeckerFooter } from '@gaulatti/bleecker/layout/footer';
@@ -135,9 +134,12 @@ function HeaderActions({ mobile = false }: { mobile?: boolean }) {
           </a>
         );
       })}
-      <Button as='a' href='/contact' size={mobile ? 'md' : 'sm'}>
+      <Link
+        to='/contact'
+        className={`focus-ring inline-flex items-center justify-center rounded-[var(--radius-button)] border border-sea bg-sea font-medium text-white shadow-[0_1px_2px_rgba(21,48,66,0.16)] transition-[background-color,border-color,box-shadow,transform] duration-[var(--motion-control)] ease-premium hover:border-deep-sea hover:bg-deep-sea active:translate-y-px dark:border-accent-blue dark:bg-accent-blue dark:text-deep-sea dark:hover:bg-accent-blue/90 ${mobile ? 'h-10 px-[18px] text-sm' : 'h-9 px-3.5 text-[13px]'}`}
+      >
         Contact
-      </Button>
+      </Link>
     </div>
   );
 }
