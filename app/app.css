@@ -1,10 +1,135 @@
-@import "@gaulatti/bleecker/styles.base.css";
+@import '@gaulatti/bleecker/styles.base.css';
 @source "../node_modules/@gaulatti/bleecker/dist/**/*.js";
 @source "./**/*.{ts,tsx}";
 @plugin "@tailwindcss/typography";
 
+body {
+  overflow-x: hidden;
+}
+
 @layer utilities {
   main .container {
     margin-inline: auto;
+    width: min(100% - 2rem, 80rem);
+  }
+
+  .consumer-main {
+    padding-block: var(--space-page);
+  }
+
+  .page-intro {
+    border-bottom: 1px solid color-mix(in srgb, var(--app-sand) 26%, transparent);
+    padding-bottom: var(--space-container);
+  }
+
+  .editorial-kicker {
+    color: var(--app-desert);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .secondary-copy {
+    color: var(--app-text-secondary);
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+  }
+
+  .quiet-section {
+    background: color-mix(in srgb, var(--surface-muted) 48%, transparent);
+    border-block: 1px solid color-mix(in srgb, var(--app-sand) 18%, transparent);
+  }
+
+  .content-surface {
+    border: 1px solid color-mix(in srgb, var(--app-sand) 28%, transparent);
+    border-radius: var(--radius-card);
+    background: var(--app-card);
+    box-shadow: var(--shadow-surface);
+  }
+
+  .subtle-surface {
+    border: 1px solid color-mix(in srgb, var(--app-sand) 20%, transparent);
+    border-radius: var(--radius-card);
+    background: color-mix(in srgb, var(--surface-muted) 46%, transparent);
+  }
+
+  .interactive-surface {
+    transform: translateY(0);
+    transition:
+      background-color var(--motion-surface) var(--ease-premium),
+      border-color var(--motion-surface) var(--ease-premium),
+      box-shadow var(--motion-surface) var(--ease-premium),
+      transform var(--motion-control) var(--ease-premium);
+  }
+
+  .interactive-surface:hover {
+    border-color: color-mix(in srgb, var(--app-sand) 55%, transparent);
+    box-shadow: var(--shadow-raised);
+    transform: translateY(-1px);
+  }
+
+  .interactive-surface:active {
+    box-shadow: var(--shadow-surface);
+    transform: translateY(0);
+  }
+
+  .quiet-link {
+    color: var(--app-sea);
+    font-weight: 500;
+    text-underline-offset: 4px;
+    transition: color var(--motion-control) var(--ease-premium);
+  }
+
+  .quiet-link:hover {
+    color: var(--app-deep-sea);
+    text-decoration: underline;
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    border-radius: var(--radius-ui);
+    box-shadow:
+      0 0 0 2px var(--surface-canvas),
+      0 0 0 4px color-mix(in srgb, var(--app-sea) 48%, transparent);
+  }
+
+  .metric-value {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    letter-spacing: var(--tracking-refined);
+  }
+
+  @media (min-width: 48rem) {
+    main .container {
+      width: min(100% - 4rem, 80rem);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    main .container {
+      width: min(100% - 6rem, 80rem);
+    }
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--app-sea) 55%, transparent);
+  outline-offset: 4px;
+}
+
+/* HeroCarousel v0.1.36 only sets its heading color in the light media variant. */
+.text-shadow-lg h1 {
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-surface,
+  .text-fade-in {
+    animation: none !important;
+    transform: none !important;
   }
 }

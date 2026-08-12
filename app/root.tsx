@@ -1,4 +1,8 @@
-import { AppShell, Footer as BleeckerFooter, Header as BleeckerHeader, type NavItem, type RenderLinkProps } from '@gaulatti/bleecker';
+import { Button } from '@gaulatti/bleecker/components/button';
+import type { NavItem, RenderLinkProps } from '@gaulatti/bleecker/components/nav-menu';
+import { AppShell } from '@gaulatti/bleecker/layout/app-shell';
+import { Footer as BleeckerFooter } from '@gaulatti/bleecker/layout/footer';
+import { Header as BleeckerHeader } from '@gaulatti/bleecker/layout/header';
 import { isRouteErrorResponse, Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import type { Route } from './+types/root';
@@ -32,9 +36,21 @@ const footerSections: Array<{ title: string; items: NavItem[] }> = [
     title: 'Connect',
     items: [
       { href: 'https://github.com/gaulatti', label: 'GitHub', external: true },
-      { href: 'https://linkedin.com/in/gaulatti', label: 'LinkedIn', external: true },
-      { href: 'https://bsky.app/profile/gaulatti.com', label: 'Bluesky', external: true },
-      { href: 'https://instagram.com/gaulatti', label: 'Instagram', external: true },
+      {
+        href: 'https://linkedin.com/in/gaulatti',
+        label: 'LinkedIn',
+        external: true
+      },
+      {
+        href: 'https://bsky.app/profile/gaulatti.com',
+        label: 'Bluesky',
+        external: true
+      },
+      {
+        href: 'https://instagram.com/gaulatti',
+        label: 'Instagram',
+        external: true
+      },
       { href: 'https://blog.gaulatti.com', label: 'Medium', external: true },
       { href: 'https://music.gaulatti.com', label: 'Music', external: true },
       { href: 'https://photos.gaulatti.com', label: 'Flickr', external: true },
@@ -91,7 +107,11 @@ function MusescoreIcon({ className }: IconProps) {
   );
 }
 
-const headerIconLinks: Array<{ href: string; icon: (props: IconProps) => React.ReactNode; label: string }> = [
+const headerIconLinks: Array<{
+  href: string;
+  icon: (props: IconProps) => React.ReactNode;
+  label: string;
+}> = [
   { href: 'https://blog.gaulatti.com', label: 'Medium', icon: MediumIcon },
   { href: 'https://music.gaulatti.com', label: 'Music', icon: MusescoreIcon },
   { href: 'https://photos.gaulatti.com', label: 'Flickr', icon: FlickrIcon }
@@ -100,8 +120,8 @@ const headerIconLinks: Array<{ href: string; icon: (props: IconProps) => React.R
 function HeaderActions({ mobile = false }: { mobile?: boolean }) {
   const wrapperClassName = mobile ? 'flex w-full items-center gap-3' : 'flex items-center gap-2';
   const iconButtonClassName = mobile
-    ? 'light:hover:text-sea dark:hover:text-accent-blue light:hover:bg-sand/50 dark:hover:bg-dark-sand/50 inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-400'
-    : 'light:hover:text-sea dark:hover:text-accent-blue light:hover:bg-sand/50 dark:hover:bg-dark-sand/50 inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-400';
+    ? 'focus-ring light:hover:text-sea dark:hover:text-accent-blue light:hover:bg-sand/30 dark:hover:bg-white/[0.06] inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-button)] transition-[background-color,color,transform] duration-[var(--motion-control)] ease-premium active:scale-[0.96]'
+    : 'focus-ring light:hover:text-sea dark:hover:text-accent-blue light:hover:bg-sand/30 dark:hover:bg-white/[0.06] inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-button)] transition-[background-color,color,transform] duration-[var(--motion-control)] ease-premium active:scale-[0.96]';
   const iconClassName = mobile ? 'h-5 w-5' : 'h-4 w-4';
 
   return (
@@ -115,12 +135,9 @@ function HeaderActions({ mobile = false }: { mobile?: boolean }) {
           </a>
         );
       })}
-      <Link
-        to='/contact'
-        className='rounded-full border border-transparent bg-sea px-5 py-2 text-sm tracking-elegant text-white transition-all duration-400 hover:bg-desert dark:bg-accent-blue dark:hover:border-desert/20 dark:hover:bg-desert'
-      >
+      <Button as='a' href='/contact' size={mobile ? 'md' : 'sm'}>
         Contact
-      </Link>
+      </Button>
     </div>
   );
 }
@@ -233,14 +250,17 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className='container mx-auto p-4 pt-16'>
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack ? (
-        <pre className='w-full overflow-x-auto p-4'>
-          <code>{stack}</code>
-        </pre>
-      ) : null}
-    </main>
+    <div className='consumer-main container mx-auto pt-28'>
+      <div className='mx-auto max-w-3xl'>
+        <p className='editorial-kicker'>Application status</p>
+        <h1 className='mt-3 text-4xl font-semibold tracking-refined'>{message}</h1>
+        <p className='secondary-copy mt-4'>{details}</p>
+        {stack ? (
+          <pre className='subtle-surface mt-8 w-full overflow-x-auto p-4 text-sm'>
+            <code>{stack}</code>
+          </pre>
+        ) : null}
+      </div>
+    </div>
   );
 }

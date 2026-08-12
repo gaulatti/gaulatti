@@ -1,4 +1,4 @@
-import { HeroCarousel, type HeroCarouselItem } from '@gaulatti/bleecker';
+import { HeroCarousel, type HeroCarouselItem } from '@gaulatti/bleecker/components/hero-carousel';
 import { Link } from 'react-router';
 import type { Route } from './+types/home';
 import { Architecture } from '~/components/home/Architecture';

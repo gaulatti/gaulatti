@@ -1,4 +1,9 @@
 import type { ComponentType } from 'react';
+import { Button } from '@gaulatti/bleecker/components/button';
+import { Card } from '@gaulatti/bleecker/components/card';
+import { Field } from '@gaulatti/bleecker/components/field';
+import { Input } from '@gaulatti/bleecker/components/input';
+import { Textarea } from '@gaulatti/bleecker/components/textarea';
 import { Mail } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import type { Route } from './+types/contact';
@@ -121,11 +126,6 @@ export default function Contact() {
     };
   }, []);
 
-  const getInputClasses = (fieldName: string) =>
-    `w-full rounded-sm border p-2 focus:ring-2 focus:ring-accent-blue focus:outline-none focus:border-transparent light:border-gray-300 dark:border-sand/20 dark:bg-light-sand dark:text-white ${
-      invalidFields[fieldName] ? 'border-accent-red' : ''
-    }`;
-
   const handleInvalid = (fieldName: string) => {
     setInvalidFields((prev) => ({ ...prev, [fieldName]: true }));
   };
@@ -186,24 +186,27 @@ export default function Contact() {
   }[status];
 
   return (
-    <main className='pt-32 pb-24'>
+    <div className='consumer-main pt-32'>
       <div className='container'>
         <div className='mx-auto max-w-4xl'>
           <div className='grid gap-16 lg:grid-cols-2'>
             <div>
-              <h1 className='mb-8 text-5xl font-bold tracking-tight md:text-6xl'>Let&apos;s Create Together</h1>
-              <p className='light:text-gray-600 dark:text-text-secondary mb-12 text-xl'>
-                Whether you&apos;re interested in collaboration, have a project in mind, or just want to say hello, I&apos;d love to hear from you.
-              </p>
+              <div className='page-intro mb-12'>
+                <p className='editorial-kicker'>Private correspondence</p>
+                <h1 className='mt-3 text-4xl font-semibold leading-[1.08] tracking-refined md:text-5xl'>Let&apos;s Create Together</h1>
+                <p className='secondary-copy mt-5 text-lg'>
+                  Whether you&apos;re interested in collaboration, have a project in mind, or just want to say hello, I&apos;d love to hear from you.
+                </p>
+              </div>
 
               <div className='space-y-6'>
-                <h2 className='text-xl font-bold'>Connect With Me</h2>
+                <h2 className='text-xl font-medium tracking-refined'>Connect With Me</h2>
                 <ul className='space-y-4'>
                   {socials.map((social) => (
                     <li key={social.name}>
                       <a
                         href={social.url}
-                        className='light:bg-gray-50 dark:bg-sand dark:hover:bg-[#253548] light:hover:bg-gray-100 group flex items-center gap-4 rounded-sm p-4 transition-colors'
+                        className='subtle-surface interactive-surface focus-ring group flex items-center gap-4 p-4'
                         target='_blank'
                         rel='noopener noreferrer'
                       >
@@ -216,7 +219,7 @@ export default function Contact() {
                         )}
                         <div>
                           <div className='font-medium'>{social.name}</div>
-                          <div className='light:text-gray-600 dark:text-text-secondary text-sm'>{social.username}</div>
+                          <div className='font-secondary text-text-secondary mt-0.5 text-sm'>{social.username}</div>
                         </div>
                       </a>
                     </li>
@@ -226,124 +229,95 @@ export default function Contact() {
             </div>
 
             <div>
-              <div className='dark:bg-sand rounded-sm bg-gray-50 p-8'>
-                <h2 className='mb-6 text-2xl font-bold'>Send a Message</h2>
+              <Card variant='elevated' padding='lg'>
+                <p className='editorial-kicker'>New inquiry</p>
+                <h2 className='mt-2 mb-7 text-2xl font-medium tracking-refined'>Send a Message</h2>
                 <form ref={formRef} action={`https://formspree.io/f/${formId}`} method='POST' className='space-y-6' onSubmit={handleSubmit}>
-                  <div>
-                    <label htmlFor='name' className='light:text-gray-700 dark:text-text-secondary mb-1 block text-sm font-medium'>
-                      Name
-                    </label>
-                    <input
+                  <Field label='Name' required error={invalidFields.name ? 'Enter at least two characters.' : undefined}>
+                    <Input
                       type='text'
                       name='name'
                       id='name'
                       required
                       minLength={2}
-                      className={getInputClasses('name')}
+                      error={invalidFields.name}
                       onInvalid={(event) => {
                         event.preventDefault();
                         handleInvalid('name');
                       }}
                       onInput={() => clearInvalid('name')}
                     />
-                  </div>
+                  </Field>
 
-                  <div>
-                    <label htmlFor='email' className='light:text-gray-700 dark:text-text-secondary mb-1 block text-sm font-medium'>
-                      Email
-                    </label>
-                    <input
+                  <Field label='Email' required error={invalidFields.email ? 'Enter a valid email address.' : undefined}>
+                    <Input
                       type='email'
                       name='email'
                       id='email'
                       required
                       pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
-                      className={getInputClasses('email')}
+                      error={invalidFields.email}
                       onInvalid={(event) => {
                         event.preventDefault();
                         handleInvalid('email');
                       }}
                       onInput={() => clearInvalid('email')}
                     />
-                  </div>
+                  </Field>
 
-                  <div>
-                    <label htmlFor='subject' className='light:text-gray-700 dark:text-text-secondary mb-1 block text-sm font-medium'>
-                      Subject
-                    </label>
-                    <input
+                  <Field label='Subject' required error={invalidFields.subject ? 'Enter at least two characters.' : undefined}>
+                    <Input
                       type='text'
                       name='subject'
                       id='subject'
                       required
                       minLength={2}
-                      className={getInputClasses('subject')}
+                      error={invalidFields.subject}
                       onInvalid={(event) => {
                         event.preventDefault();
                         handleInvalid('subject');
                       }}
                       onInput={() => clearInvalid('subject')}
                     />
-                  </div>
+                  </Field>
 
-                  <div>
-                    <label htmlFor='message' className='light:text-gray-700 dark:text-text-secondary mb-1 block text-sm font-medium'>
-                      Message
-                    </label>
-                    <textarea
+                  <Field label='Message' required error={invalidFields.message ? 'Enter at least ten characters.' : undefined}>
+                    <Textarea
                       name='message'
                       id='message'
                       rows={6}
                       required
                       minLength={10}
-                      className={getInputClasses('message')}
+                      error={invalidFields.message}
                       onInvalid={(event) => {
                         event.preventDefault();
                         handleInvalid('message');
                       }}
                       onInput={() => clearInvalid('message')}
                     />
-                  </div>
+                  </Field>
 
-                  <button
-                    type='submit'
-                    className='light:bg-black dark:bg-accent-blue hover-lift relative w-full px-8 py-3 font-medium text-white transition-all disabled:cursor-not-allowed disabled:opacity-50'
-                    disabled={status === 'sending'}
-                  >
-                    <span className='inline-flex items-center'>
-                      <span>{buttonText}</span>
-                      {status === 'sending' ? (
-                        <span className='ml-2'>
-                          <svg className='h-5 w-5 animate-spin' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
-                            <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4' />
-                            <path
-                              className='opacity-75'
-                              fill='currentColor'
-                              d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                            />
-                          </svg>
-                        </span>
-                      ) : null}
-                    </span>
-                  </button>
+                  <Button type='submit' fullWidth size='lg' loading={status === 'sending'}>
+                    {buttonText}
+                  </Button>
 
                   {status === 'success' ? (
-                    <div className='text-center'>
-                      <p className='text-accent-blue'>Thank you! Your message has been sent.</p>
+                    <div role='status' aria-live='polite' className='rounded-[var(--radius-ui)] border border-sea/20 bg-sea/[0.05] p-3 text-center'>
+                      <p className='font-secondary text-sm text-sea dark:text-accent-blue'>Thank you! Your message has been sent.</p>
                     </div>
                   ) : null}
 
                   {status === 'error' ? (
-                    <div className='text-center'>
-                      <p className='text-accent-red'>Sorry, there was an error sending your message. Please try again.</p>
+                    <div role='alert' className='rounded-[var(--radius-ui)] border border-terracotta/25 bg-terracotta/[0.06] p-3 text-center'>
+                      <p className='font-secondary text-sm text-terracotta'>Sorry, there was an error sending your message. Please try again.</p>
                     </div>
                   ) : null}
                 </form>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

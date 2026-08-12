@@ -71,8 +71,8 @@ export function Systems() {
       <div className='container relative'>
         <div className='mx-auto max-w-5xl'>
           <div className='mb-16 text-center'>
-            <h2 className='mb-6 text-4xl font-bold tracking-tight md:text-5xl'>fifthbell Media Systems</h2>
-            <p className='light:text-gray-600 dark:text-text-secondary mx-auto max-w-3xl text-xl'>
+            <h2 className='mb-6 text-3xl font-semibold leading-tight tracking-refined md:text-4xl'>fifthbell Media Systems</h2>
+            <p className='font-secondary text-text-secondary mx-auto max-w-3xl text-xl'>
               A personal media infrastructure platform I designed, built, and operate. These systems power real-world broadcast operations, automated content
               production, and newsroom monitoring.
             </p>
@@ -80,11 +80,11 @@ export function Systems() {
 
           <div className='grid gap-8 md:grid-cols-2'>
             {systems.map((system) => (
-              <div key={system.title} className='hover-lift dark:bg-sand bg-white p-8'>
+              <div key={system.title} className='hover-lift content-surface p-8'>
                 <div className={`mb-6 h-2 w-16 ${system.color}`} />
-                <h3 className='mb-3 text-2xl font-bold'>{system.title}</h3>
+                <h3 className='mb-3 text-xl font-medium tracking-refined md:text-2xl'>{system.title}</h3>
                 <p className='text-sea dark:text-accent-blue mb-4 text-sm'>{system.subtitle}</p>
-                <p className='dark:text-text-secondary mb-4 text-gray-600'>{system.description}</p>
+                <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{system.description}</p>
                 <div className='flex flex-wrap gap-2'>
                   {system.tags.map((tag) => (
                     <span key={tag} className='dark:bg-dark-sand rounded bg-gray-100 px-3 py-1 text-xs'>

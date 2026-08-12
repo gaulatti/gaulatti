@@ -1,4 +1,4 @@
-import { BauhausBackground } from '@gaulatti/bleecker';
+import { BauhausBackground } from '@gaulatti/bleecker/components/bauhaus-background';
 import { Link } from 'react-router';
 import type { Route } from './+types/portfolio';
 
@@ -96,16 +96,16 @@ export default function Portfolio() {
         <div className='order-2 md:order-1'>
           {project.link ? (
             <a href={project.link} className='group/title block' target='_blank' rel='noopener noreferrer'>
-              <h3 className='group-hover/title:text-accent-blue mb-4 text-2xl font-bold transition-colors'>{project.title}</h3>
+              <h3 className='group-hover/title:text-accent-blue mb-4 text-xl font-medium tracking-refined md:text-2xl transition-colors'>{project.title}</h3>
             </a>
           ) : (
-            <h3 className='mb-4 text-2xl font-bold'>{project.title}</h3>
+            <h3 className='mb-4 text-xl font-medium tracking-refined md:text-2xl'>{project.title}</h3>
           )}
-          <p className='dark:text-text-secondary mb-4 text-gray-600'>{project.description}</p>
+          <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{project.description}</p>
           <div className='space-y-4'>
             <div className='flex flex-wrap gap-2'>
               {project.tags.map((tag) => (
-                <span key={tag} className='light:bg-gray-100 dark:bg-sand rounded-sm px-2 py-1 text-sm'>
+                <span key={tag} className='bg-light-sand/55 dark:bg-white/[0.05] rounded-sm px-2 py-1 text-sm'>
                   {tag}
                 </span>
               ))}
@@ -115,7 +115,7 @@ export default function Portfolio() {
                 {project.link ? (
                   <a
                     href={project.link}
-                    className='light:text-gray-600 dark:text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
+                    className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -131,7 +131,7 @@ export default function Portfolio() {
                   <a
                     key={repo.link}
                     href={repo.link}
-                    className='light:text-gray-600 dark:text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
+                    className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -143,7 +143,7 @@ export default function Portfolio() {
                   <a
                     key={item.link}
                     href={item.link}
-                    className='light:text-gray-600 dark:text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
+                    className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -158,12 +158,12 @@ export default function Portfolio() {
         <div className='order-1 md:order-2'>
           {project.link ? (
             <a href={project.link} className='block' target='_blank' rel='noopener noreferrer'>
-              <div className='light:bg-gray-100 dark:bg-sand hover-lift aspect-video overflow-hidden rounded-sm'>
+              <div className='bg-light-sand/55 dark:bg-white/[0.05] hover-lift aspect-video overflow-hidden rounded-sm'>
                 <BauhausBackground type={project.type} imageUrl={project.imageUrl} />
               </div>
             </a>
           ) : (
-            <div className='light:bg-gray-100 dark:bg-sand hover-lift aspect-video overflow-hidden rounded-sm'>
+            <div className='bg-light-sand/55 dark:bg-white/[0.05] hover-lift aspect-video overflow-hidden rounded-sm'>
               <BauhausBackground type={project.type} imageUrl={project.imageUrl} />
             </div>
           )}
@@ -173,23 +173,23 @@ export default function Portfolio() {
   );
 
   return (
-    <main className='pt-32 pb-24'>
+    <div className='consumer-main pt-32'>
       <div className='container'>
         <div className='mx-auto max-w-4xl'>
-          <h1 className='text-fade-in mb-8 text-5xl font-bold tracking-tight md:text-6xl'>Projects</h1>
-          <p className='text-fade-in light:text-gray-600 dark:text-text-secondary mb-16 max-w-2xl text-xl' style={{ animationDelay: '100ms' }}>
+          <h1 className='text-fade-in mb-8 text-4xl font-semibold leading-[1.08] tracking-refined md:text-5xl'>Projects</h1>
+          <p className='text-fade-in font-secondary text-text-secondary mb-16 max-w-2xl text-xl' style={{ animationDelay: '100ms' }}>
             Production systems I&apos;ve designed and built. Each project addresses real operational challenges in observability, monitoring, and media
             infrastructure.
           </p>
 
           <section className='mb-24'>
-            <h2 className='mb-12 text-3xl font-bold'>Personal Projects</h2>
+            <h2 className='mb-12 text-2xl font-semibold tracking-refined md:text-3xl'>Personal Projects</h2>
             <div className='grid gap-12'>{personalProjects.map((project, index) => renderProject(project, index))}</div>
           </section>
 
           <section className='mb-24'>
-            <h2 className='mb-3 text-3xl font-bold'>Media Infrastructure</h2>
-            <p className='light:text-gray-600 dark:text-text-secondary mb-12 max-w-2xl text-lg'>
+            <h2 className='mb-3 text-2xl font-semibold tracking-refined md:text-3xl'>Media Infrastructure</h2>
+            <p className='font-secondary text-text-secondary mb-12 max-w-2xl text-lg'>
               Built to power fifthbell&apos;s broadcast and publishing operations. Authored and maintained under the gaulatti brand.
             </p>
             <div className='grid gap-12'>{mediaProjects.map((project, index) => renderProject(project, index))}</div>
@@ -203,6 +203,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -29,7 +29,7 @@ export function Hero() {
           <div className='flex flex-wrap justify-center gap-6'>
             <Link
               to='/contact'
-              className='light:border-dusk dark:hover:border-accent-blue light:hover:border-desert dark:border-white tracking-elegant light:text-dusk dark:text-white light:hover:text-desert dark:hover:text-accent-blue border px-8 py-3.5 text-base font-medium transition-all duration-400'
+              className='light:border-dusk dark:hover:border-accent-blue light:hover:border-desert dark:border-white tracking-elegant light:text-dusk dark:text-white light:hover:text-desert dark:hover:text-accent-blue border px-8 py-3.5 text-base font-medium transition-[background-color,border-color,color,box-shadow,transform] duration-[var(--motion-surface)] ease-premium'
             >
               Get in Touch
             </Link>

@@ -11,70 +11,70 @@ export function Architecture() {
       <div className='container relative'>
         <div className='mx-auto max-w-4xl'>
           <div className='mb-16 text-center'>
-            <h2 className='mb-6 text-4xl font-bold tracking-tight md:text-5xl'>Technical Stack</h2>
-            <p className='light:text-gray-600 dark:text-text-secondary text-xl'>Production-grade infrastructure and tooling</p>
+            <h2 className='mb-6 text-3xl font-semibold leading-tight tracking-refined md:text-4xl'>Technical Stack</h2>
+            <p className='font-secondary text-text-secondary text-xl'>Production-grade infrastructure and tooling</p>
           </div>
 
           <div className='grid gap-12 lg:grid-cols-2'>
             <div className='space-y-8'>
-              <div className='hover-lift dark:bg-sand bg-white p-8'>
-                <h3 className='mb-6 text-2xl font-bold'>Languages & Frameworks</h3>
+              <div className='hover-lift content-surface p-8'>
+                <h3 className='mb-6 text-xl font-medium tracking-refined md:text-2xl'>Languages & Frameworks</h3>
                 <div className='space-y-4'>
                   <div>
-                    <h4 className='mb-2 font-bold'>Backend</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>TypeScript, Node.js, NestJS, Python, Kotlin</p>
+                    <h4 className='mb-2 font-semibold'>Backend</h4>
+                    <p className='font-secondary text-text-secondary'>TypeScript, Node.js, NestJS, Python, Kotlin</p>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>Frontend</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>React, Astro, Tailwind CSS, GraphQL</p>
+                    <h4 className='mb-2 font-semibold'>Frontend</h4>
+                    <p className='font-secondary text-text-secondary'>React, Astro, Tailwind CSS, GraphQL</p>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>Data</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>PostgreSQL, DynamoDB, Redis, Elasticsearch</p>
+                    <h4 className='mb-2 font-semibold'>Data</h4>
+                    <p className='font-secondary text-text-secondary'>PostgreSQL, DynamoDB, Redis, Elasticsearch</p>
                   </div>
                 </div>
               </div>
 
-              <div className='hover-lift dark:bg-sand bg-white p-8'>
-                <h3 className='mb-6 text-2xl font-bold'>Cloud & Infrastructure</h3>
+              <div className='hover-lift content-surface p-8'>
+                <h3 className='mb-6 text-xl font-medium tracking-refined md:text-2xl'>Cloud & Infrastructure</h3>
                 <div className='space-y-4'>
                   <div>
-                    <h4 className='mb-2 font-bold'>AWS Services</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Lambda, Step Functions, S3, CloudFront, EC2, RDS, DynamoDB, SQS/SNS</p>
+                    <h4 className='mb-2 font-semibold'>AWS Services</h4>
+                    <p className='font-secondary text-text-secondary'>Lambda, Step Functions, S3, CloudFront, EC2, RDS, DynamoDB, SQS/SNS</p>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>DevOps</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Docker, CDK, Terraform, GitHub Actions, CI/CD pipelines</p>
+                    <h4 className='mb-2 font-semibold'>DevOps</h4>
+                    <p className='font-secondary text-text-secondary'>Docker, CDK, Terraform, GitHub Actions, CI/CD pipelines</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className='space-y-8'>
-              <div className='hover-lift dark:bg-sand bg-white p-8'>
-                <h3 className='mb-6 text-2xl font-bold'>Media & Broadcast</h3>
+              <div className='hover-lift content-surface p-8'>
+                <h3 className='mb-6 text-xl font-medium tracking-refined md:text-2xl'>Media & Broadcast</h3>
                 <div className='space-y-4'>
                   <div>
-                    <h4 className='mb-2 font-bold'>Streaming</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>OBS, FFMPEG, HLS/M3U, YouTube Live API, RTMP</p>
+                    <h4 className='mb-2 font-semibold'>Streaming</h4>
+                    <p className='font-secondary text-text-secondary'>OBS, FFMPEG, HLS/M3U, YouTube Live API, RTMP</p>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>Real-Time</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Server-Sent Events (SSE), WebSockets, Event-Driven Architecture</p>
+                    <h4 className='mb-2 font-semibold'>Real-Time</h4>
+                    <p className='font-secondary text-text-secondary'>Server-Sent Events (SSE), WebSockets, Event-Driven Architecture</p>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>Audio/Video</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Jitsi, Scarlett audio interfaces, browser-based rendering</p>
+                    <h4 className='mb-2 font-semibold'>Audio/Video</h4>
+                    <p className='font-secondary text-text-secondary'>Jitsi, Scarlett audio interfaces, browser-based rendering</p>
                   </div>
                 </div>
               </div>
 
-              <div className='hover-lift dark:bg-sand bg-white p-8'>
-                <h3 className='mb-6 text-2xl font-bold'>Beyond Engineering</h3>
+              <div className='hover-lift content-surface p-8'>
+                <h3 className='mb-6 text-xl font-medium tracking-refined md:text-2xl'>Beyond Engineering</h3>
                 <div className='space-y-4'>
                   <div>
-                    <h4 className='mb-2 font-bold'>Photojournalism</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Event coverage and documentary reporting</p>
+                    <h4 className='mb-2 font-semibold'>Photojournalism</h4>
+                    <p className='font-secondary text-text-secondary'>Event coverage and documentary reporting</p>
                     <a
                       href='https://photos.gaulatti.com'
                       target='_blank'
@@ -85,8 +85,8 @@ export function Architecture() {
                     </a>
                   </div>
                   <div>
-                    <h4 className='mb-2 font-bold'>Music</h4>
-                    <p className='dark:text-text-secondary text-gray-600'>Original compositions and orchestral arrangements</p>
+                    <h4 className='mb-2 font-semibold'>Music</h4>
+                    <p className='font-secondary text-text-secondary'>Original compositions and orchestral arrangements</p>
                     <a
                       href='https://music.gaulatti.com'
                       target='_blank'
