@@ -199,8 +199,7 @@ gtag('config', '${gaTrackingId}');`
               brand={{
                 href: '/',
                 logoAlt: 'gaulatti',
-                logoSrc: '/icons/gaulatti.svg',
-                name: 'gaulatti'
+                logoSrc: '/icons/gaulatti.svg'
               }}
               navigation={headerNavigation}
               actions={<HeaderActions />}
