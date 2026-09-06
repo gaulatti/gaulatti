@@ -6,7 +6,9 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "serve -s build/client -l 3000",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "test": "node --test --experimental-strip-types \"app/**/*.test.ts\"",
+    "check": "npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
     "@gaulatti/bleecker": "^0.1.39",

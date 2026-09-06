@@ -55,9 +55,10 @@ Built and operate a full-stack media platform for live broadcast, content publis
 | **[Monitor](https://monitor.gaulatti.com)**    | AI-powered news monitoring — ingests 40+ global sources, clusters stories via semantic embeddings, applies NLP translation & classification  | TypeScript, NestJS, Qdrant, AWS            |
 | **Cronkite**                                   | Core publishing engine — transforms CMS content into static HTML and short-form video via FFMPEG; deploys to S3/CloudFront in under a second | TypeScript, NestJS, FFMPEG, AWS            |
 | **Alcántara**                                  | Professional broadcast overlay control — manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080 via SSE              | React, NestJS, SSE, Prisma                 |
-| **[Alana](https://github.com/gaulatti/alana)** | Dockerized OBS Studio for 24/7 automated streaming with Intel QSV GPU encoding and VNC monitoring                                            | Docker, OBS, Intel QSV                     |
-| **[Broadway](https://broadway.gaulatti.com)**  | Story template studio — live preview + 1080×1920 PNG export for social media content pipelines                                               | React Router 7, TypeScript, Tailwind CSS 4 |
-| **Celesti**                                    | Stream routing platform — Go backend with Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE                              | Go, Echo, Kotlin, Jetpack Compose          |
+| **[Alana](https://github.com/gaulatti/alana)** | Composed broadcast runtime — renders one Alcántara program and publishes it to RTMP, lifecycle-controlled and transport-only for public destinations | Docker, RTMP, LiveKit                      |
+| **[Broadway](https://broadway.gaulatti.com)**  | Typed template authoring — reusable templates with generated forms, live preview, and PNG or vector-PDF export                               | React Router 7, TypeScript, Tailwind CSS 4 |
+| **[Colombo](https://github.com/gaulatti/colombo)** | Newsroom upload gateway — accepts FTP/FTPS/HTTP uploads into a restart-safe durable spool, then delivers to S3 and calls back independently | Rust, PostgreSQL, AWS S3                   |
+| **Celesti**                                    | Stream routing platform (private) — Go backend with a Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE                  | Go, Echo, Kotlin, Jetpack Compose          |
 
 ---
 
@@ -117,3 +118,50 @@ Built and operate a full-stack media platform for live broadcast, content publis
 - jack@gaulatti.com
 
 ---
+
+## Site development
+
+This repository is the source of [gaulatti.com](https://gaulatti.com).
+
+```bash
+npm run dev        # local development server
+npm run typecheck  # react-router typegen + tsc
+npm run test       # manifest schema, link, visibility, and freshness checks
+npm run build      # production build
+npm run check      # all of the above, in order
+```
+
+### The project manifest
+
+Every public project fact the site renders comes from
+[`app/data/projects.ts`](app/data/projects.ts). Route components read the
+manifest; they do not restate facts, so a correction lands in one place.
+
+Three rules govern it, enforced by `app/data/projects.validate.ts` and the tests
+in `app/data/projects.test.ts`:
+
+1. **Editorial, not discovered.** Nothing writes to the manifest automatically.
+   Repository discovery may *suggest* that an entry has drifted, but a person
+   decides what the site says.
+2. **Manual approval.** An entry renders only when `publicationApproved` is
+   `true`. The default for anything new is `false`.
+3. **Nothing private leaks.** An entry whose `visibility` is `private` carries
+   no links, no repository, and never claims to be live. Every repository the
+   manifest names must also appear on `PUBLIC_REPOSITORIES` — an allowlist of
+   repositories a person has confirmed are public. It is framed as an allowlist
+   rather than a blocklist because this repository is itself public, so
+   enumerating what is *private* would publish private metadata.
+
+### Freshness policy
+
+`evidenceDate` is the day an entry was last checked against its repository or a
+running system.
+
+| Age of `evidenceDate` | Result |
+| --- | --- |
+| ≤ 180 days | passes |
+| > 180 days | **warning** — re-check the entry against its source |
+| > 365 days **and published** | **error** — re-verify it or set `publicationApproved: false` |
+
+A future or malformed date is always an error. `npm run test` fails on any
+error, so published facts cannot silently rot.
