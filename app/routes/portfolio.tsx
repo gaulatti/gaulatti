@@ -1,83 +1,21 @@
 import { BauhausBackground } from '@gaulatti/bleecker/components/bauhaus-background';
 import { Link } from 'react-router';
+import {
+  projectsForSurface,
+  repositoryLinks,
+  siteLink,
+  statusLabel,
+  type ProjectFact
+} from '~/data/projects';
 import type { Route } from './+types/portfolio';
 
-interface Project {
-  title: string;
-  description: string;
-  type: 'autostrada' | 'pompeii' | 'monitor';
-  tags: string[];
-  link?: string;
-  imageUrl?: string;
-  repos: { label: string; link: string }[];
-  other?: { link: string; text: string; icon: string }[];
-}
-
-const personalProjects: Project[] = [
-  {
-    title: 'Colombo',
-    description:
-      'Multi-tenant FTP server for live photo ingestion in newsroom workflows. Authenticates with CMS-issued assignment keys, receives short-lived AWS STS credentials, uploads to S3, and posts photo callbacks so editors can publish in seconds.',
-    type: 'monitor',
-    tags: ['Java 21', 'Spring Boot 4', 'Apache FTP Server', 'AWS S3', 'PostgreSQL'],
-    link: 'https://github.com/gaulatti/colombo',
-    imageUrl: '/hero/colombo.avif',
-    repos: [{ label: 'GitHub', link: 'https://github.com/gaulatti/colombo' }]
-  },
-  {
-    title: 'Monitor',
-    description:
-      'AI-powered news monitoring system that aggregates global sources, clusters stories into events, and sends real-time alerts. Combines web scraping with NLP to filter signal from noise in breaking news scenarios.',
-    type: 'monitor',
-    tags: ['TypeScript', 'NestJS', 'AI/ML', 'AWS'],
-    link: 'https://monitor.gaulatti.com',
-    imageUrl: '/hero/monitor.avif',
-    repos: []
-  }
-];
-
-const mediaProjects: Project[] = [
-  {
-    title: 'Alcántara',
-    description:
-      'Professional broadcast overlay control system with real-time SSE updates. Manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080. Consolidates scene and playlist control (formerly split with Toni).',
-    type: 'monitor',
-    tags: ['React', 'NestJS', 'SSE', 'Prisma', 'obs-websocket'],
-    imageUrl: '/hero/normandy.avif',
-    repos: []
-  },
-  {
-    title: 'Alana',
-    description:
-      'Dockerized OBS Studio runtime for 24/7 automated streaming to YouTube. Receives clean feeds from Alcántara, handles GPU hardware encoding via Intel QSV, and exposes VNC for visual monitoring.',
-    type: 'pompeii',
-    tags: ['Docker', 'OBS Studio', 'VNC', 'Intel QSV'],
-    imageUrl: '/hero/catastrophes.avif',
-    repos: [{ label: 'GitHub', link: 'https://github.com/gaulatti/alana' }]
-  },
-  {
-    title: 'Broadway',
-    description:
-      "Web application for creating branded 1080×1920 social media story templates. Live preview, auto-generated forms from field definitions, and one-click PNG export. Built for fifthbell's content pipeline, branded under gaulatti.",
-    type: 'autostrada',
-    tags: ['React Router 7', 'TypeScript', 'Tailwind CSS 4', 'Vite'],
-    link: 'https://broadway.gaulatti.com',
-    imageUrl: '/hero/wiphala.avif',
-    repos: [{ label: 'GitHub', link: 'https://github.com/gaulatti/broadway' }]
-  },
-  {
-    title: 'Celesti',
-    description:
-      'Stream routing and newsroom display management platform. Go backend (mattone) with a Kotlin/Jetpack Compose Android TV client (pioggia). Manages M3U channel inventory and dispatches playback commands to devices via SSE.',
-    type: 'monitor',
-    tags: ['Go', 'Echo', 'Kotlin', 'Jetpack Compose', 'SSE'],
-    imageUrl: '/hero/points.avif',
-    repos: [
-      { label: 'mattone', link: 'https://github.com/gaulatti/mattone' },
-      { label: 'pioggia', link: 'https://github.com/gaulatti/pioggia' }
-    ]
-  }
-];
+/**
+ * Every fact on this page comes from the curated manifest in
+ * `app/data/projects.ts`. Nothing here is discovered, and an entry that is not
+ * explicitly approved for publication never reaches this component.
+ */
+const personalProjects = projectsForSurface('personal');
+const mediaProjects = projectsForSurface('media-infrastructure');
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -90,18 +28,25 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Portfolio() {
-  const renderProject = (project: Project, index: number) => (
-    <article key={project.title} className='text-fade-in group' style={{ animationDelay: `${(index + 2) * 100}ms` }}>
+  const renderProject = (project: ProjectFact, index: number) => {
+    const site = siteLink(project);
+    const repositories = repositoryLinks(project);
+
+    return (
+    <article key={project.id} className='text-fade-in group' style={{ animationDelay: `${(index + 2) * 100}ms` }}>
       <div className='grid items-center gap-8 md:grid-cols-2'>
         <div className='order-2 md:order-1'>
-          {project.link ? (
-            <a href={project.link} className='group/title block' target='_blank' rel='noopener noreferrer'>
-              <h3 className='group-hover/title:text-accent-blue mb-4 text-xl font-medium tracking-refined md:text-2xl transition-colors'>{project.title}</h3>
+          {site ? (
+            <a href={site.href} className='group/title block' target='_blank' rel='noopener noreferrer'>
+              <h3 className='group-hover/title:text-accent-blue mb-4 text-xl font-medium tracking-refined md:text-2xl transition-colors'>{project.name}</h3>
             </a>
           ) : (
-            <h3 className='mb-4 text-xl font-medium tracking-refined md:text-2xl'>{project.title}</h3>
+            <h3 className='mb-4 text-xl font-medium tracking-refined md:text-2xl'>{project.name}</h3>
           )}
-          <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{project.description}</p>
+          {project.status === 'live' ? null : (
+            <p className='font-secondary text-text-secondary mb-3 text-sm uppercase tracking-wide'>{statusLabel(project.status)}</p>
+          )}
+          <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{project.summary}</p>
           <div className='space-y-4'>
             <div className='flex flex-wrap gap-2'>
               {project.tags.map((tag) => (
@@ -110,11 +55,11 @@ export default function Portfolio() {
                 </span>
               ))}
             </div>
-            {(project.link || project.repos.length > 0 || project.other) && (
+            {project.links.length > 0 && (
               <div className='flex flex-wrap gap-4'>
-                {project.link ? (
+                {site ? (
                   <a
-                    href={project.link}
+                    href={site.href}
                     className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
                     target='_blank'
                     rel='noopener noreferrer'
@@ -127,28 +72,16 @@ export default function Portfolio() {
                     <span>Live Site</span>
                   </a>
                 ) : null}
-                {project.repos.map((repo) => (
+                {repositories.map((repository) => (
                   <a
-                    key={repo.link}
-                    href={repo.link}
+                    key={repository.href}
+                    href={repository.href}
                     className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <img src='/icons/github.svg' alt='' className='h-4 w-4 dark:invert' />
-                    <span>{repo.label}</span>
-                  </a>
-                ))}
-                {project.other?.map((item) => (
-                  <a
-                    key={item.link}
-                    href={item.link}
-                    className='font-secondary text-text-secondary hover:text-accent-blue inline-flex items-center gap-2 text-sm transition-colors'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <img src={item.icon} alt='' className='h-4 w-4 dark:invert' />
-                    <span>{item.text}</span>
+                    <span>{repository.label}</span>
                   </a>
                 ))}
               </div>
@@ -156,21 +89,22 @@ export default function Portfolio() {
           </div>
         </div>
         <div className='order-1 md:order-2'>
-          {project.link ? (
-            <a href={project.link} className='block' target='_blank' rel='noopener noreferrer'>
+          {site ? (
+            <a href={site.href} className='block' target='_blank' rel='noopener noreferrer'>
               <div className='bg-light-sand/55 dark:bg-white/[0.05] hover-lift aspect-video overflow-hidden rounded-sm'>
-                <BauhausBackground type={project.type} imageUrl={project.imageUrl} />
+                <BauhausBackground type={project.art.type} imageUrl={project.art.imageUrl} />
               </div>
             </a>
           ) : (
             <div className='bg-light-sand/55 dark:bg-white/[0.05] hover-lift aspect-video overflow-hidden rounded-sm'>
-              <BauhausBackground type={project.type} imageUrl={project.imageUrl} />
+              <BauhausBackground type={project.art.type} imageUrl={project.art.imageUrl} />
             </div>
           )}
         </div>
       </div>
     </article>
-  );
+    );
+  };
 
   return (
     <div className='consumer-main pt-32'>

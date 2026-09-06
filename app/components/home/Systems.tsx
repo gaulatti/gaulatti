@@ -1,65 +1,15 @@
 import { Link } from 'react-router';
+import { HOME_SYSTEM_IDS, projectsByIds, siteLink, statusLabel } from '~/data/projects';
 
-const systems = [
-  {
-    title: 'Cronkite',
-    subtitle: 'Publishing Engine & Rendering Pipeline',
-    description:
-      'Publishes content to S3, generates static HTML pages, and produces automated short-form video clips. Integrates with CMS workflows for seamless content delivery.',
-    tags: ['TypeScript', 'AWS S3', 'FFMPEG'],
-    color: 'bg-accent-blue'
-  },
-  {
-    title: 'Alcántara',
-    subtitle: 'Broadcast Overlay Control System',
-    description:
-      'Professional TV broadcast overlay system with real-time SSE updates. Control panel manages lower thirds, full-screen graphics, and corner bugs with instant preview.',
-    tags: ['React', 'NestJS', 'SSE'],
-    color: 'bg-accent-red'
-  },
-  {
-    title: 'Toni',
-    subtitle: 'OBS Control & Playlist Management',
-    description:
-      'Control interface for OBS via WebSocket. Manages media playlists, scene switching, and transitions. Provides clean feed output to Alana for streaming.',
-    tags: ['React', 'NestJS', 'obs-websocket'],
-    color: 'bg-accent-yellow'
-  },
-  {
-    title: 'Alana',
-    subtitle: 'Containerized OBS Streaming Runtime',
-    description:
-      'Dockerized OBS Studio with obs-websocket for remote control. Receives clean feed from Alcántara+Toni, handles GPU encoding (Intel QSV), and streams to YouTube 24/7.',
-    tags: ['Docker', 'OBS', 'VNC'],
-    color: 'bg-accent-blue'
-  },
-  {
-    title: 'Broadway',
-    subtitle: 'Story Template Studio',
-    description:
-      'Web application for creating professional 1080×1920 story templates. Live preview, dynamic forms, and one-click PNG export for social media content.',
-    tags: ['React Router 7', 'TypeScript', 'Tailwind'],
-    color: 'bg-accent-blue',
-    link: 'https://broadway.gaulatti.com'
-  },
-  {
-    title: 'Monitor',
-    subtitle: 'Global News & Earthquake Monitoring',
-    description:
-      'Source-agnostic content ingestion from 40+ global news sources. Automatic language detection, semantic embedding, and story clustering via Qdrant. AI-powered translation and classification. Real-time SSE feeds for posts, earthquakes, and events.',
-    tags: ['NestJS', 'Qdrant', 'SSE'],
-    color: 'bg-accent-red',
-    link: 'https://monitor.fifthbell.com'
-  },
-  {
-    title: 'Celesti',
-    subtitle: 'Stream Routing & Monitoring',
-    description:
-      'Go backend (mattone) + Kotlin Android TV client (pioggia). M3U import, SSE commands, and multi-display coordination for newsroom environments.',
-    tags: ['Go', 'Kotlin', 'Jetpack Compose'],
-    color: 'bg-accent-yellow'
-  }
-];
+/**
+ * The home systems grid is rendered from the curated manifest. The selection
+ * and its order are editorial (`HOME_SYSTEM_IDS`); the facts are not restated
+ * here, so a correction lands in one place.
+ */
+const systems = projectsByIds(HOME_SYSTEM_IDS);
+
+/** Presentation only — the accent rotates so adjacent cards differ. */
+const accents = ['bg-accent-blue', 'bg-accent-red', 'bg-accent-yellow'];
 
 export function Systems() {
   return (
@@ -79,31 +29,38 @@ export function Systems() {
           </div>
 
           <div className='grid gap-8 md:grid-cols-2'>
-            {systems.map((system) => (
-              <div key={system.title} className='hover-lift content-surface p-8'>
-                <div className={`mb-6 h-2 w-16 ${system.color}`} />
-                <h3 className='mb-3 text-xl font-medium tracking-refined md:text-2xl'>{system.title}</h3>
-                <p className='text-sea dark:text-accent-blue mb-4 text-sm'>{system.subtitle}</p>
-                <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{system.description}</p>
-                <div className='flex flex-wrap gap-2'>
-                  {system.tags.map((tag) => (
-                    <span key={tag} className='dark:bg-dark-sand rounded bg-gray-100 px-3 py-1 text-xs'>
-                      {tag}
-                    </span>
-                  ))}
+            {systems.map((system, index) => {
+              const site = siteLink(system);
+
+              return (
+                <div key={system.id} className='hover-lift content-surface p-8'>
+                  <div className={`mb-6 h-2 w-16 ${accents[index % accents.length]}`} />
+                  <h3 className='mb-3 text-xl font-medium tracking-refined md:text-2xl'>{system.name}</h3>
+                  <p className='text-sea dark:text-accent-blue mb-4 text-sm'>{system.subtitle}</p>
+                  {system.status === 'live' ? null : (
+                    <p className='font-secondary text-text-secondary mb-3 text-xs uppercase tracking-wide'>{statusLabel(system.status)}</p>
+                  )}
+                  <p className='font-secondary text-text-secondary mb-4 text-gray-600'>{system.summary}</p>
+                  <div className='flex flex-wrap gap-2'>
+                    {system.tags.map((tag) => (
+                      <span key={tag} className='dark:bg-dark-sand rounded bg-gray-100 px-3 py-1 text-xs'>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {site ? (
+                    <a
+                      href={site.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-sea dark:text-accent-blue mt-4 inline-flex items-center text-sm font-medium hover:underline'
+                    >
+                      Visit Live Site
+                    </a>
+                  ) : null}
                 </div>
-                {system.link ? (
-                  <a
-                    href={system.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-sea dark:text-accent-blue mt-4 inline-flex items-center text-sm font-medium hover:underline'
-                  >
-                    Visit Live Site
-                  </a>
-                ) : null}
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className='mt-12 text-center'>
