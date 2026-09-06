@@ -127,13 +127,13 @@ export const projects: ProjectFact[] = [
     name: 'Manzoni',
     subtitle: 'Field Capture Client',
     summary:
-      'The camera client photographers use in the field: capture a photo and upload it straight to Colombo, with credentials held in platform secure storage and the upload surfaced as it happens. The published client is Flutter; a React Native rewrite on the shared component system is underway and is not on the public branch yet.',
+      'The camera client photographers use in the field: capture a photo and upload it straight to Colombo. Media is copied into app-owned storage and queued in SQLite before anything is sent, so a queued photo survives a relaunch, and credentials stay in platform secure storage. The React Native client on the shared component system is the active path; the original Flutter client is kept alongside it as a rollback.',
     status: 'in-development',
     visibility: 'public',
     publicationApproved: true,
     evidenceDate: '2026-09-06',
     surface: 'personal',
-    tags: ['Flutter', 'Dart', 'iOS', 'Android'],
+    tags: ['React Native', 'Expo', 'TypeScript', 'SQLite', 'Flutter'],
     repository: 'gaulatti/manzoni',
     links: [{ label: 'GitHub', href: 'https://github.com/gaulatti/manzoni', kind: 'repository' }],
     art: { type: 'autostrada', imageUrl: '/hero/normandy.avif' }
