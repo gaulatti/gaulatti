@@ -114,10 +114,13 @@ test('Broadway is typed static and media authoring, not only story templates', (
   assert.doesNotMatch(broadway.summary, /1080×1920|social media story/i);
 });
 
-test('Manzoni does not claim the React Native migration has shipped', () => {
+test('Manzoni describes the migration as it actually stands on the public branch', () => {
+  // The Expo client landed on `main`; the Flutter client is retained as a
+  // rollback. Neither is described as finished.
   const manzoni = find('manzoni');
-  assert.match(manzoni.summary, /published client is Flutter/i);
-  assert.match(manzoni.summary, /not on the public branch yet/i);
+  assert.match(manzoni.summary, /React Native client .* is the active path/i);
+  assert.match(manzoni.summary, /Flutter client is kept alongside it as a rollback/i);
+  assert.doesNotMatch(manzoni.summary, /not on the public branch/i);
   assert.equal(manzoni.status, 'in-development');
 });
 
