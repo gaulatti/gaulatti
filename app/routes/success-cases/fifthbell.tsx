@@ -57,11 +57,11 @@ export default function Fifthbell() {
                   </div>
                   <div className='bg-accent-red/10 rounded p-4'>
                     <strong>Broadcast Pipeline</strong>
-                    <p className='mt-1 text-xs'>Alcántara → OBS → YouTube</p>
+                    <p className='mt-1 text-xs'>Alcántara → Alana → RTMP</p>
                   </div>
                   <div className='bg-accent-yellow/10 rounded p-4'>
                     <strong>Automation Pipeline</strong>
-                    <p className='mt-1 text-xs'>Toni + Broadway → Scheduled</p>
+                    <p className='mt-1 text-xs'>Broadway → Scheduled</p>
                   </div>
                 </div>
                 <div className='dark:bg-dark-sand mx-auto mt-4 max-w-md rounded bg-gray-100 p-4'>
@@ -123,52 +123,27 @@ export default function Fifthbell() {
               </div>
 
               <div className='content-surface p-8'>
-                <div className='bg-accent-yellow mb-6 h-1 w-16' />
-                <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Toni</h3>
-                <p className='text-sea dark:text-accent-blue mb-4 text-sm font-medium'>OBS Control & Playlist Management</p>
-                <h4 className='mt-6 mb-2 font-semibold'>Purpose</h4>
-                <p className='font-secondary text-text-secondary text-sm text-gray-600'>
-                  Control interface for OBS via WebSocket. Manages scenes, transitions, and media playlists.
-                </p>
-                <h4 className='mt-6 mb-2 font-semibold'>Architecture</h4>
-                <ul className='font-secondary text-text-secondary space-y-1 text-sm text-gray-600'>
-                  <li>• React Router frontend for playlist management</li>
-                  <li>• NestJS backend with obs-websocket integration</li>
-                  <li>• Media upload and scene composition</li>
-                  <li>• AWS CDK infrastructure deployment</li>
-                  <li>• Provides clean feed output to Alana</li>
-                </ul>
-                <h4 className='mt-6 mb-2 font-semibold'>Technologies</h4>
-                <div className='mt-2 flex flex-wrap gap-2'>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>React</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>NestJS</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>obs-websocket</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>AWS CDK</span>
-                </div>
-              </div>
-
-              <div className='content-surface p-8'>
                 <div className='bg-accent-blue mb-6 h-1 w-16' />
                 <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Alana</h3>
-                <p className='text-sea dark:text-accent-blue mb-4 text-sm font-medium'>Containerized OBS Streaming Runtime</p>
+                <p className='text-sea dark:text-accent-blue mb-4 text-sm font-medium'>Composed Broadcast Runtime</p>
                 <h4 className='mt-6 mb-2 font-semibold'>Purpose</h4>
                 <p className='font-secondary text-text-secondary text-sm text-gray-600'>
-                  Dockerized OBS Studio environment for 24/7 automated streaming to YouTube.
+                  Headless renderer and publisher for one composed Alcántara program.
                 </p>
                 <h4 className='mt-6 mb-2 font-semibold'>Architecture</h4>
                 <ul className='font-secondary text-text-secondary space-y-1 text-sm text-gray-600'>
-                  <li>• OBS Studio with obs-websocket (v5) for remote API control</li>
-                  <li>• VNC access for visual monitoring</li>
-                  <li>• GPU hardware encoding (Intel QSV)</li>
-                  <li>• Receives clean feed from Alcántara + Toni</li>
-                  <li>• Dynamic scene management via WebSocket commands</li>
+                  <li>• One runtime owns one configured Alcántara program</li>
+                  <li>• Publishes to one or more required RTMP outputs</li>
+                  <li>• Optional concurrent low-latency LiveKit program feed</li>
+                  <li>• Lifecycle-controlled: renders nothing until an authenticated start is acknowledged</li>
+                  <li>• Transport-only for public destinations — forwards opaque IDs and secret references, never resolves one</li>
                 </ul>
                 <h4 className='mt-6 mb-2 font-semibold'>Technologies</h4>
                 <div className='mt-2 flex flex-wrap gap-2'>
                   <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Docker</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>OBS</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>VNC</span>
-                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Intel QSV</span>
+                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>RTMP</span>
+                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>LiveKit</span>
+                  <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Broadcast</span>
                 </div>
                 <a
                   href='https://github.com/gaulatti/alana'
@@ -183,18 +158,18 @@ export default function Fifthbell() {
               <div className='content-surface p-8'>
                 <div className='bg-accent-blue mb-6 h-1 w-16' />
                 <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Broadway</h3>
-                <p className='text-sea dark:text-accent-blue mb-4 text-sm font-medium'>Story Template Studio</p>
+                <p className='text-sea dark:text-accent-blue mb-4 text-sm font-medium'>Typed Template Authoring</p>
                 <h4 className='mt-6 mb-2 font-semibold'>Purpose</h4>
                 <p className='font-secondary text-text-secondary text-sm text-gray-600'>
-                  Web application for creating and exporting professional social media story templates.
+                  Authoring tool for static and media pieces built from reusable, typed templates.
                 </p>
                 <h4 className='mt-6 mb-2 font-semibold'>Architecture</h4>
                 <ul className='font-secondary text-text-secondary space-y-1 text-sm text-gray-600'>
-                  <li>• Extensible React component template system</li>
-                  <li>• Auto-generated forms from field definitions</li>
+                  <li>• Extensible React template system with typed props</li>
+                  <li>• Auto-generated forms from each template&apos;s field definitions</li>
                   <li>• Real-time live preview of customizations</li>
-                  <li>• Perfect 1080×1920 PNG export</li>
-                  <li>• Server-side rendering with React Router 7</li>
+                  <li>• High-quality PNG export, and vector PDF with selectable text for document templates</li>
+                  <li>• Gallery view across all available templates</li>
                 </ul>
                 <h4 className='mt-6 mb-2 font-semibold'>Technologies</h4>
                 <div className='mt-2 flex flex-wrap gap-2'>
@@ -248,15 +223,12 @@ export default function Fifthbell() {
                 </p>
                 <h4 className='mt-6 mb-2 font-semibold'>Architecture</h4>
                 <ul className='font-secondary text-text-secondary space-y-1 text-sm text-gray-600'>
-                  <li>
-                    • <strong>mattone</strong> — Go backend (Echo + GORM + PostgreSQL)
-                  </li>
-                  <li>
-                    • <strong>pioggia</strong> — Kotlin Android TV client (Jetpack Compose)
-                  </li>
+                  <li>• Go backend (Echo + GORM + PostgreSQL)</li>
+                  <li>• Kotlin Android TV client (Jetpack Compose)</li>
                   <li>• M3U import and channel management</li>
                   <li>• SSE-based command dispatch to devices</li>
                   <li>• JWT auth via AWS Cognito</li>
+                  <li>• Private — source is not publicly available</li>
                 </ul>
                 <h4 className='mt-6 mb-2 font-semibold'>Technologies</h4>
                 <div className='mt-2 flex flex-wrap gap-2'>
@@ -264,14 +236,6 @@ export default function Fifthbell() {
                   <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Echo</span>
                   <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Kotlin</span>
                   <span className='dark:bg-dark-sand rounded bg-gray-100 px-2 py-1 text-xs'>Jetpack Compose</span>
-                </div>
-                <div className='mt-4 flex gap-4'>
-                  <a href='https://github.com/gaulatti/mattone' target='_blank' rel='noopener noreferrer' className='text-accent-blue text-sm hover:underline'>
-                    mattone →
-                  </a>
-                  <a href='https://github.com/gaulatti/pioggia' target='_blank' rel='noopener noreferrer' className='text-accent-blue text-sm hover:underline'>
-                    pioggia →
-                  </a>
                 </div>
               </div>
             </div>
