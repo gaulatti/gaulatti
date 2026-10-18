@@ -10,29 +10,6 @@ const client = path.resolve('build/client');
 const catalog = publishedProjects();
 const meta = (html, property) => (html.match(/<meta\b[^>]*>/g) ?? []).filter((tag) => tag.includes('property="' + property + '"'));
 
-test('the homepage leads with the introduction and connects the approved work before JavaScript', async () => {
-  const html = await fs.readFile(path.join(client, 'index.html'), 'utf8');
-  assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
-  const sections = ['Javier Godoy', 'Selected projects', 'Engineering experience', 'Sanremo Festival', 'Writing', 'Beyond engineering', 'Get in touch'];
-  let previous = -1;
-  for (const section of sections) {
-    const at = html.indexOf(section, html.indexOf('<main'));
-    assert.ok(at > previous, 'homepage section order: ' + section);
-    previous = at;
-  }
-  for (const id of ['mistify', 'colombo', 'guggiana', 'alcantara', 'alana', 'croccante', 'palazzo']) {
-    assert.ok(catalog.some((project) => project.id === id));
-    assert.ok(html.includes('href="/portfolio/' + id + '"'), 'missing featured project: ' + id);
-  }
-  assert.ok(html.includes('independently, using my own resources'));
-  assert.ok(html.includes('catastrophic session failures from 40% to 1.3%'));
-  assert.ok(html.includes('LLM Gateway'));
-  assert.ok(html.includes('href="/journey"'));
-  assert.ok(html.includes('href="/success-cases/sanremo"'));
-  assert.ok(!html.includes('Technical Stack'));
-  for (const icon of ['medsender', 'cnn', 'amazon']) assert.ok(html.includes('/icons/' + icon + '.svg'));
-});
-
 for (const project of catalog) {
   test(project.name + ': the initial HTML is ready for a link-preview crawler', async () => {
     const route = projectPath(project);

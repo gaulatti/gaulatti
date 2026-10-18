@@ -2,16 +2,16 @@ import { Link } from 'react-router';
 
 export function FeaturedOperation() {
   return (
-    <section className='home-section quiet-section' aria-labelledby='home-sanremo'>
+    <section className='quiet-section py-20'>
       <div className='container'>
-        <div className='mx-auto max-w-4xl'>
-          <p className='text-accent-red mb-4 text-sm font-medium tracking-wide uppercase'>From software to live production</p>
+        <div className='mx-auto max-w-5xl'>
+          <p className='text-accent-red mb-4 text-sm font-medium tracking-wide uppercase'>Featured Operation</p>
           <div className='grid items-center gap-12 md:grid-cols-2'>
             <div>
-              <h2 id='home-sanremo' className='mb-6 text-2xl font-semibold tracking-refined md:text-3xl'>Sanremo Festival</h2>
+              <h2 className='mb-6 text-2xl font-semibold tracking-refined md:text-3xl'>Sanremo Festival Coverage</h2>
               <p className='font-secondary text-text-secondary mb-6 text-lg'>
-                I led technical production and live operations for coverage spanning three countries. When the original setup failed, I rebuilt the broadcast
-                architecture in approximately three days and ran multi-hour broadcasts with distributed contributors.
+                Executive production and live operations leadership for a joint media venture covering the Sanremo Festival. Includes crisis response,
+                production redesign, editorial direction, and multi-hour live broadcasts from Italy.
               </p>
               <div className='mb-8 flex flex-wrap gap-4'>
                 <div className='flex items-center gap-2'>
@@ -27,7 +27,7 @@ export function FeaturedOperation() {
                   <span className='font-secondary text-text-secondary text-sm'>~2,000 total viewers</span>
                 </div>
               </div>
-              <Link to='/success-cases/sanremo' className='quiet-link inline-flex items-center gap-2'>
+              <Link to='/success-cases/sanremo' className='text-accent-blue inline-flex items-center gap-2 font-medium hover:underline'>
                 Read the case study
                 <svg className='h-4 w-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M17 8l4 4m0 0l-4 4m4-4H3' />

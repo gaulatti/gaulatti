@@ -2,22 +2,37 @@ import { Link } from 'react-router';
 
 export function Hero() {
   return (
-    <section className='home-intro relative overflow-hidden'>
-      <div className='absolute inset-0 bg-gradient-to-b from-sand/10 via-transparent to-transparent opacity-20' />
+    <section className='relative overflow-hidden py-32'>
+      <div className='absolute inset-0 opacity-20'>
+        <div className='absolute inset-0 bg-gradient-to-b from-sand/10 via-transparent to-transparent' />
+      </div>
+
+      <div className='from-sunset/0 via-sunset to-sunset/0 absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r' />
+
       <div className='container relative'>
         <div className='mx-auto max-w-4xl text-center'>
-          <h1 className='font-display mb-6 text-6xl leading-tight font-medium tracking-tight md:text-7xl'>Javier Godoy</h1>
+          <h1 className='font-display mb-8 text-6xl leading-tight font-medium tracking-tight md:text-7xl'>
+            <span className='text-fade-in block' id='dynamicText'>
+              Javier Godoy
+            </span>
+          </h1>
+
           <p className='font-display tracking-refined mb-2 text-2xl font-normal text-sea md:text-3xl'>Staff Software Engineer</p>
+
           <p className='text-text-secondary mb-6 text-sm font-light tracking-widest uppercase'>New York, NY</p>
-          <p className='home-lead mx-auto mb-5 max-w-2xl text-xl leading-relaxed md:text-2xl'>
-            I build AI infrastructure, developer platforms, and software that runs live operations.
+
+          <p className='text-text-secondary mx-auto mb-12 max-w-3xl text-lg leading-relaxed font-light md:text-xl'>
+            I build AI infrastructure, developer platforms, and production systems. Currently a Staff Software Engineer at Medsender; previously at Amazon,
+            CNN, and Narmi. Outside work, I build software for newsrooms, broadcasting, and photography.
           </p>
-          <p className='secondary-copy mx-auto mb-8 max-w-2xl text-lg'>
-            Currently at Medsender. Previously at Amazon, CNN, and Narmi. Outside work, I build and operate my own software for newsrooms, broadcasting, and photography.
-          </p>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link to='/portfolio' className='home-primary-link focus-ring'>Explore projects</Link>
-            <Link to='/journey' className='home-secondary-link focus-ring'>View résumé</Link>
+
+          <div className='flex flex-wrap justify-center gap-6'>
+            <Link
+              to='/contact'
+              className='light:border-dusk dark:hover:border-accent-blue light:hover:border-desert dark:border-white tracking-elegant light:text-dusk dark:text-white light:hover:text-desert dark:hover:text-accent-blue border px-8 py-3.5 text-base font-medium transition-[background-color,border-color,color,box-shadow,transform] duration-[var(--motion-surface)] ease-premium'
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>
