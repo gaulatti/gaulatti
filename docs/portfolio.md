@@ -63,6 +63,15 @@ LLM Gateway, developer portal, MCP, engineering automation, and delivery-safety
 work. No confidential implementation details or unverified impact metrics are
 added.
 
+The Narmi entry credits the owner-confirmed original AI DecisionAssist
+implementation using Anthropic Claude via Amazon Bedrock. The later public
+announcement documents the product, not individual authorship or the scope of
+that original implementation. Its subsequent interface, features, and advertised
+outcome metrics are not attributed to Javier's version.
+
+Product announcement:
+https://www.narmi.com/press/narmi-launches-ai-decisionassist-to-streamline-account-opening-for-community-banks-and-credit-unions
+
 WGU academic requirements are complete; conferral is pending. Earlier
 institutions are omitted until their degree/completion wording is confirmed.
 
