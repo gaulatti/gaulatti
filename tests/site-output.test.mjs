@@ -77,6 +77,8 @@ test('the résumé contains the corrected employment and degree status before Ja
   assert.ok(!html.includes('Acting GM'));
   assert.ok(html.includes('Degree conferral pending'));
   assert.ok(html.includes('CompTIA Project+'));
+  assert.ok(html.includes('Created the original version of Narmi’s AI DecisionAssist'));
+  assert.ok(html.includes('Anthropic Claude via Amazon Bedrock'));
   assert.ok(html.includes('Feb 2017 – Jan 2023'));
   assert.equal(await fs.readFile('build/static-pages/1/journey', 'utf8'), html);
 });

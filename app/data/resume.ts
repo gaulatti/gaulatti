@@ -34,7 +34,7 @@ export const experience: Experience[] = [
     focus: 'Account opening & AI-assisted KYC',
     highlights: [
       'Worked on account-opening systems for business and consumer banking.',
-      'Designed a Claude-powered pipeline that turned third-party identity-verification summaries into risk scores and actionable next steps.',
+      'Created the original version of Narmi’s AI DecisionAssist, using Anthropic Claude via Amazon Bedrock to turn identity-verification data into risk assessments and actionable recommendations for account-opening reviewers.',
       'Mentored a junior engineer to lead tactical execution while guiding the integration strategy and technical direction.'
     ]
   },
