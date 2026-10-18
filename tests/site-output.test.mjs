@@ -17,6 +17,14 @@ for (const project of catalog) {
     assert.ok(html.includes('<h1>' + project.name + '</h1>'), 'project heading must exist without JavaScript');
     assert.ok(html.includes('Engineering decisions'));
     assert.ok(html.includes('Where it stands'));
+    assert.ok(!html.includes('Copy project link'));
+    const resources = html.match(/<section class="project-intro-meta" aria-label="Project resources">([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(resources, 'project resources must be visible in the introduction');
+    for (const link of project.links)
+      assert.ok(resources.includes('href="' + link.href + '"'), 'missing introductory resource: ' + link.href);
+    if (project.repository) assert.ok(resources.includes(project.repository), 'the repository name must be readable');
+    if (project.visibility === 'private')
+      assert.ok(!resources.includes('href='), 'private projects must not acquire public source or demo links');
     assert.ok(html.includes('<h2>Evidence and outcomes</h2>'));
     if (project.story.study.workflow) assert.ok(html.includes('<h2>Architecture and workflow</h2>'));
     for (const reference of project.story.study.references) assert.ok(html.includes('href="' + reference.href + '"'));

@@ -30,6 +30,7 @@ const entry = (overrides: Partial<ProjectFact> = {}): ProjectFact => ({
   name: 'Example',
   subtitle: 'Subtitle',
   summary: 'A summary.',
+  accessNote: 'Public source is available.',
   status: 'in-development',
   visibility: 'public',
   publicationApproved: true,
@@ -62,7 +63,7 @@ test('every repository the manifest publishes is on the public allowlist', () =>
 });
 
 test('no entry links a host outside the ones the site vouches for', () => {
-  const allowedHosts = new Set(['github.com', 'monitor.gaulatti.com', 'broadway.gaulatti.com']);
+  const allowedHosts = new Set(['github.com', 'broadway.gaulatti.com', 'alcantara.gaulatti.com', 'gaulatti.com']);
   for (const project of publishedProjects()) {
     for (const link of project.links) {
       assert.ok(

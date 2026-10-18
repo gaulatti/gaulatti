@@ -16,6 +16,10 @@
   artwork, and read links open the individual project page. The existing six
   project illustrations are retained; added entries use the same decorative
   photography and Bauhaus treatment, not claimed product screenshots.
+- Detail-page introductions show full repository names, direct application links
+  where available, technical documentation, and an explicit access note. They do
+  not include a copy-URL button. Private and unreleased entries explain their
+  availability without inventing a source/demo link.
 - A direct request returns project-specific HTML, canonical metadata, and a
   1200 × 630 PNG preview without requiring the crawler to execute JavaScript.
 - The fifthbell overview links to the same catalog rather than duplicating
@@ -100,12 +104,17 @@ the property of their owner.
 ## LinkedIn links
 
 Use the project’s canonical `https://gaulatti.com/portfolio/<id>` URL after the
-site is deployed. The project’s copy-link action produces this address;
-`/project-links.csv` exports all 32 addresses. Preview images are generated for
+site is deployed. `/project-links.csv` exports all 32 addresses. Preview images are generated for
 each page and exposed through `og:image`.
 
 Local preview URLs are for review. This change does not update LinkedIn or make
 the new production URLs available until deployment.
+
+The application-link review on 18 October 2026 confirmed Broadway's public
+generator/gallery and Alcántara's authorized sign-in surface. Gaulatti.com is
+also linked directly. The Autostrada homepage returned 403, and Nena's old
+identity-provider organization was deactivated, so those are not presented as
+working demos. Their source remains accessible from the project header.
 
 The production preview uses static-file serving, not the former SPA catch-all.
 An HTTP regression starts the actual preview command, checks every project’s

@@ -159,7 +159,7 @@ function validateRequiredFields(project: ProjectFact): ValidationIssue[] {
   if (!ID_PATTERN.test(project.id ?? '')) {
     issues.push(error(project.id || '(missing id)', 'id-format', 'Ids are lowercase and kebab-case.'));
   }
-  for (const field of ['name', 'subtitle', 'summary'] as const) {
+  for (const field of ['name', 'subtitle', 'summary', 'accessNote'] as const) {
     if (isBlank(project[field])) {
       issues.push(error(project.id, `${field}-required`, `"${field}" must not be empty.`));
     }

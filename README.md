@@ -41,7 +41,7 @@ wrong initial HTML for project links.
 - `docs/portfolio.md`: evidence, authoring, sharing, and deployment behavior.
 
 Project pages have stable canonical URLs, unique Open Graph previews, related
-projects, and a copy-link action. `/project-links.csv` provides the approved
+projects, and introductory repository/application/documentation links. `/project-links.csv` provides the approved
 project URLs for updating professional profiles after publication.
 
 The source catalog is an editorial document. It is not synchronized from

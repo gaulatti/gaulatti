@@ -1131,7 +1131,7 @@ export const projectStudies: Record<string, ProjectStudy> = {
     ],
     evidence: [
       'The local verification checks publication guards, complete public-repository coverage, initial project HTML, canonical/preview metadata, image dimensions, and the actual preview server’s direct-link behavior.',
-      'Desktop and mobile browser checks exercise category filters, search, title/artwork navigation, copying canonical links, and résumé layout. The same generated project data feeds the index and detail pages so a content correction reaches both surfaces.'
+      'Desktop and mobile browser checks exercise category filters, search, title/artwork navigation, repository/application links, and résumé layout. The same generated project data feeds the index and detail pages so a content correction reaches both surfaces.'
     ],
     limitations: [
       'The website is a static publication with an explicit approval boundary. A repository discovered during research is not automatically added to the public catalog, and a private implementation is not linked merely because it is mentioned in a project story.'

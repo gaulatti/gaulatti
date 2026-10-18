@@ -6,6 +6,7 @@ type Entry = {
   name: string;
   subtitle: string;
   summary: string;
+  accessNote: string;
   surface: ProjectSurface;
   tags: string[];
   repository?: string;
@@ -40,6 +41,7 @@ function project(entry: Entry): ProjectFact {
 export const portfolioCatalog: ProjectFact[] = [
   project({
     id: 'mistify',
+    accessNote: 'Self-hosted AI service. Setup and API contracts are in the repository.',
     art: { type: 'monitor', imageUrl: '/hero/monitor.avif' },
     name: 'Mistify',
     subtitle: 'Language and media intelligence',
@@ -74,6 +76,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'colombo',
+    accessNote: 'Self-hosted upload gateway. Run locally with the repository’s Docker setup.',
     art: { type: 'monitor', imageUrl: '/hero/colombo.avif' },
     name: 'Colombo',
     subtitle: 'Reliable photo intake',
@@ -109,6 +112,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'guggiana',
+    accessNote: 'AWS workflow and local speech tooling. Setup and experiment guides are in the repository.',
     art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Guggiana',
     subtitle: 'Multilingual article-to-audio',
@@ -144,6 +148,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'monitor',
+    accessNote: 'Private application and source. This case study is the public overview.',
     art: { type: 'monitor', imageUrl: '/hero/monitor.avif' },
     name: 'Monitor',
     subtitle: 'Editorial intelligence',
@@ -175,6 +180,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'pompeii',
+    accessNote: 'Private identity service and source. This case study is the public overview.',
     art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'Pompeii',
     subtitle: 'Shared identity and permissions',
@@ -205,6 +211,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'bleecker',
+    accessNote: 'React component library. Installation, Storybook, and usage examples are in the repository.',
     art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Bleecker',
     subtitle: 'The web design system',
@@ -240,6 +247,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'sabella',
+    accessNote: 'SwiftUI library for Apple platforms. Package and native catalog instructions are in the repository.',
     art: { type: 'pompeii', imageUrl: '/hero/design.avif' },
     name: 'Sabella',
     subtitle: 'Native components for Apple platforms',
@@ -269,6 +277,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'orchard',
+    accessNote: 'WinUI 3 component library. Open the solution and component catalog on Windows.',
     art: { type: 'autostrada', imageUrl: '/hero/points.avif' },
     name: 'Orchard',
     subtitle: 'Native components for Windows',
@@ -297,6 +306,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'avelino',
+    accessNote: 'Qt Quick library for Linux. Build, catalog, and package verification guides are in the repository.',
     art: { type: 'monitor', imageUrl: '/hero/design.avif' },
     name: 'Avelino',
     subtitle: 'Native components for Linux',
@@ -326,6 +336,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'thompson',
+    accessNote: 'React Native component library. Package, example app, and Storybook guides are in the repository.',
     art: { type: 'pompeii', imageUrl: '/hero/points.avif' },
     name: 'Thompson',
     subtitle: 'The React Native design system',
@@ -353,6 +364,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'alcantara',
+    accessNote: 'The hosted broadcast console requires authorized sign-in. Source and local setup are public.',
     art: { type: 'monitor', imageUrl: '/hero/normandy.avif' },
     name: 'Alcántara',
     subtitle: 'Live production control',
@@ -360,6 +372,10 @@ export const portfolioCatalog: ProjectFact[] = [
     surface: 'media-infrastructure',
     tags: ['React', 'NestJS', 'PostgreSQL', 'SSE', 'WebRTC'],
     repository: 'gaulatti/alcantara',
+    links: [
+      { label: 'Source code', href: 'https://github.com/gaulatti/alcantara', kind: 'repository' },
+      { label: 'Open console', href: 'https://alcantara.gaulatti.com', kind: 'site' }
+    ],
     story: {
       problem: 'A live production needs one place to control what goes to air, coordinate contributors, and understand program state.',
       contribution: 'I build the production interface, program and media model, renderer integration, and live contribution workflows.',
@@ -387,6 +403,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'alana',
+    accessNote: 'Headless broadcast runtime. Docker setup and control API documentation are in the repository.',
     art: { type: 'pompeii', imageUrl: '/hero/catastrophes.avif' },
     name: 'Alana',
     subtitle: 'Composed broadcast runtime',
@@ -422,6 +439,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'croccante',
+    accessNote: 'Self-hosted relay. Docker setup, architecture, and operation notes are in the repository.',
     art: { type: 'autostrada', imageUrl: '/hero/nazca.avif' },
     name: 'Croccante',
     subtitle: 'Broadcast delivery and continuity',
@@ -462,6 +480,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'palazzo',
+    accessNote: 'Self-hosted radio engine. Local setup and playout API documentation are in the repository.',
     art: { type: 'monitor', imageUrl: '/hero/sanremo.avif' },
     name: 'Palazzo',
     subtitle: 'Radio playout control',
@@ -490,6 +509,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'broadway',
+    accessNote: 'Try the public generator and gallery, or inspect the source and template documentation.',
     art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Broadway',
     subtitle: 'Typed visual authoring',
@@ -526,6 +546,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'manzoni',
+    accessNote: 'Mobile client. The repository contains Expo setup and the retained Flutter implementation.',
     art: { type: 'autostrada', imageUrl: '/hero/normandy.avif' },
     name: 'Manzoni',
     subtitle: 'Field photography client',
@@ -559,6 +580,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'atlantide',
+    accessNote: 'Apple TV client. Build and device-distribution instructions are in the repository.',
     art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Atlantide',
     subtitle: 'tvOS playback client',
@@ -586,6 +608,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'autostrada',
+    accessNote: 'The source spans infrastructure, dashboard, and API repositories. No working public demo is linked.',
     art: { type: 'autostrada', imageUrl: '/hero/autostrada.avif' },
     name: 'Autostrada',
     subtitle: 'Web performance observability',
@@ -620,6 +643,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'clouseau',
+    accessNote: 'GitHub Actions tooling. Integration examples and review protocols are in the repository.',
     art: { type: 'pompeii', imageUrl: '/hero/sprints.avif' },
     name: 'Clouseau',
     subtitle: 'AI-assisted change review research',
@@ -655,6 +679,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'cronkite',
+    accessNote: 'Private publishing service and source. This case study is the public overview.',
     art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Cronkite',
     subtitle: 'Publishing and rendering',
@@ -683,6 +708,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'celesti',
+    accessNote: 'Private display-management service and clients. See Atlantide for a public Apple TV implementation.',
     art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Celesti',
     subtitle: 'Newsroom displays and stream routing',
@@ -711,6 +737,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'gaulatti',
+    accessNote: 'Browse the live website or inspect its public source.',
     art: { type: 'autostrada', imageUrl: '/hero/pompeii.avif' },
     name: 'Gaulatti.com',
     subtitle: 'This engineering portfolio',
@@ -718,6 +745,10 @@ export const portfolioCatalog: ProjectFact[] = [
     surface: 'personal',
     tags: ['React Router', 'TypeScript', 'Tailwind CSS', 'Bleecker'],
     repository: 'gaulatti/gaulatti',
+    links: [
+      { label: 'Source code', href: 'https://github.com/gaulatti/gaulatti', kind: 'repository' },
+      { label: 'Visit website', href: 'https://gaulatti.com', kind: 'site' }
+    ],
     story: {
       problem:
         'A résumé lists roles, while source repositories explain implementation. Project pages connect the two with enough context to understand the work.',
@@ -739,6 +770,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'kolibri',
+    accessNote: 'Private development. Public release is deferred until degree conferral.',
     art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'Kolibri',
     subtitle: 'A capstone-derived product',
@@ -764,6 +796,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'nena',
+    accessNote: 'Historical web prototype. The original hosted sign-in is unavailable; inspect the retained source.',
     art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Nena',
     subtitle: 'Yearn web experiments',
@@ -787,6 +820,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'roxette',
+    accessNote: 'Historical iOS prototype. Inspect or build the retained Xcode project.',
     art: { type: 'monitor', imageUrl: '/hero/wiphala.avif' },
     name: 'Roxette',
     subtitle: 'Yearn on iOS',
@@ -810,6 +844,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'springfield',
+    accessNote: 'Self-hosted stream service. Setup and API examples are in the repository.',
     art: { type: 'monitor', imageUrl: '/hero/nazca.avif' },
     name: 'Springfield',
     subtitle: 'Stream-processing service',
@@ -837,6 +872,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'castela',
+    accessNote: 'Archived Flask prototype. The application source and dependencies are preserved.',
     art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Castela',
     subtitle: 'An early summarization prototype',
@@ -861,6 +897,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'gtt-player',
+    accessNote: 'Archived iOS player. The Xcode project and playback implementation are preserved.',
     art: { type: 'pompeii', imageUrl: '/hero/sanremo.avif' },
     name: 'GTT Player',
     subtitle: 'An early iOS media player',
@@ -885,6 +922,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'leonora-latorre',
+    accessNote: 'Historical website source and assets. No maintained live installation is linked.',
     art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Leonora Latorre',
     subtitle: 'A condominium website',
@@ -908,6 +946,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'foris-challenge',
+    accessNote: 'Programming-challenge solutions grouped by language. There is no application demo.',
     art: { type: 'autostrada', imageUrl: '/hero/sprints.avif' },
     name: 'Foris Challenge',
     subtitle: 'Programming exercises',
@@ -930,6 +969,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'nazca',
+    accessNote: 'Historical experiment. The public repository is currently empty and has no runnable implementation.',
     art: { type: 'monitor', imageUrl: '/hero/nazca.avif' },
     name: 'Nazca',
     subtitle: 'Live streams and earthquake monitoring',
@@ -954,6 +994,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'php-nuke',
+    accessNote: 'Third-party source archive. Original credits, license, and installation documents are preserved.',
     art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'PHP-Nuke archive',
     subtitle: 'Preserved web history',

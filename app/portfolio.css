@@ -139,21 +139,53 @@
   .project-intro-meta .editorial-kicker {
     margin-bottom: 1.25rem;
   }
-  .project-share {
+  .project-resource-status {
+    font-size: 0.75rem;
+    color: var(--app-text-secondary);
+    margin: -0.5rem 0 1rem;
+  }
+  .project-resource-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .project-resource-link {
+    display: flex;
+    align-items: start;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  .project-resource-link > span {
+    flex: 1;
+    min-width: 0;
+  }
+  .project-resource-link strong {
+    font-weight: 500;
+  }
+  .project-resource-link .secondary-copy {
+    display: block;
+    overflow-wrap: anywhere;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+  }
+  .project-resource-link > svg,
+  .project-resource-link > img {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .project-resource-docs {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border-bottom: 1px solid var(--app-sand);
-    padding-bottom: 0.4rem;
-    margin-top: 1.5rem;
     font-size: 0.8125rem;
-    cursor: pointer;
+    margin-top: 1rem;
   }
-  .project-copy-status {
-    display: block;
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
-    min-height: 1.3em;
+  .project-access-note {
+    font-size: 0.8125rem;
+    margin: 1rem 0 1.5rem;
   }
   .project-body {
     display: grid;

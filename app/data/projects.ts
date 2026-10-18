@@ -54,6 +54,8 @@ export interface ProjectFact {
   subtitle: string;
   /** Curated public description. */
   summary: string;
+  /** What a reader can inspect, run, or access from this page. */
+  accessNote: string;
   status: ProjectStatus;
   visibility: ProjectVisibility;
   /** Manual approval gate. Nothing renders on the public site without this. */

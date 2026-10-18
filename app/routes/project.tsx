@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router';
 import { publishedProject, projectsByIds, projectPath } from '~/data/public-projects';
 import { pageMeta } from '~/data/seo';
@@ -28,15 +27,9 @@ export default function Project({ loaderData }: Route.ComponentProps) {
   const decisionNumber = study.workflow ? '04' : '03';
   const evidenceNumber = study.workflow ? '05' : '04';
   const scopeNumber = study.workflow ? '06' : '05';
-  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
-  async function copyLink() {
-    try {
-      await navigator.clipboard.writeText('https://gaulatti.com' + projectPath(project));
-      setCopyState('copied');
-    } catch {
-      setCopyState('failed');
-    }
-  }
+  const resourceLinks = [...project.links].sort((a, b) => Number(b.kind === 'site') - Number(a.kind === 'site'));
+  const repositoryCount = resourceLinks.filter((link) => link.kind === 'repository').length;
+  const documentation = study.references[0];
   return (
     <article className='consumer-main project-page'>
       <div className='container'>
@@ -50,25 +43,48 @@ export default function Project({ loaderData }: Route.ComponentProps) {
             <p className='secondary-copy project-lead'>{project.summary}</p>
             <p className='secondary-copy mt-4'>{story.ownership}</p>
           </div>
-          <div className='project-intro-meta'>
-            <p className='editorial-kicker'>Javier Godoy</p>
+          <section className='project-intro-meta' aria-label='Project resources'>
+            <p className='editorial-kicker'>Explore the project</p>
+            <p className='project-resource-status'>
+              {project.visibility === 'private'
+                ? 'Private source'
+                : repositoryCount > 1
+                  ? 'Public repositories'
+                  : repositoryCount === 1
+                    ? 'Public repository'
+                    : null}
+            </p>
+            {resourceLinks.length > 0 && (
+              <ul className='project-resource-list'>
+                {resourceLinks.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} target='_blank' rel='noopener noreferrer' className='project-resource-link quiet-link'>
+                      {link.kind === 'repository' && <img src='/icons/github.svg' alt='' className='h-4 w-4 dark:invert' />}
+                      <span>
+                        <strong>{link.kind === 'repository' && link.label === 'Source code' ? 'GitHub repository' : link.label}</strong>
+                        <span className='secondary-copy'>
+                          {link.kind === 'repository' ? link.href.replace('https://github.com/', '') : link.href.replace(/^https:\/\//, '')}
+                        </span>
+                      </span>
+                      <ArrowUpRight size={16} aria-hidden='true' />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {documentation && (
+              <a href={documentation.href} target='_blank' rel='noopener noreferrer' className='project-resource-docs quiet-link'>
+                <BookOpen size={16} aria-hidden='true' /> Technical documentation <ArrowUpRight size={16} aria-hidden='true' />
+              </a>
+            )}
+            <p className='secondary-copy project-access-note'>{project.accessNote}</p>
+            <p className='editorial-kicker'>Technologies</p>
             <ul className='project-tags' aria-label='Technologies'>
               {project.tags.map((tag) => (
                 <li key={tag}>{tag}</li>
               ))}
             </ul>
-            <button type='button' className='project-share focus-ring' onClick={copyLink}>
-              {copyState === 'copied' ? <Check size={16} aria-hidden='true' /> : <LinkIcon size={16} aria-hidden='true' />}
-              {copyState === 'copied' ? 'Link copied' : 'Copy project link'}
-            </button>
-            <span className='secondary-copy project-copy-status' role='status'>
-              {copyState === 'failed'
-                ? 'Could not copy the link. Copy the address from your browser.'
-                : copyState === 'copied'
-                  ? 'The project link is ready to share.'
-                  : ''}
-            </span>
-          </div>
+          </section>
         </header>
         <div className='project-body'>
           <aside className='project-contents' aria-label='On this page'>
@@ -164,16 +180,6 @@ export default function Project({ loaderData }: Route.ComponentProps) {
                   {paragraph}
                 </p>
               ))}
-              {project.links.length > 0 && (
-                <div className='project-external-links'>
-                  {project.links.map((link) => (
-                    <a key={link.href} href={link.href} target='_blank' rel='noopener noreferrer' className='quiet-link'>
-                      {link.label}
-                      <ArrowUpRight size={16} aria-hidden='true' />
-                    </a>
-                  ))}
-                </div>
-              )}
             </section>
           </div>
         </div>
