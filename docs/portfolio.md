@@ -4,7 +4,11 @@
 
 - Every approved project has a stable `/portfolio/<id>` page.
 - A page explains its context, contribution, engineering decisions, and current scope.
-- The index supports category filtering, search, and a visible empty state.
+- The index extends the original narrow, image-and-text row layout. Projects
+  remain grouped by category, with search and a visible empty state. Titles,
+  artwork, and read links open the individual project page. The existing six
+  project illustrations are retained; added entries use the same decorative
+  photography and Bauhaus treatment, not claimed product screenshots.
 - A direct request returns project-specific HTML, canonical metadata, and a
   1200 × 630 PNG preview without requiring the crawler to execute JavaScript.
 - The fifthbell overview links to the same catalog rather than duplicating

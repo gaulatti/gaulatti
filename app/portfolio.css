@@ -4,44 +4,12 @@
   .consumer-main.resume-page {
     padding-top: 9rem;
   }
-  .portfolio-page h1,
   .project-page h1,
   .resume-page h1 {
     font-size: clamp(2.75rem, 5.5vw, 5.2rem);
     line-height: 1.04;
     font-weight: 500;
     letter-spacing: -0.045em;
-  }
-  .portfolio-intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 13rem;
-    gap: 5rem;
-    padding-bottom: 3.5rem;
-    border-bottom: 1px solid var(--app-sand);
-  }
-  .portfolio-intro h1 {
-    margin: 1rem 0 1.5rem;
-    max-width: 55rem;
-  }
-  .portfolio-lead {
-    max-width: 43rem;
-    font-size: 1.125rem;
-  }
-  .portfolio-intro-note {
-    align-self: end;
-    border-left: 1px solid var(--app-sand);
-    padding-left: 2rem;
-  }
-  .portfolio-count {
-    display: block;
-    font-size: 4rem;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: -0.05em;
-    margin-bottom: 0.75rem;
-  }
-  .portfolio-intro-note p {
-    font-size: 0.8125rem;
   }
   .portfolio-tools {
     display: flex;
@@ -100,63 +68,6 @@
     margin: 1.5rem 0;
     font-size: 0.75rem;
   }
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-  .project-card {
-    background: var(--app-card);
-    border: 1px solid var(--app-sand);
-    border-radius: var(--radius-card);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    min-height: 24rem;
-  }
-  .project-card-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
-  .project-card-number {
-    font-size: 0.75rem;
-    color: var(--app-text-secondary);
-    font-variant-numeric: tabular-nums;
-  }
-  .project-card-subtitle {
-    font-family: var(--font-secondary);
-    font-size: 0.8125rem;
-    color: var(--app-text-secondary);
-    margin-bottom: 0.5rem;
-  }
-  .project-card h2 {
-    font-size: 2rem;
-    line-height: 1.12;
-    letter-spacing: -0.035em;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .project-card h2 a {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 1rem;
-  }
-  .project-card h2 a svg {
-    flex-shrink: 0;
-    color: var(--app-desert);
-    margin-top: 0.25rem;
-  }
-  .project-card-main > p:last-child {
-    font-size: 0.9375rem;
-  }
-  .project-card-bottom {
-    padding-top: 2rem;
-    margin-top: auto;
-  }
   .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -172,15 +83,6 @@
     border: 1px solid var(--app-sand);
     border-radius: var(--radius-button);
     color: var(--app-text-secondary);
-  }
-  .project-read-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    margin-top: 1.5rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--app-sea);
   }
   .portfolio-endnote {
     display: flex;
@@ -555,7 +457,6 @@
     }
   }
   @media (max-width: 60rem) {
-    .portfolio-intro,
     .project-intro,
     .resume-intro {
       gap: 2.5rem;
@@ -569,12 +470,6 @@
       gap: 2.5rem;
       grid-template-columns: 12rem minmax(0, 1fr);
     }
-    .project-card {
-      padding: 1.5rem;
-    }
-    .project-card h2 {
-      font-size: 1.75rem;
-    }
   }
   @media (max-width: 44rem) {
     .consumer-main.portfolio-page,
@@ -582,27 +477,12 @@
     .consumer-main.resume-page {
       padding-top: 6.5rem;
     }
-    .portfolio-intro,
     .project-intro,
     .resume-intro,
     .project-body,
     .resume-layout {
       grid-template-columns: minmax(0, 1fr);
       gap: 2rem;
-    }
-    .portfolio-intro-note {
-      border: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .portfolio-count {
-      font-size: 2.75rem;
-      margin: 0;
-    }
-    .portfolio-grid {
-      grid-template-columns: 1fr;
     }
     .portfolio-search {
       width: 100%;
@@ -612,12 +492,6 @@
     }
     .portfolio-filter {
       padding: 0.55rem 0.65rem;
-    }
-    .project-card {
-      min-height: 23rem;
-    }
-    .project-card-heading {
-      margin-bottom: 2rem;
     }
     .project-intro-meta {
       border-top: 1px solid var(--app-sand);

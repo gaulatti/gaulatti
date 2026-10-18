@@ -12,6 +12,7 @@ type Entry = {
   links?: ProjectFact['links'];
   status?: ProjectFact['status'];
   visibility?: ProjectFact['visibility'];
+  art: ProjectFact['art'];
   story: ProjectStory;
 };
 
@@ -24,7 +25,6 @@ function project(entry: Entry): ProjectFact {
     publicationApproved: true,
     evidenceDate: '2026-10-18',
     links: entry.repository ? [{ label: 'Source code', href: 'https://github.com/' + entry.repository, kind: 'repository' }] : [],
-    art: { type: 'monitor' },
     ...fact,
     story
   };
@@ -33,6 +33,7 @@ function project(entry: Entry): ProjectFact {
 export const portfolioCatalog: ProjectFact[] = [
   project({
     id: 'mistify',
+    art: { type: 'monitor', imageUrl: '/hero/monitor.avif' },
     name: 'Mistify',
     subtitle: 'Language and media intelligence',
     summary: 'A shared AI service for language detection, translation, classification, clustering, and recorded-media analysis.',
@@ -66,6 +67,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'colombo',
+    art: { type: 'monitor', imageUrl: '/hero/colombo.avif' },
     name: 'Colombo',
     subtitle: 'Reliable photo intake',
     summary: 'A Rust upload gateway that accepts photographs over FTP, FTPS, and HTTP, then delivers them to storage and a newsroom CMS.',
@@ -100,6 +102,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'guggiana',
+    art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Guggiana',
     subtitle: 'Multilingual article-to-audio',
     summary: 'An article-to-audio pipeline coordinating translation, speech synthesis, reusable language renditions, and audio assembly.',
@@ -134,6 +137,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'monitor',
+    art: { type: 'monitor', imageUrl: '/hero/monitor.avif' },
     name: 'Monitor',
     subtitle: 'Editorial intelligence',
     summary: 'A workspace for following developing stories, grouping related coverage, and tracking events across multiple feeds.',
@@ -164,6 +168,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'pompeii',
+    art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'Pompeii',
     subtitle: 'Shared identity and permissions',
     summary: 'A shared authentication and authorization service for application permissions, feature flags, and identity management.',
@@ -193,6 +198,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'bleecker',
+    art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Bleecker',
     subtitle: 'The web design system',
     summary: 'A React component library with shared typography, design tokens, accessible controls, and application layouts.',
@@ -227,6 +233,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'sabella',
+    art: { type: 'pompeii', imageUrl: '/hero/design.avif' },
     name: 'Sabella',
     subtitle: 'Native components for Apple platforms',
     summary: 'The SwiftUI sibling of Bleecker, sharing its tokens and component contracts across macOS, iOS, and tvOS.',
@@ -255,6 +262,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'orchard',
+    art: { type: 'autostrada', imageUrl: '/hero/points.avif' },
     name: 'Orchard',
     subtitle: 'Native components for Windows',
     summary: 'A Windows component library implementing the shared design system in C# and WinUI 3.',
@@ -282,6 +290,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'avelino',
+    art: { type: 'monitor', imageUrl: '/hero/design.avif' },
     name: 'Avelino',
     subtitle: 'Native components for Linux',
     summary: 'A Linux implementation of the shared design system using Qt Quick, with explicit visual and platform acceptance.',
@@ -310,6 +319,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'thompson',
+    art: { type: 'pompeii', imageUrl: '/hero/points.avif' },
     name: 'Thompson',
     subtitle: 'The React Native design system',
     summary: 'A React Native implementation of shared tokens and component contracts for mobile applications.',
@@ -336,6 +346,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'alcantara',
+    art: { type: 'monitor', imageUrl: '/hero/normandy.avif' },
     name: 'Alcántara',
     subtitle: 'Live production control',
     summary: 'A broadcast control surface for graphics, program state, media, and live guest contributions.',
@@ -369,6 +380,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'alana',
+    art: { type: 'pompeii', imageUrl: '/hero/catastrophes.avif' },
     name: 'Alana',
     subtitle: 'Composed broadcast runtime',
     summary:
@@ -403,6 +415,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'croccante',
+    art: { type: 'autostrada', imageUrl: '/hero/nazca.avif' },
     name: 'Croccante',
     subtitle: 'Broadcast delivery and continuity',
     summary:
@@ -433,6 +446,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'palazzo',
+    art: { type: 'monitor', imageUrl: '/hero/sanremo.avif' },
     name: 'Palazzo',
     subtitle: 'Radio playout control',
     summary: 'A self-hosted radio controller combining a NestJS API with Liquidsoap and Icecast.',
@@ -460,6 +474,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'broadway',
+    art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Broadway',
     subtitle: 'Typed visual authoring',
     summary: 'A template editor with generated forms, live preview, and high-quality image and document exports.',
@@ -495,6 +510,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'manzoni',
+    art: { type: 'autostrada', imageUrl: '/hero/normandy.avif' },
     name: 'Manzoni',
     subtitle: 'Field photography client',
     summary: 'A mobile image-intake client with a persistent upload queue and delivery receipts from Colombo.',
@@ -527,6 +543,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'atlantide',
+    art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Atlantide',
     subtitle: 'tvOS playback client',
     summary: 'A native Apple TV client in the Celesti stream-routing and newsroom-display family.',
@@ -553,6 +570,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'autostrada',
+    art: { type: 'autostrada', imageUrl: '/hero/autostrada.avif' },
     name: 'Autostrada',
     subtitle: 'Web performance observability',
     summary: 'A web performance platform with a React dashboard, a NestJS service, and AWS infrastructure defined as code.',
@@ -586,6 +604,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'clouseau',
+    art: { type: 'pompeii', imageUrl: '/hero/sprints.avif' },
     name: 'Clouseau',
     subtitle: 'AI-assisted change review research',
     summary: 'Shared coverage gates and evidence-led pull request review automation for GitHub Actions.',
@@ -620,6 +639,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'cronkite',
+    art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Cronkite',
     subtitle: 'Publishing and rendering',
     summary: 'A publishing pipeline that turns newsroom content into static pages and automated media artifacts.',
@@ -647,6 +667,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'celesti',
+    art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Celesti',
     subtitle: 'Newsroom displays and stream routing',
     summary: 'A channel inventory and display-management platform with service-controlled playback clients.',
@@ -674,6 +695,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'gaulatti',
+    art: { type: 'autostrada', imageUrl: '/hero/pompeii.avif' },
     name: 'Gaulatti.com',
     subtitle: 'This engineering portfolio',
     summary: 'A React-based portfolio connecting engineering experience, project stories, and public source.',
@@ -701,6 +723,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'kolibri',
+    art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'Kolibri',
     subtitle: 'A capstone-derived product',
     summary: 'A software product in private development, with public release held until degree conferral.',
@@ -725,6 +748,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'nena',
+    art: { type: 'autostrada', imageUrl: '/hero/wiphala.avif' },
     name: 'Nena',
     subtitle: 'Yearn web experiments',
     summary: 'An early React and TypeScript frontend for exploring the Yearn product.',
@@ -747,6 +771,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'roxette',
+    art: { type: 'monitor', imageUrl: '/hero/wiphala.avif' },
     name: 'Roxette',
     subtitle: 'Yearn on iOS',
     summary: 'An iOS prototype for experimenting with the Yearn product on a native platform.',
@@ -769,6 +794,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'springfield',
+    art: { type: 'monitor', imageUrl: '/hero/nazca.avif' },
     name: 'Springfield',
     subtitle: 'Stream-processing service',
     summary: 'A service for on-demand live-stream repackaging, process lifecycle management, and playback readiness.',
@@ -795,6 +821,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'castela',
+    art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Castela',
     subtitle: 'An early summarization prototype',
     summary: 'A historical Flask-based experiment in text summarization.',
@@ -818,6 +845,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'gtt-player',
+    art: { type: 'pompeii', imageUrl: '/hero/sanremo.avif' },
     name: 'GTT Player',
     subtitle: 'An early iOS media player',
     summary: 'A historical native media-player prototype for iOS.',
@@ -841,6 +869,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'leonora-latorre',
+    art: { type: 'monitor', imageUrl: '/hero/points.avif' },
     name: 'Leonora Latorre',
     subtitle: 'A condominium website',
     summary: 'A retained website project from 2015, built with HTML, CSS, and JavaScript.',
@@ -863,6 +892,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'foris-challenge',
+    art: { type: 'autostrada', imageUrl: '/hero/sprints.avif' },
     name: 'Foris Challenge',
     subtitle: 'Programming exercises',
     summary: 'Solutions to programming challenges written in several languages.',
@@ -884,6 +914,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'nazca',
+    art: { type: 'monitor', imageUrl: '/hero/nazca.avif' },
     name: 'Nazca',
     subtitle: 'Live streams and earthquake monitoring',
     summary: 'An earlier experiment connecting live-streaming workflows with earthquake monitoring.',
@@ -907,6 +938,7 @@ export const portfolioCatalog: ProjectFact[] = [
   }),
   project({
     id: 'php-nuke',
+    art: { type: 'pompeii', imageUrl: '/hero/pompeii.avif' },
     name: 'PHP-Nuke archive',
     subtitle: 'Preserved web history',
     summary: 'A preserved copy of the third-party PHP-Nuke portal system, retained for historical reference.',
