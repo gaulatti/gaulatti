@@ -90,9 +90,10 @@ const find = (id: string): ProjectFact => {
 
 test('Colombo describes acceptance rather than completed delivery', () => {
   const colombo = find('colombo');
-  assert.match(colombo.summary, /durable spool/i);
-  assert.match(colombo.summary, /retried independently/i);
-  assert.match(colombo.summary, /promise to deliver rather than a completed delivery/i);
+  const story = JSON.stringify(colombo.story);
+  assert.match(story, /durable spool/i);
+  assert.match(story, /retried independently/i);
+  assert.match(story, /promise to deliver rather than a completed delivery/i);
   // The Java implementation moved to an archive branch; the site said otherwise.
   assert.doesNotMatch(colombo.summary, /Java|Spring Boot|Apache FTP/i);
   assert.ok(colombo.tags.includes('Rust'));
@@ -102,15 +103,15 @@ test('Alana is the composed broadcast runtime, not an OBS container', () => {
   const alana = find('alana');
   assert.match(alana.subtitle, /composed broadcast runtime/i);
   assert.match(alana.summary, /RTMP/);
-  assert.match(alana.summary, /lifecycle-controlled/i);
+  assert.match(JSON.stringify(alana.story), /start\/stop lifecycle/i);
   assert.doesNotMatch(alana.summary, /YouTube|Intel QSV|VNC|OBS Studio/i);
 });
 
 test('Broadway is typed static and media authoring, not only story templates', () => {
   const broadway = find('broadway');
-  assert.match(broadway.subtitle, /typed template authoring/i);
-  assert.match(broadway.summary, /typed templates/i);
-  assert.match(broadway.summary, /PDF/);
+  assert.match(broadway.subtitle, /typed .*authoring/i);
+  assert.ok(broadway.tags.includes('TypeScript'));
+  assert.match(JSON.stringify(broadway.story), /vector PDF with selectable text/i);
   assert.doesNotMatch(broadway.summary, /1080×1920|social media story/i);
 });
 
@@ -118,8 +119,8 @@ test('Manzoni describes the migration as it actually stands on the public branch
   // The Expo client landed on `main`; the Flutter client is retained as a
   // rollback. Neither is described as finished.
   const manzoni = find('manzoni');
-  assert.match(manzoni.summary, /React Native client .* is the active path/i);
-  assert.match(manzoni.summary, /Flutter client is kept alongside it as a rollback/i);
+  assert.ok(manzoni.tags.includes('React Native'));
+  assert.match(JSON.stringify(manzoni.story), /Flutter client remains as a rollback/i);
   assert.doesNotMatch(manzoni.summary, /not on the public branch/i);
   assert.equal(manzoni.status, 'in-development');
 });
@@ -130,7 +131,7 @@ test('Kolibri is private, unlaunched, and not publicly distributable', () => {
   assert.equal(kolibri.status, 'private-development');
   assert.deepEqual(kolibri.links, []);
   assert.equal(kolibri.repository, undefined);
-  assert.match(kolibri.summary, /deferred until graduation/i);
+  assert.match(kolibri.summary, /release held until degree conferral/i);
   assert.match(statusLabel(kolibri.status), /private/i);
   assert.doesNotMatch(kolibri.summary, /available|download|launched|try it/i);
 });

@@ -1,167 +1,63 @@
-# Javier Godoy — Staff Software Engineer
+# Gaulatti.com
 
-> _"A king without scars is not a King."_
+Javier Godoy’s engineering portfolio: AI infrastructure, developer platforms,
+design systems, and software for newsrooms and live production.
 
-**New York, NY · [gaulatti.com](https://gaulatti.com) · [LinkedIn](https://linkedin.com/in/gaulatti) · jack@gaulatti.com**
+The website includes a project index, individual project pages, an engineering
+résumé, and longer case studies. It uses React Router 7.12, TypeScript, Tailwind
+CSS 4, and Bleecker.
 
----
+## Local development
 
-### About Me
+Use Node.js 22.13 or newer.
 
-Staff Software Engineer with 15+ years of experience building production systems across media infrastructure, platform engineering, and real-time streaming. I've owned system design and end-to-end execution—frontend, backend, infra, and product—at companies like **Amazon** and **Warner Bros. Discovery (CNN)**.
-
-I'm most effective when **bridging engineering leadership with hands-on delivery**: architecting scalable systems, mentoring engineers, removing blockers, and turning ambiguous problems into working software.
-
-Currently at **Narmi** (Senior Software Engineer II), leading Account Opening Platform architecture. Concurrently running **fifthbell**, a personal media systems platform I designed and operate for real-world broadcast and newsroom operations.
-
----
-
-### Experience
-
-| Period         | Company                              | Role                                    |
-| -------------- | ------------------------------------ | --------------------------------------- |
-| 2025 – Present | **Narmi**                            | Senior Software Engineer II             |
-| Feb 2026       | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival   |
-| 2025 – Present | **fifthbell**                        | Founder & Lead Engineer                 |
-| 2023 – 2025    | **Warner Bros. Discovery (CNN)**     | Staff Software Engineer / Acting GM     |
-| 2017 – 2022    | **Amazon**                           | Software Development Engineer           |
-| 2010 – 2016    | Various roles                        | Lead/Senior Developer (Chile, Peru, US) |
-
-#### Highlights
-
-**Narmi (2025 – Present)**  
-Leading architecture and implementation of Account Opening features for business and consumer accounts on the Grow Team. Driving technical decisions and mentoring engineers while building scalable onboarding solutions for financial institutions.
-
-**Warner Bros. Discovery / CNN (2023 – 2025)**
-
-- **Design Systems Team Lead** — Architected CNN's design systems initiative; drove collaboration between engineering and design to produce performant, scalable component libraries with strong cross-team adoption.
-- **Site Performance Platform Lead** — Led development of a comprehensive performance assessment platform integrating Lighthouse, Datadog RUM, and Google PageSpeed Insights. Delivered metrics covering performance, SEO, accessibility, and visual consistency at CNN scale.
-
-**Amazon (2017 – 2022)**
-
-- **Amazon Explore** — Built core streaming infrastructure and host-side experience features. As single-threaded owner of the Defect Reduction program, reduced Catastrophic Defect Rate from **40% to 1.3%** through systematic root-cause analysis.
-- **Alexa Shopping** — Led Prime Day Readiness across **15 global teams** (Seattle, NYC, Dublin, Israel, India). Coordinated infrastructure verification, scaling reviews, and SOP/Runbook validation under deadline pressure.
-- **Payments** — Integrated EBT (2017) and HSA/FSA (2018) payment methods, enabling multi-tender and tax-free purchase flows for millions of customers.
-
-**fifthbell — Founder & Executive Producer (2025 – Present)**  
-Built and operate a full-stack media platform for live broadcast, content publishing, and newsroom monitoring. In February 2026, served as Executive Producer for Sanremo Festival coverage — when a critical broadcast dependency failed mid-operation, rebuilt the entire production model on-site within three days while the event was ongoing.
-
----
-
-### Projects
-
-| Project                                        | Description                                                                                                                                  | Stack                                      |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| **[Monitor](https://monitor.gaulatti.com)**    | AI-powered news monitoring — ingests 40+ global sources, clusters stories via semantic embeddings, applies NLP translation & classification  | TypeScript, NestJS, Qdrant, AWS            |
-| **Cronkite**                                   | Core publishing engine — transforms CMS content into static HTML and short-form video via FFMPEG; deploys to S3/CloudFront in under a second | TypeScript, NestJS, FFMPEG, AWS            |
-| **Alcántara**                                  | Professional broadcast overlay control — manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080 via SSE              | React, NestJS, SSE, Prisma                 |
-| **[Alana](https://github.com/gaulatti/alana)** | Composed broadcast runtime — renders one Alcántara program and publishes it to RTMP, lifecycle-controlled and transport-only for public destinations | Docker, RTMP, LiveKit                      |
-| **[Broadway](https://broadway.gaulatti.com)**  | Typed template authoring — reusable templates with generated forms, live preview, and PNG or vector-PDF export                               | React Router 7, TypeScript, Tailwind CSS 4 |
-| **[Colombo](https://github.com/gaulatti/colombo)** | Newsroom upload gateway — accepts FTP/FTPS/HTTP uploads into a restart-safe durable spool, then delivers to S3 and calls back independently | Rust, PostgreSQL, AWS S3                   |
-| **Celesti**                                    | Stream routing platform (private) — Go backend with a Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE                  | Go, Echo, Kotlin, Jetpack Compose          |
-
----
-
-### Skills
-
-**Cloud & Infrastructure**
-
-![AWS CDK](https://img.shields.io/badge/AWS_CDK-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-FF9900?logo=awslambda&logoColor=white&style=for-the-badge)
-![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?logo=amazondynamodb&logoColor=white&style=for-the-badge)
-![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS CloudFront](https://img.shields.io/badge/AWS_CloudFront-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS Cognito](https://img.shields.io/badge/AWS_Cognito-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS EC2](https://img.shields.io/badge/AWS_EC2-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS RDS](https://img.shields.io/badge/AWS_RDS-527FFF?logo=amazonrds&logoColor=white&style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white&style=for-the-badge)
-![Serverless Framework](https://img.shields.io/badge/Serverless-FD5750?logo=serverless&logoColor=white&style=for-the-badge)
-
-**Frontend & UI**
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
-![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge)
-![Redux](https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=white&style=for-the-badge)
-![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white&style=for-the-badge)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge)
-![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white&style=for-the-badge)
-
-**Backend & Systems**
-
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=for-the-badge)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge)
-![Java](https://img.shields.io/badge/Java-007396?logo=java&logoColor=white&style=for-the-badge)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white&style=for-the-badge)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white&style=for-the-badge)
-![gRPC](https://img.shields.io/badge/gRPC-4488CC?logo=grpc&logoColor=white&style=for-the-badge)
-![AWS AppSync](https://img.shields.io/badge/AWS_AppSync-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS Step Functions](https://img.shields.io/badge/AWS_Step_Functions-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-
-**Broadcast & Media**
-
-![AWS Transcribe](https://img.shields.io/badge/Amazon_Transcribe-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![Amazon Translate](https://img.shields.io/badge/Amazon_Translate-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![Amazon Polly](https://img.shields.io/badge/Amazon_Polly-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![AWS IoT Core](https://img.shields.io/badge/AWS_IoT_Core-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-![Redux-Saga](https://img.shields.io/badge/Redux--Saga-999999?logo=redux&logoColor=white&style=for-the-badge)
-
-**Languages:** English (fluent) · Spanish (native) · Italian (intermediate)
-
----
-
-### Connect
-
-- [Portfolio](https://gaulatti.com)
-- [LinkedIn](https://linkedin.com/in/gaulatti)
-- jack@gaulatti.com
-
----
-
-## Site development
-
-This repository is the source of [gaulatti.com](https://gaulatti.com).
-
-```bash
-npm run dev        # local development server
-npm run typecheck  # react-router typegen + tsc
-npm run test       # manifest schema, link, visibility, and freshness checks
-npm run build      # production build
-npm run check      # all of the above, in order
+```sh
+npm ci
+npm run dev
 ```
 
-### The project manifest
+Open the URL printed by the development server. Before starting, the site
+generates its approved public catalog, project-preview images, and link export.
 
-Every public project fact the site renders comes from
-[`app/data/projects.ts`](app/data/projects.ts). Route components read the
-manifest; they do not restate facts, so a correction lands in one place.
+```sh
+npm run check
+npm run start
+```
 
-Three rules govern it, enforced by `app/data/projects.validate.ts` and the tests
-in `app/data/projects.test.ts`:
+The complete check runs TypeScript, catalog/publication checks, the production
+build, and tests of the actual pre-rendered HTML and image output.
+The production preview serves on port 3000.
+It serves the pre-rendered pages directly; a SPA catch-all would return the
+wrong initial HTML for project links.
 
-1. **Editorial, not discovered.** Nothing writes to the manifest automatically.
-   Repository discovery may *suggest* that an entry has drifted, but a person
-   decides what the site says.
-2. **Manual approval.** An entry renders only when `publicationApproved` is
-   `true`. The default for anything new is `false`.
-3. **Nothing private leaks.** An entry whose `visibility` is `private` carries
-   no links, no repository, and never claims to be live. Every repository the
-   manifest names must also appear on `PUBLIC_REPOSITORIES` — an allowlist of
-   repositories a person has confirmed are public. It is framed as an allowlist
-   rather than a blocklist because this repository is itself public, so
-   enumerating what is *private* would publish private metadata.
+## Content
 
-### Freshness policy
+- `app/data/project-catalog.ts`: curated project summaries and stories.
+- `app/data/projects.ts`: public repository allowlist, types, and home selection.
+- `app/data/resume.ts`: employment, earlier work, and volunteering.
+- `app/routes/project.tsx`: individual project pages at `/portfolio/:projectId`.
+- `docs/portfolio.md`: evidence, authoring, sharing, and deployment behavior.
 
-`evidenceDate` is the day an entry was last checked against its repository or a
-running system.
+Project pages have stable canonical URLs, unique Open Graph previews, related
+projects, and a copy-link action. `/project-links.csv` provides the approved
+project URLs for updating professional profiles after publication.
 
-| Age of `evidenceDate` | Result |
-| --- | --- |
-| ≤ 180 days | passes |
-| > 180 days | **warning** — re-check the entry against its source |
-| > 365 days **and published** | **error** — re-verify it or set `publicationApproved: false` |
+The source catalog is an editorial document. It is not synchronized from
+GitHub automatically. Approval, link visibility, and content validation run
+before the browser catalog and public assets are generated.
 
-A future or malformed date is always an error. `npm run test` fails on any
-error, so published facts cannot silently rot.
+## Static hosting
+
+React Router pre-renders all public pages. The build contains:
+
+- `build/client`: HTML, navigation data, images, and browser assets.
+- `build/static-pages`: extensionless HTML objects, grouped by path depth.
+
+The existing deployment workflow uploads the client build, then uploads each
+static-page group with `Content-Type: text/html`. This makes clean project URLs
+return their own HTML from S3, without requiring a new CloudFront rewrite.
+The existing workflow clears its configured S3 bucket before upload and then
+invalidates CloudFront. Do not trigger it without approval for that deployment.
+
+The GitHub wiki remote was unavailable during this update. This README and
+`docs/portfolio.md` contain the current development and publishing guidance.

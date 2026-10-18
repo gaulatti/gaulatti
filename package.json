@@ -5,10 +5,16 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "serve -s build/client -l 3000",
+    "start": "serve build/client",
     "typecheck": "react-router typegen && tsc",
     "test": "node --test --experimental-strip-types \"app/**/*.test.ts\"",
-    "check": "npm run typecheck && npm run test && npm run build"
+    "check": "npm run typecheck && npm run test && npm run build && npm run test:site",
+    "images": "node --experimental-strip-types scripts/generate-project-images.mjs",
+    "predev": "npm run images",
+    "prebuild": "npm run images",
+    "postbuild": "node --experimental-strip-types scripts/prepare-static-pages.mjs",
+    "test:site": "node --test --experimental-strip-types tests/site-output.test.mjs",
+    "pretypecheck": "node --experimental-strip-types scripts/generate-public-catalog.mjs"
   },
   "dependencies": {
     "@gaulatti/bleecker": "^0.1.39",
@@ -22,6 +28,7 @@
     "serve": "^14.2.6"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "0.1.100",
     "@react-router/dev": "7.12.0",
     "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^22",

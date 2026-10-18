@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { HOME_SYSTEM_IDS, projectsByIds, siteLink, statusLabel } from '~/data/projects';
+import { HOME_SYSTEM_IDS, projectsByIds, siteLink, statusLabel } from '~/data/public-projects';
 
 /**
  * The home systems grid is rendered from the curated manifest. The selection

@@ -78,9 +78,7 @@ function validateLinks(project: ProjectFact): ValidationIssue[] {
       issues.push(error(project.id, 'link-label', 'A link has no label.'));
     }
     if (!isPublishableHref(link.href)) {
-      issues.push(
-        error(project.id, 'link-href', `"${link.href}" is not an https URL or a site-relative path.`)
-      );
+      issues.push(error(project.id, 'link-href', `"${link.href}" is not an https URL or a site-relative path.`));
     }
     if (seen.has(link.href)) {
       issues.push(error(project.id, 'link-duplicate', `"${link.href}" is listed twice.`));
@@ -104,43 +102,29 @@ function validateVisibility(project: ProjectFact): ValidationIssue[] {
         )
       );
     }
-    if (project.repository) {
-      issues.push(
-        error(project.id, 'private-no-repository', 'A private project must not name a repository.')
-      );
+    if (project.repository || project.repositories?.length) {
+      issues.push(error(project.id, 'private-no-repository', 'A private project must not name a repository.'));
     }
     if (project.status === 'live') {
-      issues.push(
-        error(project.id, 'private-not-live', 'A private project must not be presented as live.')
-      );
+      issues.push(error(project.id, 'private-not-live', 'A private project must not be presented as live.'));
     }
     if (project.status !== 'private-development' && project.status !== 'archived') {
       issues.push(
-        error(
-          project.id,
-          'private-status',
-          `A private project must be "private-development" or "archived", not "${project.status}".`
-        )
+        error(project.id, 'private-status', `A private project must be "private-development" or "archived", not "${project.status}".`)
       );
     }
   }
 
   if (project.visibility === 'public' && project.status === 'private-development') {
-    issues.push(
-      error(project.id, 'public-status', 'A public project cannot have private-development status.')
-    );
+    issues.push(error(project.id, 'public-status', 'A public project cannot have private-development status.'));
   }
 
   if (project.repository && !REPOSITORY_PATTERN.test(project.repository)) {
-    issues.push(
-      error(project.id, 'repository-format', `"${project.repository}" is not an owner/name pair.`)
-    );
+    issues.push(error(project.id, 'repository-format', `"${project.repository}" is not an owner/name pair.`));
   }
 
   if (project.status === 'live' && !project.links.some((link) => link.kind === 'site')) {
-    issues.push(
-      error(project.id, 'live-needs-site', 'A live project must link the site that proves it.')
-    );
+    issues.push(error(project.id, 'live-needs-site', 'A live project must link the site that proves it.'));
   }
 
   return issues;
@@ -149,9 +133,7 @@ function validateVisibility(project: ProjectFact): ValidationIssue[] {
 function validateFreshness(project: ProjectFact, now: Date): ValidationIssue[] {
   const age = evidenceAgeDays(project.evidenceDate, now);
   if (age === null) {
-    return [
-      error(project.id, 'evidence-date', `"${project.evidenceDate}" is not a YYYY-MM-DD date.`)
-    ];
+    return [error(project.id, 'evidence-date', `"${project.evidenceDate}" is not a YYYY-MM-DD date.`)];
   }
   if (age < 0) {
     return [error(project.id, 'evidence-future', 'The evidence date is in the future.')];
@@ -166,9 +148,7 @@ function validateFreshness(project: ProjectFact, now: Date): ValidationIssue[] {
     ];
   }
   if (age > STALE_AFTER_DAYS) {
-    return [
-      warning(project.id, 'evidence-stale', `Facts are ${age} days old; re-check against the source.`)
-    ];
+    return [warning(project.id, 'evidence-stale', `Facts are ${age} days old; re-check against the source.`)];
   }
   return [];
 }
@@ -204,10 +184,7 @@ export function validateProject(project: ProjectFact, now: Date = new Date()): V
   ];
 }
 
-export function validateManifest(
-  manifest: ProjectFact[],
-  now: Date = new Date()
-): ValidationIssue[] {
+export function validateManifest(manifest: ProjectFact[], now: Date = new Date()): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const seen = new Set<string>();
 
@@ -237,44 +214,29 @@ export function errorsOf(issues: ValidationIssue[]): ValidationIssue[] {
  * for. Repository discovery may suggest that the allowlist has drifted; it
  * never edits it.
  */
-export function repositoriesOutsideAllowlist(
-  manifest: ProjectFact[],
-  allowedPublicRepositories: string[]
-): ValidationIssue[] {
+export function repositoriesOutsideAllowlist(manifest: ProjectFact[], allowedPublicRepositories: string[]): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const allowed = new Set(allowedPublicRepositories.map((name) => name.toLowerCase()));
 
   for (const project of manifest) {
-    if (project.repository && !allowed.has(project.repository.toLowerCase())) {
-      issues.push(
-        error(
-          project.id,
-          'repository-not-allowlisted',
-          `"${project.repository}" is not on the public-repository allowlist.`
-        )
-      );
+    const repositories = [project.repository, ...(project.repositories ?? [])].filter((name): name is string => Boolean(name));
+    for (const repository of repositories) {
+      if (!allowed.has(repository.toLowerCase())) {
+        issues.push(error(project.id, 'repository-not-allowlisted', `"${repository}" is not on the public-repository allowlist.`));
+      }
     }
 
     for (const link of project.links) {
       if (link.kind !== 'repository') continue;
-      if (!project.repository) {
+      if (repositories.length === 0) {
         issues.push(
-          error(
-            project.id,
-            'repository-link-unbacked',
-            `"${link.href}" is a repository link on an entry that names no repository.`
-          )
+          error(project.id, 'repository-link-unbacked', `"${link.href}" is a repository link on an entry that names no repository.`)
         );
         continue;
       }
-      const expected = `https://github.com/${project.repository}`;
-      if (link.href !== expected) {
+      if (!repositories.some((repository) => link.href === `https://github.com/${repository}`)) {
         issues.push(
-          error(
-            project.id,
-            'repository-link-mismatch',
-            `"${link.href}" does not match the allowlisted repository "${project.repository}".`
-          )
+          error(project.id, 'repository-link-mismatch', `"${link.href}" does not match the allowlisted repository "${project.repository}".`)
         );
       }
     }

@@ -23,13 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
+      - name: Verify and build static site
         env:
           VITE_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
           VITE_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
           PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
           PUBLIC_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
-        run: npm run build
+        run: npm run check
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -42,6 +42,14 @@ jobs:
         run: |
           aws s3 rm s3://${{ secrets.S3_BUCKET }} --recursive
           aws s3 sync build/client/ s3://${{ secrets.S3_BUCKET }} --delete
+
+      - name: Publish pre-rendered page URLs
+        run: |
+          for page_group in build/static-pages/*; do
+            aws s3 sync "$page_group/" s3://${{ secrets.S3_BUCKET }}/ \
+              --content-type text/html \
+              --cache-control 'public,max-age=0,must-revalidate'
+          done
 
       - name: Invalidate CloudFront
         run: |

@@ -1,415 +1,176 @@
-import { IconBadge } from '@gaulatti/bleecker/components/icon-badge';
-import { Bell, Building2, RadioTower } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Printer } from 'lucide-react';
 import { Link } from 'react-router';
+import { experience, earlierExperience, volunteering } from '~/data/resume';
+import { publishedProject, projectPath } from '~/data/public-projects';
+import { pageMeta } from '~/data/seo';
 import type { Route } from './+types/journey';
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: 'Experience — Gaulatti' },
-    {
-      name: 'description',
-      content:
-        'A journey through design systems, team leadership, and scalable architecture - from an early career engineer to a cross-functional leader at Narmi.'
-    }
-  ];
+  return pageMeta(
+    'Résumé — Javier Godoy | Staff Software Engineer',
+    'Staff Software Engineer building AI infrastructure and developer platforms. Experience at Medsender, Narmi, CNN, and Amazon.',
+    '/journey'
+  );
 }
+
+const selectedProjects = ['mistify', 'colombo', 'guggiana', 'bleecker', 'alcantara'].map((id) => publishedProject(id)!);
 
 export default function Journey() {
   return (
-    <div className='consumer-main pt-32'>
+    <div className='consumer-main resume-page'>
       <div className='container'>
-        <div className='mx-auto max-w-4xl'>
-          <header className='mb-16'>
-            <h1 className='mb-6 text-4xl font-semibold leading-[1.08] tracking-refined md:text-5xl'>My Journey</h1>
-            <p className='font-secondary text-text-secondary max-w-2xl text-xl'>
-              From writing my first lines of production code to leading cross-functional teams, my path has been shaped by a passion for building great software
-              and empowering others.
+        <header className='resume-intro'>
+          <div>
+            <p className='editorial-kicker'>Experience & background</p>
+            <h1>Javier Godoy</h1>
+            <p className='resume-title'>Staff Software Engineer</p>
+            <p className='secondary-copy resume-summary'>
+              I build AI infrastructure, developer platforms, and production systems. My work spans healthcare, fintech, media, and
+              e-commerce.
             </p>
-          </header>
-
-          <section className='mb-20'>
-            <div className='mb-8 flex items-center gap-4'>
-              <div className='bg-accent-blue h-1 w-12' />
-              <h2 className='text-2xl font-semibold tracking-refined md:text-3xl'>Technical Skills</h2>
-            </div>
-
-            <div className='mb-8 grid grid-cols-3 gap-4'>
-              <div className='subtle-surface p-4'>
-                <p className='text-xs font-semibold uppercase tracking-widest'>English</p>
-                <p className='font-secondary text-text-secondary text-sm'>Fluent</p>
-              </div>
-              <div className='subtle-surface p-4'>
-                <p className='text-xs font-semibold uppercase tracking-widest'>Italian</p>
-                <p className='font-secondary text-text-secondary text-sm'>Intermediate</p>
-              </div>
-              <div className='subtle-surface p-4'>
-                <p className='text-xs font-semibold uppercase tracking-widest'>Spanish</p>
-                <p className='font-secondary text-text-secondary text-sm'>Native</p>
-              </div>
-            </div>
-
-            <div className='grid grid-cols-2 gap-6 md:grid-cols-3'>
-              <div className='space-y-4'>
-                <h3 className='text-lg font-semibold'>Cloud & Infrastructure</h3>
-                <ul className='font-secondary text-text-secondary space-y-2'>
-                  <li>AWS (CDK, Lambda, DynamoDB)</li>
-                  <li>AWS (API Gateway, Cognito)</li>
-                  <li>AWS (S3, CloudFront, Route53)</li>
-                  <li>AWS (EC2, RDS, ECR)</li>
-                  <li>Docker, Serverless Framework</li>
-                </ul>
-              </div>
-
-              <div className='space-y-4'>
-                <h3 className='text-lg font-semibold'>Frontend & UI</h3>
-                <ul className='font-secondary text-text-secondary space-y-2'>
-                  <li>React, Redux, TypeScript</li>
-                  <li>Angular, Astro, Tailwind</li>
-                  <li>HTML5, CSS3, GraphQL</li>
-                  <li>Design Systems, Figma</li>
-                  <li>WebRTC, RTMP</li>
-                </ul>
-              </div>
-
-              <div className='space-y-4'>
-                <h3 className='text-lg font-semibold'>Backend & Tools</h3>
-                <ul className='font-secondary text-text-secondary space-y-2'>
-                  <li>NestJS, Express, Spring</li>
-                  <li>PostgreSQL, DynamoDB</li>
-                  <li>gRPC, REST APIs</li>
-                  <li>Git, CI/CD</li>
-                  <li>Agile/Scrum, Kanban</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className='mb-20'>
-            <div className='mb-8 flex items-center gap-4'>
-              <div className='bg-accent-blue h-1 w-12' />
-              <h2 className='text-2xl font-semibold tracking-refined md:text-3xl'>Experience & Growth</h2>
-            </div>
-
-            <div className='space-y-12'>
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <RadioTower className='h-8 w-8 text-white dark:text-black' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Executive Producer — Sanremo Festival Coverage</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>fifthbell × ModoItaliano (Chile) × HNMag (Spain)</p>
-                    <p className='font-secondary text-text-secondary'>Feb 2026 • Sanremo, Italy</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Live Operations Leadership</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Led a distributed live media operation covering the Sanremo Music Festival, coordinating contributors across Italy and Spain for a joint
-                      venture between fifthbell, ModoItaliano, and HNMag. Served as Executive Producer with full responsibility for editorial direction,
-                      technical supervision, and operational continuity.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Crisis Response & Production Redesign</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      When a critical external broadcast dependency failed and threatened the viability of the coverage, made the decision to remove that
-                      dependency and assume full operational control from Sanremo. Rebuilt the production model locally in approximately three days — including
-                      signal routing, production workflow, and contributor coordination — while the operation was running.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Execution</h4>
-                    <p className='font-secondary text-text-secondary mb-3 text-gray-600'>
-                      Directed nightly broadcasts lasting roughly 4–5 hours under sustained schedule pressure, with press activity beginning around 11am and
-                      broadcasts concluding between 2am and 3am. Final broadcast reached approximately 2,000 total viewers.
-                    </p>
-                    <ul className='font-secondary text-text-secondary list-disc space-y-1 pl-6'>
-                      <li>Interview coordination with artists and press representatives</li>
-                      <li>On-air narrative direction and real-time editorial decisions</li>
-                      <li>Technical setup, monitoring, and teardown each day</li>
-                      <li>Remote contributor coordination across time zones</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <Link to='/success-cases/sanremo' className='text-accent-red text-sm font-medium hover:underline'>
-                      Read the full case study →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <Bell className='h-8 w-8 text-white dark:text-black' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Founder & Lead Engineer — fifthbell</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>Independent Media Systems Platform</p>
-                    <p className='font-secondary text-text-secondary'>2025 – Present</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Platform & Architecture</h4>
-                    <ul className='font-secondary text-text-secondary list-disc space-y-2 pl-6'>
-                      <li>
-                        Founded and built fifthbell, an independent digital newsroom and media systems platform focused on real-time news monitoring and live
-                        broadcasting.
-                      </li>
-                      <li>
-                        Designed the full platform architecture including a custom CMS (Payload backend + React editorial interface), an automated publishing
-                        pipeline generating static HTML to S3/CloudFront, and event-driven content distribution.
-                      </li>
-                      <li>
-                        Built a global news monitoring system that ingests content from 40+ sources worldwide, performs automatic language detection and
-                        semantic embedding to cluster related stories, and applies AI-powered translation and classification — built on NestJS and Qdrant.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Broadcast & Automation Tools</h4>
-                    <ul className='font-secondary text-text-secondary list-disc space-y-2 pl-6'>
-                      <li>
-                        Built a real-time broadcast overlay system (Alcántara) using NestJS, SSE, and React, rendering live graphics at fixed 1920×1080 via OBS
-                        browser sources.
-                      </li>
-                      <li>Developed an OBS control and playlist management interface (Toni) via obs-websocket with AWS CDK infrastructure.</li>
-                      <li>Containerized OBS Studio runtime (Alana) using Docker with VNC access and Intel QSV hardware encoding for 24/7 YouTube streaming.</li>
-                      <li>
-                        Built a social media story template studio (Broadway) with live preview and 1080×1920 PNG export using React Router 7 and Tailwind CSS
-                        4.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Operations & Infrastructure</h4>
-                    <ul className='font-secondary text-text-secondary list-disc space-y-2 pl-6'>
-                      <li>
-                        Operate a stream routing platform (Celesti) — Go backend (Echo + GORM) with a Kotlin/Jetpack Compose Android TV client — for managing
-                        M3U channel inventory and dispatching playback commands via SSE.
-                      </li>
-                      <li>Manage all infrastructure on AWS including Lambda, S3, CloudFront, DynamoDB, SQS/SNS, and Cognito, deployed via CDK.</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <Link to='/success-cases/fifthbell' className='text-accent-blue text-sm font-medium hover:underline'>
-                      Read the full case study →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <img src='/icons/narmi.svg' alt='Narmi' className='h-8 w-8 fill-current light:invert dark:invert-0' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Narmi</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>Senior Software Engineer II</p>
-                    <p className='font-secondary text-text-secondary'>2025 - Present</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Grow Team - Account Opening Platform</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Leading architecture and implementation of Account Opening features for both business and consumer accounts. Driving technical decisions
-                      and mentoring team members while building scalable solutions that enable financial institutions to streamline their onboarding processes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <img src='/icons/cnn.svg' alt='CNN' className='h-8 w-8 fill-current light:invert dark:invert-0' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Warner Bros. Discovery (CNN)</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>Staff Software Engineer / Acting GM</p>
-                    <p className='font-secondary text-text-secondary'>2023 - 2025</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Design Systems Team Lead</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Lead and architect the design systems initiative, providing technical direction and mentorship to the team. Drive collaboration between
-                      engineering and design to translate design tokens and components into performant, scalable code libraries. Focus on developer experience
-                      and system adoption across teams.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Site Performance Platform Lead</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Lead development and team direction for the performance assessment platform, integrating Lighthouse, Datadog RUM, and Google PageSpeed
-                      Insights. Guide team strategy and implementation while maintaining direct contribution to architecture and development. Platform provides
-                      comprehensive metrics for performance, SEO, accessibility, and visual consistency.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <img src='/icons/amazon.svg' alt='Amazon' className='h-8 w-8 fill-current light:invert dark:invert-0' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Amazon</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>Software Development Engineer</p>
-                    <p className='font-secondary text-text-secondary'>2017 - 2022 • Seattle, WA / New York, NY</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Advertiser Experience</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Enhanced self-service campaign builder features and expanded to EU and FE markets. Led Observability efforts meeting SRE goals through
-                      automation and monitoring.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Amazon Explore</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Member of the Amazon Explore team. Developed core streaming infrastructure and host-side experience features. As single-threaded owner of
-                      the Defect Reduction program, resolved critical bottlenecks, reducing Catastrophic Defect Rate from 40% to 1.3% through systematic
-                      analysis and improvements.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Alexa Shopping & Infrastructure</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Led Prime Day Readiness program for Alexa Shopping, coordinating across 15 global teams spanning Seattle, New York, Dublin, Israel, and
-                      India to verify infrastructure, scaling, and SOPs/Runbooks. Spearheaded migration from third-party safety management service in
-                      Fulfillment Centers.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Payments Services</h4>
-                    <p className='font-secondary text-text-secondary'>
-                      Developed and integrated new payment services focusing on eligibility and tax allocation. Enabled multi-tender purchases including
-                      tax-free options with EBT (2017) and HSA/FSA (2018) payment methods.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className='group'>
-                <div className='mb-6 flex flex-col gap-6 md:flex-row md:items-start'>
-                  <div className='shrink-0'>
-                    <IconBadge>
-                      <Building2 className='h-8 w-8 text-white' />
-                    </IconBadge>
-                  </div>
-                  <div>
-                    <h3 className='mb-2 text-xl font-medium tracking-refined md:text-2xl'>Prior Experience</h3>
-                    <p className='font-secondary text-text-secondary mb-4 text-xl'>Backfilled from LinkedIn resume</p>
-                    <p className='font-secondary text-text-secondary'>2010 - 2016 • Chile, Peru & United States</p>
-                  </div>
-                </div>
-                <div className='space-y-4 pl-0 md:pl-22'>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Tecla Labs — Senior Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Sep 2016 - Dec 2016 • Lima, Peru</p>
-                    <p className='font-secondary text-text-secondary'>Contract role focused on web delivery and cross-team execution.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Waggl, Inc — Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Sep 2016 - Dec 2016 • San Francisco Bay Area, United States</p>
-                    <p className='font-secondary text-text-secondary'>Built and shipped product features as part of the web engineering team.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>CyberCenter — Senior Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>May 2016 - Sep 2016 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>Senior development role across multiple web initiatives.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Capitalizarme — Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Mar 2016 - May 2016 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>Stack: Ruby, Rails 5, PostgreSQL, Linux, AWS/Linode.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Desert Point Technologies — Lead Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Jan 2016 - Mar 2016 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>Stack: PHP, Ruby, Rails 5, MySQL, Linux, AWS.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>IdoSoft — Lead Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Nov 2015 - Dec 2015 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>Stack: PHP, Laravel 5, MySQL, Linux, Angular, SASS. Main client: Servel.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Cumplo — Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Aug 2015 - Nov 2015 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>
-                      Stack: PHP, Ruby, Python, JavaScript, Bottle, Rails, Meteor, MySQL, MongoDB, Linux, AWS, Ember, AngularJS.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Arca Comunicaciones — Lead Web Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Nov 2014 - Jul 2015 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>Stack: PHP, Laravel 5, MySQL, Linux, DigitalOcean. Main client: Bayer Conosur.</p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>LINETS — Senior PHP Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Jan 2014 - Oct 2014 • Santiago, Chile</p>
-                    <p className='font-secondary text-text-secondary'>
-                      Developed web applications with Symfony2 + Doctrine and executed projects from requirements through client delivery.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Maxis Ltda. — Lead Developer</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Jun 2013 - Oct 2013 • Antofagasta, Chile</p>
-                    <p className='font-secondary text-text-secondary'>
-                      Led a multidisciplinary software team, improving delivery speed and development/deploy processes while maintaining strong team culture.
-                    </p>
-                  </div>
-                  <div className='subtle-surface p-6'>
-                    <h4 className='mb-3 font-semibold'>Scrum S.A. — IT Manager / .NET Developer / QA Tester</h4>
-                    <p className='font-secondary text-text-secondary mb-2 text-gray-600'>Oct 2010 - Jun 2013 • Antofagasta, Chile</p>
-                    <ul className='font-secondary text-text-secondary mb-3 list-disc pl-6 text-gray-600'>
-                      <li>IT Manager (Oct 2010 - Jun 2013): managed local infrastructure, servers, hosting, Exchange, VoIP, OCS, and Lync.</li>
-                      <li>.NET Developer (Sep 2011 - Jun 2013): built and deployed features for existing and new systems.</li>
-                      <li>QA Tester (Dec 2011 - Mar 2012): executed testing plans for production software releases.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div className='mb-8 flex items-center gap-4'>
-              <div className='bg-accent-blue h-1 w-12' />
-              <h2 className='text-2xl font-semibold tracking-refined md:text-3xl'>Let&apos;s Connect</h2>
-            </div>
-
-            <div className='light:bg-persgray-50 dark:bg-sand p-8'>
-              <p className='mb-6 text-xl'>Have an interesting project or opportunity? I&apos;d love to hear about it.</p>
-              <Link
-                to='/contact'
-                className='light:bg-black dark:bg-accent-blue inline-block px-8 py-3 text-white transition-transform hover:translate-y-[-4px]'
-              >
-                Start a Conversation
+          </div>
+          <div className='resume-contact'>
+            <p>New York, NY</p>
+            <a href='mailto:jack@gaulatti.com'>jack@gaulatti.com</a>
+            <a href='https://github.com/gaulatti'>
+              GitHub <ArrowUpRight size={14} aria-hidden='true' />
+            </a>
+            <a href='https://www.linkedin.com/in/gaulatti/'>
+              LinkedIn <ArrowUpRight size={14} aria-hidden='true' />
+            </a>
+            <button type='button' onClick={() => window.print()} className='quiet-link resume-print'>
+              <Printer size={15} aria-hidden='true' /> Print résumé
+            </button>
+          </div>
+        </header>
+        <div className='resume-layout'>
+          <aside className='resume-rail'>
+            <section>
+              <p className='editorial-kicker'>Focus</p>
+              <h2>AI & platforms</h2>
+              <p className='secondary-copy'>LLM gateways, MCP services, language and media workflows, engineering automation.</p>
+              <h2>Production systems</h2>
+              <p className='secondary-copy'>Distributed systems, API design, durable processing, observability, developer experience.</p>
+              <h2>Implementation</h2>
+              <p className='secondary-copy'>Rust, Go, Python, TypeScript, AWS, PostgreSQL, React, and native application platforms.</p>
+            </section>
+            <section>
+              <p className='editorial-kicker'>Selected projects</p>
+              {selectedProjects.map((project) => (
+                <Link className='resume-project-link' to={projectPath(project)} key={project.id}>
+                  <span>
+                    <strong>{project.name}</strong>
+                    <span className='secondary-copy'>{project.subtitle}</span>
+                  </span>
+                  <ArrowUpRight size={16} aria-hidden='true' />
+                </Link>
+              ))}
+              <Link className='quiet-link' to='/portfolio'>
+                All project stories <ArrowRight size={15} aria-hidden='true' />
               </Link>
-            </div>
-          </section>
+            </section>
+            <section>
+              <p className='editorial-kicker'>Languages</p>
+              <p className='secondary-copy'>
+                Spanish · Native
+                <br />
+                English · Fluent
+                <br />
+                Italian · Intermediate
+              </p>
+            </section>
+          </aside>
+          <div className='resume-main'>
+            <section aria-labelledby='experience-title'>
+              <p className='editorial-kicker'>Professional experience</p>
+              <h2 id='experience-title'>Engineering work</h2>
+              <div className='resume-experience'>
+                {experience.map((item) => (
+                  <article className='resume-role' key={item.company}>
+                    <header>
+                      <div>
+                        <p className='resume-dates'>{item.dates}</p>
+                        <h3>{item.company}</h3>
+                        <p className='resume-role-title'>{item.title}</p>
+                        <p className='secondary-copy resume-location'>{item.location}</p>
+                      </div>
+                      {item.logo && (
+                        <a href={item.href} aria-label={item.company + ' website'} target='_blank' rel='noopener noreferrer'>
+                          <img
+                            src={item.logo}
+                            alt=''
+                            className={'resume-company-logo' + (item.company === 'Medsender' ? ' resume-medsender-logo' : '')}
+                          />
+                        </a>
+                      )}
+                    </header>
+                    <p className='editorial-kicker resume-focus'>{item.focus}</p>
+                    <ul>
+                      {item.highlights.map((highlight) => (
+                        <li className='secondary-copy' key={highlight}>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className='resume-section' aria-labelledby='earlier-title'>
+              <p className='editorial-kicker'>2010–2016</p>
+              <h2 id='earlier-title'>Earlier engineering work</h2>
+              <div className='resume-earlier'>
+                {earlierExperience.map((item) => (
+                  <article key={item.company}>
+                    <div>
+                      <h3>{item.company}</h3>
+                      <p className='secondary-copy'>{item.role}</p>
+                    </div>
+                    <p className='resume-dates'>{item.dates}</p>
+                    <p className='secondary-copy resume-earlier-detail'>{item.detail}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className='resume-section' aria-labelledby='education-title'>
+              <p className='editorial-kicker'>Education & credentials</p>
+              <h2 id='education-title'>Learning and qualifications</h2>
+              <article className='resume-education'>
+                <h3>Western Governors University</h3>
+                <p>B.S. Software Engineering</p>
+                <p className='secondary-copy'>2019–2026 · All academic requirements completed. Degree conferral pending.</p>
+              </article>
+              <div className='resume-credentials'>
+                <div>
+                  <h3>CompTIA Project+</h3>
+                  <p className='secondary-copy'>CompTIA · October 2026</p>
+                </div>
+                <div>
+                  <h3>ITIL® 4 Foundation</h3>
+                  <p className='secondary-copy'>PeopleCert · October 2026</p>
+                </div>
+              </div>
+            </section>
+            <section className='resume-section' aria-labelledby='community-title'>
+              <p className='editorial-kicker'>Beyond employment</p>
+              <h2 id='community-title'>Volunteering & community</h2>
+              <p className='secondary-copy resume-community-intro'>
+                Photography, media production, and community engineering alongside my software work.
+              </p>
+              <div className='resume-volunteering'>
+                {volunteering.map((item) => (
+                  <article key={item.company}>
+                    <h3>{item.company}</h3>
+                    <p className='secondary-copy'>{item.role}</p>
+                    <p className='resume-dates'>{item.dates}</p>
+                  </article>
+                ))}
+              </div>
+              <Link to='/success-cases/sanremo' className='quiet-link'>
+                Sanremo production case study <ArrowRight size={16} aria-hidden='true' />
+              </Link>
+            </section>
+          </div>
         </div>
       </div>
     </div>

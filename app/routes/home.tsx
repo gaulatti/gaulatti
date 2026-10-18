@@ -10,12 +10,12 @@ import { featuredItems } from '~/data/featuredItems';
 export function meta({}: Route.MetaArgs) {
   return [
     {
-      title: 'Javier Godoy — Staff Software Engineer | Media Infrastructure & Real-Time Systems'
+      title: 'Javier Godoy — Staff Software Engineer | AI Infrastructure & Platforms'
     },
     {
       name: 'description',
       content:
-        'Staff Software Engineer specializing in media infrastructure, platform engineering, and real-time production systems. Amazon, CNN/Warner Bros. Discovery experience.'
+        'Staff Software Engineer building AI infrastructure, developer platforms, and production systems. Medsender, Narmi, CNN, and Amazon.'
     }
   ];
 }
