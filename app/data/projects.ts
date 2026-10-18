@@ -81,6 +81,19 @@ export interface ProjectStory {
   decisions: Array<{ title: string; description: string }>;
   statusNote: string;
   related: string[];
+  study: ProjectStudy;
+}
+
+export interface ProjectStudy {
+  context: string[];
+  implementation: string[];
+  workflow?: {
+    title: string;
+    steps: Array<{ title: string; description: string }>;
+  };
+  evidence: string[];
+  limitations: string[];
+  references: Array<{ label: string; href: string }>;
 }
 
 /**

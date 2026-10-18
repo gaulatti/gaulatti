@@ -1,4 +1,5 @@
 import type { ProjectFact, ProjectStory, ProjectSurface } from './projects';
+import { projectStudies } from './project-studies.ts';
 
 type Entry = {
   id: string;
@@ -13,12 +14,14 @@ type Entry = {
   status?: ProjectFact['status'];
   visibility?: ProjectFact['visibility'];
   art: ProjectFact['art'];
-  story: Omit<ProjectStory, 'ownership'> & { ownership?: string };
+  story: Omit<ProjectStory, 'ownership' | 'study'> & { ownership?: string };
 };
 
 /** Editorial copy, reviewed against public source on 18 October 2026. */
 function project(entry: Entry): ProjectFact {
   const { story, ...fact } = entry;
+  const study = projectStudies[entry.id];
+  if (!study) throw new Error('Missing case study: ' + entry.id);
   return {
     status: 'in-development',
     visibility: 'public',
@@ -28,7 +31,8 @@ function project(entry: Entry): ProjectFact {
     ...fact,
     story: {
       ownership: 'I designed and built this project independently, using my own resources.',
-      ...story
+      ...story,
+      study
     }
   };
 }
@@ -434,13 +438,22 @@ export const portfolioCatalog: ProjectFact[] = [
         {
           title: 'Relay without another encode',
           description:
-            'The relay forwards the incoming program with stream-copy output processes rather than transcoding every destination.'
+            'The program is already encoded upstream, so each destination uses stream copy. This avoids another generation of quality loss and per-destination encoder cost; bandwidth, connection supervision, and packet forwarding still grow with the number of outputs.'
         },
-        { title: 'Isolate destination failures', description: 'Separate supervisors retry failed destinations independently.' },
+        {
+          title: 'One failure domain per destination',
+          description:
+            'I chose long-lived supervisors over opaque nginx push retries so each output has an observable process, mode, retry budget, and health state. A rejecting platform can back off without recycling another platform’s healthy connection.'
+        },
         {
           title: 'Prepare before going live',
           description:
-            'Start uses an explicit destination selection and prepared filler version. Losing a publisher is handled as continuity work, not an implicit stop command.'
+            'Checksum verification, transcoding, and media-profile checks happen before Start. An atomic installation protects already-ready filler from a failed preparation, and the active session pins one version so a later edit cannot alter the live recovery path.'
+        },
+        {
+          title: 'Keep session authority outside media observations',
+          description:
+            'A publisher connecting or disappearing is only an observation. Authenticated sequenced commands own Start and Stop. This prevents an uplink interruption, a stale command, or a control-plane outage from making an unintended publication decision.'
         }
       ],
       statusNote: 'A broadcast infrastructure component with documented lifecycle and recovery contracts.',
@@ -645,7 +658,7 @@ export const portfolioCatalog: ProjectFact[] = [
     art: { type: 'autostrada', imageUrl: '/hero/design.avif' },
     name: 'Cronkite',
     subtitle: 'Publishing and rendering',
-    summary: 'A publishing pipeline that turns newsroom content into static pages and automated media artifacts.',
+    summary: 'A CMS-directed rendering service that turns approved content and presentation manifests into authorized publishing artifacts.',
     surface: 'media-infrastructure',
     tags: ['TypeScript', 'AWS S3', 'FFmpeg'],
     visibility: 'private',
@@ -655,13 +668,13 @@ export const portfolioCatalog: ProjectFact[] = [
       contribution: 'I build the rendering and distribution pipeline behind the newsroom publishing workflow.',
       decisions: [
         {
-          title: 'Content and delivery are separate concerns',
+          title: 'Publication authority stays with the CMS',
           description:
-            'Editorial content is transformed into static output and media artifacts before it is delivered to storage and publishing destinations.'
+            'The CMS chooses canonical content, publication state, renderables, and signed write targets. Cronkite executes that request rather than discovering new work, deciding editorial scope, or holding ambient storage authority.'
         },
         {
-          title: 'Reuse the publishing path',
-          description: 'Rendering and delivery belong to a shared pipeline rather than being reimplemented in each editorial interface.'
+          title: 'Declare presentation and return receipts',
+          description: 'Presentation packages declare supported output. The renderer validates the contract, produces bytes, and returns receipts; the CMS persists outcomes and owns later retries. Boot validates packages without publishing autonomously.'
         }
       ],
       statusNote: 'A private implementation of the newsroom publishing pipeline.',

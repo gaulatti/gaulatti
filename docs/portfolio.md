@@ -7,6 +7,10 @@
   and current scope. Owner-authored projects explicitly credit Javier’s independent
   design and development using his own resources. The preserved PHP-Nuke archive
   retains its third-party authorship attribution.
+- Expanded case studies add the operating context, architecture/workflow steps,
+  evidence and outcomes, and current limitations within the existing detail
+  layout. Historical prototypes stay proportional to the surviving source;
+  Kolibri's private launch boundary is preserved.
 - The index extends the original narrow, image-and-text row layout. Projects
   remain grouped by category, with search and a visible empty state. Titles,
   artwork, and read links open the individual project page. The existing six
@@ -53,10 +57,22 @@ institutions are omitted until their degree/completion wording is confirmed.
 
 ## Authoring and approval
 
-Edit `app/data/project-catalog.ts`. Each entry includes an immutable ID,
+Edit `app/data/project-catalog.ts` for concise facts and
+`app/data/project-studies.ts` for the expanded case study. Each entry includes an immutable ID,
 summary, technologies, visibility, evidence date, and story. Public source URLs
 must be explicitly covered by `PUBLIC_REPOSITORIES`; a multi-repository project
 names each additional repository. Private entries carry no source links.
+
+Public technical notes pin exact source files to reviewed commit SHAs. The
+publication validator rejects moving branches, unrelated/unapproved repositories,
+and references on private entries. The deeper review includes broadcast/radio
+operation history, the editorial ingestion and clustering work, and source
+contracts reviewed on 18 October 2026. Repository tests are described as existing
+verification surfaces; they are not represented as newly executed here.
+Croccante's 0.18s/2.40s transitions and five-minute publisher absence come from
+its pinned public architecture experiment, not a general service-level claim.
+Colombo's retained-spool CPU observation describes the earlier investigation;
+it does not claim a measured production improvement after deployment.
 
 The build exports only approved entries into
 `app/data/public-projects.generated.ts`. Browser routes import this projection,

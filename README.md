@@ -33,6 +33,8 @@ wrong initial HTML for project links.
 ## Content
 
 - `app/data/project-catalog.ts`: curated project summaries and stories.
+- `app/data/project-studies.ts`: deeper architecture, operating context, evidence,
+  limitations, and pinned public technical notes.
 - `app/data/projects.ts`: public repository allowlist, types, and home selection.
 - `app/data/resume.ts`: employment, earlier work, and volunteering.
 - `app/routes/project.tsx`: individual project pages at `/portfolio/:projectId`.

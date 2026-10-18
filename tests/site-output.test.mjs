@@ -17,6 +17,9 @@ for (const project of catalog) {
     assert.ok(html.includes('<h1>' + project.name + '</h1>'), 'project heading must exist without JavaScript');
     assert.ok(html.includes('Engineering decisions'));
     assert.ok(html.includes('Where it stands'));
+    assert.ok(html.includes('<h2>Evidence and outcomes</h2>'));
+    if (project.story.study.workflow) assert.ok(html.includes('<h2>Architecture and workflow</h2>'));
+    for (const reference of project.story.study.references) assert.ok(html.includes('href="' + reference.href + '"'));
     assert.equal(meta(html, 'og:title').length, 1);
     assert.equal(meta(html, 'og:description').length, 1);
     assert.equal(meta(html, 'og:url').length, 1);
@@ -33,7 +36,8 @@ for (const project of catalog) {
     assert.equal(png.readUInt32BE(20), 630);
     const allowed = new Set(PUBLIC_REPOSITORIES.map((name) => 'https://github.com/' + name));
     for (const [, href] of html.matchAll(/href="(https:\/\/github\.com\/gaulatti\/[^"#?]+)"/g)) {
-      assert.ok(allowed.has(href), 'unapproved repository link: ' + href);
+      const repositoryUrl = new URL(href).origin + '/' + new URL(href).pathname.split('/').slice(1, 3).join('/');
+      assert.ok(allowed.has(repositoryUrl), 'unapproved repository link: ' + href);
     }
   });
 }
