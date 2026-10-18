@@ -2,6 +2,13 @@
 
 ## Reader-facing contract
 
+- Homepage updates are content only. Preserve the carousel, component order,
+  markup, CSS classes, spacing, typography, icons, and artwork. Current copy
+  highlights Medsender's AI infrastructure, CNN's developer platforms, and
+  Amazon Explore reliability. The 40% to 1.3% metric concerns catastrophic
+  Explore session failures, not payment failures. Technology descriptions
+  reflect the reviewed portfolio without adding a new homepage section.
+
 - Every approved project has a stable `/portfolio/<id>` page.
 - A page explains its context, design and implementation, engineering decisions,
   and current scope. Owner-authored projects explicitly credit Javier’s independent

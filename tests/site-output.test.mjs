@@ -10,6 +10,21 @@ const client = path.resolve('build/client');
 const catalog = publishedProjects();
 const meta = (html, property) => (html.match(/<meta\b[^>]*>/g) ?? []).filter((tag) => tag.includes('property="' + property + '"'));
 
+test('homepage content refresh preserves the original carousel and section order', async () => {
+  const html = await fs.readFile(path.join(client, 'index.html'), 'utf8');
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  const headings = [...main.matchAll(/<h[12]\b[^>]*>([\s\S]*?)<\/h[12]>/g)]
+    .map((match) => match[1].replace(/<[^>]+>/g, '').trim());
+  assert.equal(headings[0], 'Colombo: How to get a photo from the ground to the newsroom in 15 seconds');
+  assert.deepEqual(headings.slice(-4), ['Javier Godoy', 'Experience', 'Sanremo Festival Coverage', 'Technical Stack']);
+  assert.equal((main.match(/aria-label="Go to slide \d+"/g) ?? []).length, 8);
+  for (const company of ['Medsender', 'CNN', 'Amazon']) assert.ok(main.includes('>' + company + '</h4>'));
+  assert.ok(main.includes('MCP services'));
+  assert.ok(main.includes('catastrophic Amazon Explore session failures from 40% to 1.3%'));
+  assert.ok(main.includes('using my own resources'));
+  assert.ok(main.includes('LiveKit, WebRTC'));
+});
+
 for (const project of catalog) {
   test(project.name + ': the initial HTML is ready for a link-preview crawler', async () => {
     const route = projectPath(project);

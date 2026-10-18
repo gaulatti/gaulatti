@@ -12,7 +12,7 @@ export function Architecture() {
         <div className='mx-auto max-w-4xl'>
           <div className='mb-16 text-center'>
             <h2 className='mb-6 text-3xl font-semibold leading-tight tracking-refined md:text-4xl'>Technical Stack</h2>
-            <p className='font-secondary text-text-secondary text-xl'>Production-grade infrastructure and tooling</p>
+            <p className='font-secondary text-text-secondary text-xl'>Tools I use across AI services, developer platforms, and live production</p>
           </div>
 
           <div className='grid gap-12 lg:grid-cols-2'>
@@ -22,15 +22,15 @@ export function Architecture() {
                 <div className='space-y-4'>
                   <div>
                     <h4 className='mb-2 font-semibold'>Backend</h4>
-                    <p className='font-secondary text-text-secondary'>TypeScript, Node.js, NestJS, Python, Kotlin</p>
+                    <p className='font-secondary text-text-secondary'>Rust, Go, Python, TypeScript, Node.js, NestJS</p>
                   </div>
                   <div>
                     <h4 className='mb-2 font-semibold'>Frontend</h4>
-                    <p className='font-secondary text-text-secondary'>React, Astro, Tailwind CSS, GraphQL</p>
+                    <p className='font-secondary text-text-secondary'>React, Tailwind CSS, GraphQL</p>
                   </div>
                   <div>
                     <h4 className='mb-2 font-semibold'>Data</h4>
-                    <p className='font-secondary text-text-secondary'>PostgreSQL, DynamoDB, Redis, Elasticsearch</p>
+                    <p className='font-secondary text-text-secondary'>PostgreSQL, pgvector, DynamoDB, Redis, Elasticsearch</p>
                   </div>
                 </div>
               </div>
@@ -56,15 +56,15 @@ export function Architecture() {
                 <div className='space-y-4'>
                   <div>
                     <h4 className='mb-2 font-semibold'>Streaming</h4>
-                    <p className='font-secondary text-text-secondary'>OBS, FFMPEG, HLS/M3U, YouTube Live API, RTMP</p>
+                    <p className='font-secondary text-text-secondary'>FFmpeg, RTMP, HLS, Liquidsoap, Icecast</p>
                   </div>
                   <div>
                     <h4 className='mb-2 font-semibold'>Real-Time</h4>
-                    <p className='font-secondary text-text-secondary'>Server-Sent Events (SSE), WebSockets, Event-Driven Architecture</p>
+                    <p className='font-secondary text-text-secondary'>LiveKit, WebRTC, WebSockets, Server-Sent Events</p>
                   </div>
                   <div>
                     <h4 className='mb-2 font-semibold'>Audio/Video</h4>
-                    <p className='font-secondary text-text-secondary'>Jitsi, Scarlett audio interfaces, browser-based rendering</p>
+                    <p className='font-secondary text-text-secondary'>Browser-based production rendering, live audio routing, recording</p>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export function Architecture() {
                 <div className='space-y-4'>
                   <div>
                     <h4 className='mb-2 font-semibold'>Photojournalism</h4>
-                    <p className='font-secondary text-text-secondary'>Event coverage and documentary reporting</p>
+                    <p className='font-secondary text-text-secondary'>Live events and documentary stories</p>
                     <a
                       href='https://photos.gaulatti.com'
                       target='_blank'
@@ -102,7 +102,7 @@ export function Architecture() {
           </div>
 
           <div className='mt-16 text-center'>
-            <p className='mb-8 text-xl'>Interested in discussing architecture or collaboration?</p>
+            <p className='mb-8 text-xl'>For engineering opportunities, technical conversations, or collaboration.</p>
             <Link
               to='/contact'
               className='light:bg-black dark:bg-white light:text-white dark:text-black hover:bg-sea dark:hover:bg-accent-blue dark:hover:text-white inline-block px-8 py-3 font-medium transition-colors'
