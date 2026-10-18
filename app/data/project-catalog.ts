@@ -13,7 +13,7 @@ type Entry = {
   status?: ProjectFact['status'];
   visibility?: ProjectFact['visibility'];
   art: ProjectFact['art'];
-  story: ProjectStory;
+  story: Omit<ProjectStory, 'ownership'> & { ownership?: string };
 };
 
 /** Editorial copy, reviewed against public source on 18 October 2026. */
@@ -26,7 +26,10 @@ function project(entry: Entry): ProjectFact {
     evidenceDate: '2026-10-18',
     links: entry.repository ? [{ label: 'Source code', href: 'https://github.com/' + entry.repository, kind: 'repository' }] : [],
     ...fact,
-    story
+    story: {
+      ownership: 'I designed and built this project independently, using my own resources.',
+      ...story
+    }
   };
 }
 
@@ -947,6 +950,7 @@ export const portfolioCatalog: ProjectFact[] = [
     repository: 'gaulatti/php-nuke',
     status: 'archived',
     story: {
+      ownership: 'I preserve this third-party project for reference. Original authorship belongs to PHP-Nuke’s creators.',
       problem: 'Earlier web platforms are useful historical references for how publishing systems were built.',
       contribution: 'I preserve this copy for reference. I do not claim original authorship of PHP-Nuke.',
       decisions: [

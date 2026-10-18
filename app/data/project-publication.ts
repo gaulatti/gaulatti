@@ -9,7 +9,14 @@ export function publicCatalog(manifest: ProjectFact[] = projects): ProjectFact[]
   const ids = new Set(published.map((project) => project.id));
   for (const project of published) {
     const story = project.story;
-    if (!story || !story.problem.trim() || !story.contribution.trim() || !story.statusNote.trim() || story.decisions.length === 0)
+    if (
+      !story ||
+      !story.ownership.trim() ||
+      !story.problem.trim() ||
+      !story.contribution.trim() ||
+      !story.statusNote.trim() ||
+      story.decisions.length === 0
+    )
       throw new Error(project.id + ': incomplete project story');
     for (const decision of story.decisions)
       if (!decision.title.trim() || !decision.description.trim()) throw new Error(project.id + ': incomplete engineering decision');

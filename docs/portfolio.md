@@ -3,7 +3,10 @@
 ## Reader-facing contract
 
 - Every approved project has a stable `/portfolio/<id>` page.
-- A page explains its context, contribution, engineering decisions, and current scope.
+- A page explains its context, design and implementation, engineering decisions,
+  and current scope. Owner-authored projects explicitly credit Javier’s independent
+  design and development using his own resources. The preserved PHP-Nuke archive
+  retains its third-party authorship attribution.
 - The index extends the original narrow, image-and-text row layout. Projects
   remain grouped by category, with search and a visible empty state. Titles,
   artwork, and read links open the individual project page. The existing six

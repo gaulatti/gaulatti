@@ -39,7 +39,7 @@ export default function Portfolio() {
           <header>
             <h1 className='mb-8 text-4xl font-semibold leading-[1.08] tracking-refined md:text-5xl'>Projects</h1>
             <p className='font-secondary text-text-secondary mb-12 max-w-2xl text-xl'>
-              Software I design and build: AI infrastructure, developer tools, and systems for newsrooms and live production.
+              Independent software projects I design and build with my own resources, from AI infrastructure to developer tools and media systems.
             </p>
           </header>
           <div className='portfolio-tools'>

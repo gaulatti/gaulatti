@@ -44,9 +44,10 @@ export default function Project({ loaderData }: Route.ComponentProps) {
             <p className='editorial-kicker'>{project.subtitle}</p>
             <h1>{project.name}</h1>
             <p className='secondary-copy project-lead'>{project.summary}</p>
+            <p className='secondary-copy mt-4'>{story.ownership}</p>
           </div>
           <div className='project-intro-meta'>
-            <p className='editorial-kicker'>Project notes by Javier Godoy</p>
+            <p className='editorial-kicker'>Javier Godoy</p>
             <ul className='project-tags' aria-label='Technologies'>
               {project.tags.map((tag) => (
                 <li key={tag}>{tag}</li>
@@ -69,7 +70,7 @@ export default function Project({ loaderData }: Route.ComponentProps) {
           <aside className='project-contents' aria-label='On this page'>
             <p className='editorial-kicker'>The project</p>
             <a href='#context'>Context</a>
-            <a href='#contribution'>My work</a>
+            <a href='#contribution'>Implementation</a>
             <a href='#decisions'>Engineering decisions</a>
             <a href='#status'>Where it stands</a>
           </aside>
@@ -80,8 +81,8 @@ export default function Project({ loaderData }: Route.ComponentProps) {
               <p className='secondary-copy'>{story.problem}</p>
             </section>
             <section id='contribution'>
-              <p className='editorial-kicker'>02 / Contribution</p>
-              <h2>My work</h2>
+              <p className='editorial-kicker'>02 / Implementation</p>
+              <h2>Design and implementation</h2>
               <p className='secondary-copy'>{story.contribution}</p>
             </section>
             <section id='decisions'>

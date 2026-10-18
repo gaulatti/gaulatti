@@ -75,6 +75,7 @@ export interface ProjectFact {
 }
 
 export interface ProjectStory {
+  ownership: string;
   problem: string;
   contribution: string;
   decisions: Array<{ title: string; description: string }>;
