@@ -22,8 +22,8 @@ export function Hero() {
           <p className='text-text-secondary mb-6 text-sm font-light tracking-widest uppercase'>New York, NY</p>
 
           <p className='text-text-secondary mx-auto mb-12 max-w-3xl text-lg leading-relaxed font-light md:text-xl'>
-            I build and operate media infrastructure, real-time production systems, and platform engineering solutions. Formerly at Amazon and CNN/Warner Bros.
-            Discovery. Currently architecting fifthbell — a personal media systems platform.
+            I build AI infrastructure, developer platforms, and software that runs live operations. Currently at Medsender; previously at Amazon, CNN, and
+            Narmi. Outside work, I independently design, build, and operate software for newsrooms, broadcasting, and photography, using my own resources.
           </p>
 
           <div className='flex flex-wrap justify-center gap-6'>

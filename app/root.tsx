@@ -7,9 +7,9 @@ import { isRouteErrorResponse, Link, Links, Meta, Outlet, Scripts, ScrollRestora
 import type { Route } from './+types/root';
 import './app.css';
 
-const defaultTitle = 'Javier Godoy — Staff Software Engineer | Media Infrastructure & Real-Time Systems';
+const defaultTitle = 'Javier Godoy — Staff Software Engineer | AI Infrastructure & Platforms';
 const defaultDescription =
-  'Staff Software Engineer specializing in media infrastructure, platform engineering, and real-time production systems. Amazon, CNN/Warner Bros. Discovery experience.';
+  'Staff Software Engineer building AI infrastructure, developer platforms, and production systems. Medsender, Narmi, CNN, and Amazon.';
 
 const gaTrackingId = import.meta.env.VITE_GA_TRACKING_ID ?? (import.meta.env as Record<string, string | undefined>).PUBLIC_GA_TRACKING_ID ?? '';
 
@@ -151,7 +151,7 @@ export const meta: Route.MetaFunction = () => [
   {
     name: 'keywords',
     content:
-      'Staff Software Engineer, Platform Engineering, Media Infrastructure, Real-Time Systems, AWS, Amazon, CNN, Warner Bros Discovery, Streaming, Broadcast Engineering, Javier Godoy'
+      'Staff Software Engineer, AI Infrastructure, Platform Engineering, Distributed Systems, LLM Gateway, MCP, AWS, Medsender, Amazon, CNN, Javier Godoy'
   },
   { property: 'og:type', content: 'website' },
   { property: 'og:url', content: 'https://gaulatti.com/' },
@@ -215,7 +215,7 @@ gtag('config', '${gaTrackingId}');`
                 logoSrc: '/icons/gaulatti.svg',
                 name: 'gaulatti',
                 description:
-                  "Crafting digital experiences that blend precision with poetry. Where engineering meets artistry, creating spaces for reflection, innovation, and the quiet appreciation of life's remarkable moments."
+                  "AI infrastructure, developer tools, and software for newsrooms, broadcasting, and photography."
               }}
               sections={footerSections}
               bottomLeft={`© ${new Date().getFullYear()} Javier Godoy Núñez. All rights reserved.`}
