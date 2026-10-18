@@ -32,6 +32,8 @@ wrong initial HTML for project links.
 
 ## Content
 
+- `app/components/home/`: introduction, selected projects, career highlights,
+  Sanremo, writing, and personal interests; styling in `app/home.css`.
 - `app/data/project-catalog.ts`: curated project summaries and stories.
 - `app/data/project-studies.ts`: deeper architecture, operating context, evidence,
   limitations, and pinned public technical notes.

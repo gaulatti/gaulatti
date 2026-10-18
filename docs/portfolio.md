@@ -2,6 +2,16 @@
 
 ## Reader-facing contract
 
+- The homepage leads with Javier's introduction and project/résumé links, then
+  selected independent projects, engineering experience, Sanremo, writing,
+  photography/music, and contact. It retains the site's fonts, Bauhaus artwork,
+  and image/text project rows; the old leading carousel and technology inventory
+  are replaced by direct links to detailed work. Homepage project artwork and
+  paths resolve through the approved public catalog; no private sources are
+  inferred. The broadcast overview links to all four individual project pages.
+- Career highlights reuse résumé company assets. Amazon's 40% to 1.3% result
+  refers specifically to catastrophic Explore session failures, not payments.
+
 - Every approved project has a stable `/portfolio/<id>` page.
 - A page explains its context, design and implementation, engineering decisions,
   and current scope. Owner-authored projects explicitly credit Javier’s independent
