@@ -59,7 +59,7 @@ Created the original version of **AI DecisionAssist**, using **Anthropic Claude 
 | Apr 2024 – Apr 2025 | **L Train Brass Band** | Tech Committee Director |
 | Oct 2020 – Nov 2021 | **Area Sports Network** | Executive Producer |
 | Sep 2019 – Oct 2020 | **Pulso Sports** | Executive Producer |
-| Aug – Sep 2019 | **Plataforma Latina Networks** | Founder |
+| Aug – Sep 2019 | **Plataforma Latina Networks** | Executive Producer |
 | Dec 2016 – Jul 2018 | **PLAZFER.** | Founding Engineer |
 | Jun – Oct 2013 | **Maxis Ltda.** | Founding Engineer |
 
