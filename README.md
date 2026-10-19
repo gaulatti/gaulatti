@@ -8,62 +8,81 @@
 
 ### About Me
 
-Staff Software Engineer with 15+ years of experience building production systems across media infrastructure, platform engineering, and real-time streaming. I've owned system design and end-to-end execution—frontend, backend, infra, and product—at companies like **Amazon** and **Warner Bros. Discovery (CNN)**.
+Staff Software Engineer with 15+ years of experience building production systems across healthcare, fintech, media, and e-commerce. My work spans AI infrastructure, developer platforms, distributed systems, and real-time production.
 
-I'm most effective when **bridging engineering leadership with hands-on delivery**: architecting scalable systems, mentoring engineers, removing blockers, and turning ambiguous problems into working software.
+Currently at **Medsender**, building an LLM Gateway, MCP services, developer tooling, and engineering automation. Previously at **Amazon**, **Warner Bros. Discovery (CNN)**, and **Narmi**.
 
-Currently at **Narmi** (Senior Software Engineer II), leading Account Opening Platform architecture. Concurrently running **fifthbell**, a personal media systems platform I designed and operate for real-world broadcast and newsroom operations.
+Outside work, I independently design, build, and operate software for newsrooms, broadcasting, and photography, using my own resources. I've completed all academic requirements for the **WGU B.S. in Software Engineering**; degree conferral is pending. Recently earned **CompTIA Project+**.
 
 ---
 
 ### Experience
 
-| Period         | Company                              | Role                                    |
-| -------------- | ------------------------------------ | --------------------------------------- |
-| 2025 – Present | **Narmi**                            | Senior Software Engineer II             |
-| Feb 2026       | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival   |
-| 2025 – Present | **fifthbell**                        | Founder & Lead Engineer                 |
-| 2023 – 2025    | **Warner Bros. Discovery (CNN)**     | Staff Software Engineer / Acting GM     |
-| 2017 – 2022    | **Amazon**                           | Software Development Engineer           |
-| 2010 – 2016    | Various roles                        | Lead/Senior Developer (Chile, Peru, US) |
+| Period                 | Company                              | Role                                    |
+| ---------------------- | ------------------------------------ | --------------------------------------- |
+| Jul 2026 – Present     | **Medsender**                        | Staff Software Engineer                 |
+| Jun 2025 – Mar 2026    | **Narmi**                            | Software Engineer                       |
+| Feb 2026              | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival   |
+| Jul 2025 – Present    | **fifthbell**                        | Independent Engineer & Photographer     |
+| Jan 2023 – May 2025   | **Warner Bros. Discovery (CNN)**     | Staff Software Engineer                 |
+| Feb 2017 – Jan 2023   | **Amazon**                           | Software Development Engineer           |
+| 2010 – 2016           | Various roles                        | Lead/Senior Developer (Chile, Peru, US) |
 
 #### Highlights
 
-**Narmi (2025 – Present)**  
-Leading architecture and implementation of Account Opening features for business and consumer accounts on the Grow Team. Driving technical decisions and mentoring engineers while building scalable onboarding solutions for financial institutions.
+**Medsender (Jul 2026 – Present)**
 
-**Warner Bros. Discovery / CNN (2023 – 2025)**
+- **AI Infrastructure** — Launched a customer-facing LLM Gateway for production AI workflows and build MCP services to connect tools and systems.
+- **Developer Platforms** — Own the developer portal and build AI-assisted review and governance tooling, engineering automation, and deployment safeguards.
 
-- **Design Systems Team Lead** — Architected CNN's design systems initiative; drove collaboration between engineering and design to produce performant, scalable component libraries with strong cross-team adoption.
-- **Site Performance Platform Lead** — Led development of a comprehensive performance assessment platform integrating Lighthouse, Datadog RUM, and Google PageSpeed Insights. Delivered metrics covering performance, SEO, accessibility, and visual consistency at CNN scale.
+**Narmi (Jun 2025 – Mar 2026)**  
+Created the original version of **AI DecisionAssist**, using **Anthropic Claude via Amazon Bedrock** to turn identity-verification data into risk assessments and actionable recommendations for account-opening reviewers. Mentored a junior engineer to lead tactical execution while guiding integration strategy and technical direction.
 
-**Amazon (2017 – 2022)**
+**Warner Bros. Discovery / CNN (Jan 2023 – May 2025)**
 
-- **Amazon Explore** — Built core streaming infrastructure and host-side experience features. As single-threaded owner of the Defect Reduction program, reduced Catastrophic Defect Rate from **40% to 1.3%** through systematic root-cause analysis.
-- **Alexa Shopping** — Led Prime Day Readiness across **15 global teams** (Seattle, NYC, Dublin, Israel, India). Coordinated infrastructure verification, scaling reviews, and SOP/Runbook validation under deadline pressure.
-- **Payments** — Integrated EBT (2017) and HSA/FSA (2018) payment methods, enabling multi-tender and tax-free purchase flows for millions of customers.
+- **Design Systems** — Delivered CNN's design system internally with **two engineers in seven months**, avoiding a planned **$3M agency engagement**. Built an automated Figma-to-code pipeline using TypeScript, NestJS, and Style Dictionary.
+- **Site Performance** — Built a performance-observability platform combining real-user metrics, Lighthouse CI, and PageSpeed Insights. Drove adoption across Live Story and Politics ahead of the 2024 election and identified livestreaming components as a major performance bottleneck.
 
-**fifthbell — Founder & Executive Producer (2025 – Present)**  
-Built and operate a full-stack media platform for live broadcast, content publishing, and newsroom monitoring. In February 2026, served as Executive Producer for Sanremo Festival coverage — when a critical broadcast dependency failed mid-operation, rebuilt the entire production model on-site within three days while the event was ongoing.
+**Amazon (Feb 2017 – Jan 2023)**
+
+- **Amazon Explore** — Owned the defect-reduction program, reducing catastrophic session failures from **40% to 1.3% over six months** and clearing the executive launch gate. Built observability using AWS IoT Core and CloudWatch and traced failures across Redux Saga and WebRTC.
+- **Alexa Shopping** — Led peak-event readiness across **15 global teams** and improved monitoring after uncovering a silent production outage.
+- **Payments** — Launched EBT and HSA/FSA payment support, including eligibility verification, tax allocation, and multi-tender purchase flows.
+
+**fifthbell — Independent Engineering & Live Production (2025 – Present)**  
+Independently design, build, and operate software for live broadcasting, publishing, and newsroom monitoring, using my own resources. In February 2026, led technical production and live operations for Sanremo Festival coverage across three countries. When the original setup failed, rebuilt the broadcast architecture in approximately three days and ran multi-hour broadcasts with distributed contributors.
 
 ---
 
 ### Projects
 
-| Project                                        | Description                                                                                                                                  | Stack                                      |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| **[Monitor](https://monitor.gaulatti.com)**    | AI-powered news monitoring — ingests 40+ global sources, clusters stories via semantic embeddings, applies NLP translation & classification  | TypeScript, NestJS, Qdrant, AWS            |
-| **Cronkite**                                   | Core publishing engine — transforms CMS content into static HTML and short-form video via FFMPEG; deploys to S3/CloudFront in under a second | TypeScript, NestJS, FFMPEG, AWS            |
-| **Alcántara**                                  | Professional broadcast overlay control — manages lower thirds, full-screen graphics, and corner bugs at fixed 1920×1080 via SSE              | React, NestJS, SSE, Prisma                 |
-| **[Alana](https://github.com/gaulatti/alana)** | Dockerized OBS Studio for 24/7 automated streaming with Intel QSV GPU encoding and VNC monitoring                                            | Docker, OBS, Intel QSV                     |
-| **[Broadway](https://broadway.gaulatti.com)**  | Story template studio — live preview + 1080×1920 PNG export for social media content pipelines                                               | React Router 7, TypeScript, Tailwind CSS 4 |
-| **Celesti**                                    | Stream routing platform — Go backend with Kotlin/Jetpack Compose Android TV client, commands dispatched via SSE                              | Go, Echo, Kotlin, Jetpack Compose          |
+I designed and built these projects independently, using my own resources. Each link opens its architecture, engineering decisions, evidence, and available source or application links.
+
+| Project | Description | Stack |
+| ------- | ----------- | ----- |
+| **[Mistify](https://gaulatti.com/portfolio/mistify)** | A shared AI service for language detection, translation, classification, clustering, and recorded-media analysis. | Python, FastAPI, gRPC, PyTorch, Redis |
+| **[Colombo](https://gaulatti.com/portfolio/colombo)** | A Rust upload gateway that accepts photographs over FTP, FTPS, and HTTP, then delivers them to storage and a newsroom CMS. | Rust, FTP/FTPS, HTTP, AWS S3, PostgreSQL |
+| **[Guggiana](https://gaulatti.com/portfolio/guggiana)** | An article-to-audio pipeline coordinating translation, speech synthesis, reusable language renditions, and audio assembly. | AWS Step Functions, Polly, DynamoDB, Python, TypeScript |
+| **[Monitor](https://gaulatti.com/portfolio/monitor)** | A workspace for following developing stories, grouping related coverage, and tracking events across multiple feeds. | Rust, React, PostgreSQL, pgvector |
+| **[Pompeii](https://gaulatti.com/portfolio/pompeii)** | A shared authentication and authorization service for application permissions, feature flags, and identity management. | Go, APIs, Authorization, Feature flags |
+| **[Bleecker](https://gaulatti.com/portfolio/bleecker)** | A React component library with shared typography, design tokens, accessible controls, and application layouts. | React, TypeScript, Design tokens, Accessibility, Storybook |
+| **[Alcántara](https://gaulatti.com/portfolio/alcantara)** | A broadcast control surface for graphics, program state, media, and live guest contributions. | React, NestJS, PostgreSQL, SSE, WebRTC |
+| **[Alana](https://gaulatti.com/portfolio/alana)** | A headless runtime that renders an Alcántara program and publishes independent RTMP outputs and an optional low-latency feed. | Python, Chromium, FFmpeg, RTMP, LiveKit |
+| **[Croccante](https://gaulatti.com/portfolio/croccante)** | An RTMP relay with independently supervised destinations, explicit broadcast lifecycle control, and prepared continuity media. | Python, nginx-rtmp, FFmpeg, RTMP |
+| **[Palazzo](https://gaulatti.com/portfolio/palazzo)** | A self-hosted radio controller combining a NestJS API with Liquidsoap and Icecast. | NestJS, Liquidsoap, Icecast, SSE |
+| **[Broadway](https://gaulatti.com/portfolio/broadway)** | A template editor with generated forms, live preview, and high-quality image and document exports. | React Router, TypeScript, PNG, Vector PDF |
+| **[Cronkite](https://gaulatti.com/portfolio/cronkite)** | A CMS-directed rendering service that turns approved content and presentation manifests into authorized publishing artifacts. | TypeScript, AWS S3, FFmpeg |
+| **[Celesti](https://gaulatti.com/portfolio/celesti)** | A channel inventory and display-management platform with service-controlled playback clients. | Go, Kotlin, Jetpack Compose, SSE |
+
+[Explore the full portfolio →](https://gaulatti.com/portfolio)
 
 ---
 
 ### Skills
 
 **Cloud & Infrastructure**
+
+![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-FF9900?style=for-the-badge)
 
 ![AWS CDK](https://img.shields.io/badge/AWS_CDK-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-FF9900?logo=awslambda&logoColor=white&style=for-the-badge)
@@ -88,6 +107,10 @@ Built and operate a full-stack media platform for live broadcast, content publis
 ![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white&style=for-the-badge)
 
 **Backend & Systems**
+
+![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white&style=for-the-badge)
+![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge)
 
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge)
