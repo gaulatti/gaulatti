@@ -22,8 +22,6 @@ Outside work, I independently design, build, and operate software for newsrooms,
 | ---------------------- | ------------------------------------ | --------------------------------------- |
 | Jul 2026 – Present     | **Medsender**                        | Staff Software Engineer                 |
 | Jun 2025 – Mar 2026    | **Narmi**                            | Software Engineer                       |
-| Feb 2026              | **fifthbell × ModoItaliano × HNMag** | Executive Producer — Sanremo Festival   |
-| Jul 2025 – Present    | **fifthbell**                        | Independent Engineer & Photographer     |
 | Jan 2023 – May 2025   | **Warner Bros. Discovery (CNN)**     | Staff Software Engineer                 |
 | Feb 2017 – Jan 2023   | **Amazon**                           | Software Development Engineer           |
 | 2010 – 2016           | Various roles                        | Lead/Senior Developer (Chile, Peru, US) |
@@ -49,8 +47,25 @@ Created the original version of **AI DecisionAssist**, using **Anthropic Claude 
 - **Alexa Shopping** — Led peak-event readiness across **15 global teams** and improved monitoring after uncovering a silent production outage.
 - **Payments** — Launched EBT and HSA/FSA payment support, including eligibility verification, tax allocation, and multi-tender purchase flows.
 
-**fifthbell — Independent Engineering & Live Production (2025 – Present)**  
-Independently design, build, and operate software for live broadcasting, publishing, and newsroom monitoring, using my own resources. In February 2026, led technical production and live operations for Sanremo Festival coverage across three countries. When the original setup failed, rebuilt the broadcast architecture in approximately three days and ran multi-hour broadcasts with distributed contributors.
+---
+
+### Volunteering
+
+| Period | Organization | Role |
+| ------ | ------------ | ---- |
+| Nov 2025 – Present | **ModoItaliano** | Executive Producer |
+| Jul 2025 – Present | **fifthbell** | Photographer |
+| 2015 – Present | **devsChile** | Huemul Developer |
+| Apr 2024 – Apr 2025 | **L Train Brass Band** | Tech Committee Director |
+| Oct 2020 – Nov 2021 | **Area Sports Network** | Executive Producer |
+| Sep 2019 – Oct 2020 | **Pulso Sports** | Executive Producer |
+| Aug – Sep 2019 | **Plataforma Latina Networks** | Founder |
+| Dec 2016 – Jul 2018 | **PLAZFER.** | Founding Engineer |
+| Jun – Oct 2013 | **Maxis Ltda.** | Founding Engineer |
+
+**ModoItaliano — Sanremo Festival (Feb 2026)**
+
+In February 2026, led technical production and live operations for Sanremo Festival coverage with ModoItaliano, fifthbell, and HNMag across three countries. When the original setup failed, rebuilt the broadcast architecture in approximately three days and ran multi-hour broadcasts with distributed contributors.
 
 ---
 
