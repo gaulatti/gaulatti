@@ -135,7 +135,7 @@ export const volunteering = [
   { company: 'L Train Brass Band', role: 'Tech Committee Director', dates: 'Apr 2024 – Apr 2025' },
   { company: 'Area Sports Network', role: 'Executive Producer', dates: 'Oct 2020 – Nov 2021' },
   { company: 'Pulso Sports', role: 'Executive Producer', dates: 'Sep 2019 – Oct 2020' },
-  { company: 'Plataforma Latina Networks', role: 'Founder', dates: 'Aug – Sep 2019' },
+  { company: 'Plataforma Latina Networks', role: 'Executive Producer', dates: 'Aug – Sep 2019' },
   { company: 'PLAZFER.', role: 'Founding Engineer', dates: 'Dec 2016 – Jul 2018' },
   { company: 'Maxis Ltda.', role: 'Founding Engineer', dates: 'Jun – Oct 2013' }
 ];
