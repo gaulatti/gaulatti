@@ -32,6 +32,13 @@ wrong initial HTML for project links.
 
 ## Content
 
+- The root `README.md` is the public professional profile. Keep its existing
+  section order, quote, contact details, experience/project tables, and skill
+  badges when refreshing facts. Setup and deployment guidance belongs here.
+  Profile content follows the approved résumé and project catalog; project
+  links point to their public `/portfolio/<id>` case studies. Education states
+  academic completion separately from degree conferral, and employer product
+  credit does not claim subsequent versions or company-wide launch metrics.
 - `app/data/project-catalog.ts`: curated project summaries and stories.
 - `app/data/project-studies.ts`: deeper architecture, operating context, evidence,
   limitations, and pinned public technical notes.
