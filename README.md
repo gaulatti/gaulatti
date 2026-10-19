@@ -83,7 +83,6 @@ I designed and built these projects independently, using my own resources. Each 
 **Cloud & Infrastructure**
 
 ![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-FF9900?style=for-the-badge)
-
 ![AWS CDK](https://img.shields.io/badge/AWS_CDK-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![AWS Lambda](https://img.shields.io/badge/AWS_Lambda-FF9900?logo=awslambda&logoColor=white&style=for-the-badge)
 ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?logo=amazondynamodb&logoColor=white&style=for-the-badge)
@@ -111,7 +110,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white&style=for-the-badge)
 ![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge)
-
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white&style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white&style=for-the-badge)
 ![Java](https://img.shields.io/badge/Java-007396?logo=java&logoColor=white&style=for-the-badge)
