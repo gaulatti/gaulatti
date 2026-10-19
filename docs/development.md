@@ -39,6 +39,11 @@ wrong initial HTML for project links.
   links point to their public `/portfolio/<id>` case studies. Education states
   academic completion separately from degree conferral, and employer product
   credit does not claim subsequent versions or company-wide launch metrics.
+  Keep employment separate from volunteering. Volunteer organizations, titles,
+  and dates match the résumé data and LinkedIn; Sanremo coverage belongs under
+  ModoItaliano's Executive Producer volunteering role. Independent software
+  ownership belongs in About Me and Projects rather than a separate fifthbell
+  engineering employment entry.
 - `app/data/project-catalog.ts`: curated project summaries and stories.
 - `app/data/project-studies.ts`: deeper architecture, operating context, evidence,
   limitations, and pinned public technical notes.
