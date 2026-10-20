@@ -114,7 +114,9 @@ I designed and built these projects independently, using my own resources. Each 
 ![Sass](https://img.shields.io/badge/Sass-3178C6?style=for-the-badge)
 ![QML](https://img.shields.io/badge/QML-3178C6?style=for-the-badge)
 
-Additional work in C, C++, and Dart.
+![C](https://img.shields.io/badge/C-3178C6?style=for-the-badge)
+![C++](https://img.shields.io/badge/C%2B%2B-3178C6?style=for-the-badge)
+![Dart](https://img.shields.io/badge/Dart-3178C6?style=for-the-badge)
 
 **Web & Frontend**
 
@@ -128,7 +130,10 @@ Additional work in C, C++, and Dart.
 ![Vite](https://img.shields.io/badge/Vite-61DAFB?style=for-the-badge)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
 
-Responsive interfaces · accessibility · browser performance · server-rendered and static applications.
+![Responsive interfaces](https://img.shields.io/badge/Responsive_interfaces-06B6D4?style=for-the-badge)
+![Accessibility](https://img.shields.io/badge/Accessibility-06B6D4?style=for-the-badge)
+![Browser performance](https://img.shields.io/badge/Browser_performance-06B6D4?style=for-the-badge)
+![Server-rendered and static applications](https://img.shields.io/badge/Server--rendered_and_static_applications-06B6D4?style=for-the-badge)
 
 **Backend & Application Frameworks**
 
@@ -147,7 +152,9 @@ Responsive interfaces · accessibility · browser performance · server-rendered
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white&style=for-the-badge)
 ![gRPC](https://img.shields.io/badge/gRPC-4488CC?logo=grpc&logoColor=white&style=for-the-badge)
 
-REST APIs · asynchronous processing · background workers.
+![REST APIs](https://img.shields.io/badge/REST_APIs-4488CC?style=for-the-badge)
+![Asynchronous processing](https://img.shields.io/badge/Asynchronous_processing-4488CC?style=for-the-badge)
+![Background workers](https://img.shields.io/badge/Background_workers-4488CC?style=for-the-badge)
 
 **Native, Mobile & Desktop**
 
@@ -164,7 +171,8 @@ REST APIs · asynchronous processing · background workers.
 ![WinUI 3](https://img.shields.io/badge/WinUI_3-6B57FF?style=for-the-badge)
 ![Qt Quick](https://img.shields.io/badge/Qt_Quick-6B57FF?style=for-the-badge)
 
-Cross-platform component contracts and platform-specific interaction.
+![Cross-platform Components](https://img.shields.io/badge/Cross--platform_Components-6B57FF?style=for-the-badge)
+![Platform-specific Interaction](https://img.shields.io/badge/Platform--specific_Interaction-6B57FF?style=for-the-badge)
 
 **AI & Language Processing**
 
@@ -175,7 +183,18 @@ Cross-platform component contracts and platform-specific interaction.
 ![PyTorch](https://img.shields.io/badge/PyTorch-D97757?style=for-the-badge)
 ![Transformers.js](https://img.shields.io/badge/Transformers.js-D97757?style=for-the-badge)
 
-LLM gateways · MCP services · AI-assisted code review and engineering automation · embeddings · vector search · semantic clustering · classification · language detection · translation · transcription · speaker diarization · summarization.
+![LLM gateways](https://img.shields.io/badge/LLM_gateways-D97757?style=for-the-badge)
+![MCP services](https://img.shields.io/badge/MCP_services-D97757?style=for-the-badge)
+![AI-assisted code review and engineering automation](https://img.shields.io/badge/AI--assisted_code_review_and_engineering_automation-D97757?style=for-the-badge)
+![Embeddings](https://img.shields.io/badge/Embeddings-D97757?style=for-the-badge)
+![Vector search](https://img.shields.io/badge/Vector_search-D97757?style=for-the-badge)
+![Semantic clustering](https://img.shields.io/badge/Semantic_clustering-D97757?style=for-the-badge)
+![Classification](https://img.shields.io/badge/Classification-D97757?style=for-the-badge)
+![Language detection](https://img.shields.io/badge/Language_detection-D97757?style=for-the-badge)
+![Translation](https://img.shields.io/badge/Translation-D97757?style=for-the-badge)
+![Transcription](https://img.shields.io/badge/Transcription-D97757?style=for-the-badge)
+![Speaker diarization](https://img.shields.io/badge/Speaker_diarization-D97757?style=for-the-badge)
+![Summarization](https://img.shields.io/badge/Summarization-D97757?style=for-the-badge)
 
 **Databases & Persistence**
 
@@ -187,7 +206,12 @@ LLM gateways · MCP services · AI-assisted code review and engineering automati
 ![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge)
 ![Qdrant](https://img.shields.io/badge/Qdrant-4169E1?style=for-the-badge)
 
-Relational modeling · vector storage · caching · durable job state · conditional writes · idempotent processing.
+![Relational modeling](https://img.shields.io/badge/Relational_modeling-4169E1?style=for-the-badge)
+![Vector storage](https://img.shields.io/badge/Vector_storage-4169E1?style=for-the-badge)
+![Caching](https://img.shields.io/badge/Caching-4169E1?style=for-the-badge)
+![Durable job state](https://img.shields.io/badge/Durable_job_state-4169E1?style=for-the-badge)
+![Conditional writes](https://img.shields.io/badge/Conditional_writes-4169E1?style=for-the-badge)
+![Idempotent processing](https://img.shields.io/badge/Idempotent_processing-4169E1?style=for-the-badge)
 
 **AWS & Infrastructure**
 
@@ -216,11 +240,29 @@ Relational modeling · vector storage · caching · durable job state · conditi
 
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge)
 
-Developer portals · CI/CD · infrastructure as code · deployment safeguards · automated review and governance · release workflows · reusable libraries · service integration · developer tooling.
+![Developer portals](https://img.shields.io/badge/Developer_portals-2088FF?style=for-the-badge)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge)
+![Infrastructure as code](https://img.shields.io/badge/Infrastructure_as_code-2088FF?style=for-the-badge)
+![Deployment safeguards](https://img.shields.io/badge/Deployment_safeguards-2088FF?style=for-the-badge)
+![Automated review and governance](https://img.shields.io/badge/Automated_review_and_governance-2088FF?style=for-the-badge)
+![Release workflows](https://img.shields.io/badge/Release_workflows-2088FF?style=for-the-badge)
+![Reusable libraries](https://img.shields.io/badge/Reusable_libraries-2088FF?style=for-the-badge)
+![Service integration](https://img.shields.io/badge/Service_integration-2088FF?style=for-the-badge)
+![Developer tooling](https://img.shields.io/badge/Developer_tooling-2088FF?style=for-the-badge)
 
 **Architecture & Reliability**
 
-Distributed systems · event-driven architecture · real-time systems · service boundaries · authentication and authorization · feature flags · retry and recovery workflows · concurrency control · fault isolation · production debugging · performance optimization.
+![Distributed systems](https://img.shields.io/badge/Distributed_systems-4A5568?style=for-the-badge)
+![Event-driven architecture](https://img.shields.io/badge/Event--driven_architecture-4A5568?style=for-the-badge)
+![Real-time systems](https://img.shields.io/badge/Real--time_systems-4A5568?style=for-the-badge)
+![Service boundaries](https://img.shields.io/badge/Service_boundaries-4A5568?style=for-the-badge)
+![Authentication and authorization](https://img.shields.io/badge/Authentication_and_authorization-4A5568?style=for-the-badge)
+![Feature flags](https://img.shields.io/badge/Feature_flags-4A5568?style=for-the-badge)
+![Retry and recovery workflows](https://img.shields.io/badge/Retry_and_recovery_workflows-4A5568?style=for-the-badge)
+![Concurrency control](https://img.shields.io/badge/Concurrency_control-4A5568?style=for-the-badge)
+![Fault isolation](https://img.shields.io/badge/Fault_isolation-4A5568?style=for-the-badge)
+![Production debugging](https://img.shields.io/badge/Production_debugging-4A5568?style=for-the-badge)
+![Performance optimization](https://img.shields.io/badge/Performance_optimization-4A5568?style=for-the-badge)
 
 **Design Systems**
 
@@ -229,7 +271,12 @@ Distributed systems · event-driven architecture · real-time systems · service
 ![Style Dictionary](https://img.shields.io/badge/Style_Dictionary-F24E1E?style=for-the-badge)
 ![Storybook](https://img.shields.io/badge/Storybook-F24E1E?style=for-the-badge)
 
-Design tokens · token generation · React component libraries · native component catalogs · accessibility · shared contracts across web, Apple, Windows, Linux, and mobile implementations.
+![Design tokens](https://img.shields.io/badge/Design_tokens-F24E1E?style=for-the-badge)
+![Token generation](https://img.shields.io/badge/Token_generation-F24E1E?style=for-the-badge)
+![React component libraries](https://img.shields.io/badge/React_component_libraries-F24E1E?style=for-the-badge)
+![Native component catalogs](https://img.shields.io/badge/Native_component_catalogs-F24E1E?style=for-the-badge)
+![Accessibility](https://img.shields.io/badge/Accessibility-F24E1E?style=for-the-badge)
+![Cross-platform Design Contracts](https://img.shields.io/badge/Cross--platform_Design_Contracts-F24E1E?style=for-the-badge)
 
 **Observability & Quality**
 
@@ -239,7 +286,14 @@ Design tokens · token generation · React component libraries · native compone
 ![Lighthouse CI](https://img.shields.io/badge/Lighthouse_CI-F46800?style=for-the-badge)
 ![PageSpeed Insights](https://img.shields.io/badge/PageSpeed_Insights-F46800?style=for-the-badge)
 
-CloudWatch · real-user monitoring · operational dashboards · automated testing · integration testing · regression testing · accessibility verification · incident diagnosis.
+![CloudWatch](https://img.shields.io/badge/CloudWatch-F46800?style=for-the-badge)
+![Real-user monitoring](https://img.shields.io/badge/Real--user_monitoring-F46800?style=for-the-badge)
+![Operational dashboards](https://img.shields.io/badge/Operational_dashboards-F46800?style=for-the-badge)
+![Automated testing](https://img.shields.io/badge/Automated_testing-F46800?style=for-the-badge)
+![Integration testing](https://img.shields.io/badge/Integration_testing-F46800?style=for-the-badge)
+![Regression testing](https://img.shields.io/badge/Regression_testing-F46800?style=for-the-badge)
+![Accessibility verification](https://img.shields.io/badge/Accessibility_verification-F46800?style=for-the-badge)
+![Incident diagnosis](https://img.shields.io/badge/Incident_diagnosis-F46800?style=for-the-badge)
 
 **Streaming, Broadcast & Publishing**
 
@@ -258,15 +312,31 @@ CloudWatch · real-user monitoring · operational dashboards · automated testin
 ![AWS Transcribe](https://img.shields.io/badge/Amazon_Transcribe-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![Amazon Translate](https://img.shields.io/badge/Amazon_Translate-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 
-FTP/FTPS ingestion · multi-destination streaming · broadcast continuity · CMS integration · publishing pipelines · image and PDF generation.
+![FTP/FTPS ingestion](https://img.shields.io/badge/FTP%2FFTPS_ingestion-FF9900?style=for-the-badge)
+![Multi-destination streaming](https://img.shields.io/badge/Multi--destination_streaming-FF9900?style=for-the-badge)
+![Broadcast continuity](https://img.shields.io/badge/Broadcast_continuity-FF9900?style=for-the-badge)
+![CMS integration](https://img.shields.io/badge/CMS_integration-FF9900?style=for-the-badge)
+![Publishing pipelines](https://img.shields.io/badge/Publishing_pipelines-FF9900?style=for-the-badge)
+![Image and PDF generation](https://img.shields.io/badge/Image_and_PDF_generation-FF9900?style=for-the-badge)
 
 **Technical Leadership**
 
-Architecture and technical direction · mentoring · cross-team delivery · engineering standards · launch readiness · incident coordination · translating ambiguous requirements into production systems.
+![Architecture and technical direction](https://img.shields.io/badge/Architecture_and_technical_direction-4A5568?style=for-the-badge)
+![Mentoring](https://img.shields.io/badge/Mentoring-4A5568?style=for-the-badge)
+![Cross-team delivery](https://img.shields.io/badge/Cross--team_delivery-4A5568?style=for-the-badge)
+![Engineering standards](https://img.shields.io/badge/Engineering_standards-4A5568?style=for-the-badge)
+![Launch readiness](https://img.shields.io/badge/Launch_readiness-4A5568?style=for-the-badge)
+![Incident coordination](https://img.shields.io/badge/Incident_coordination-4A5568?style=for-the-badge)
+![Requirements to Production](https://img.shields.io/badge/Requirements_to_Production-4A5568?style=for-the-badge)
 
-**Languages:** English (fluent) · Spanish (native) · Italian (intermediate)
+**Languages**
+
+![English — Fluent](https://img.shields.io/badge/English_%E2%80%94_Fluent-4A5568?style=for-the-badge)
+![Spanish — Native](https://img.shields.io/badge/Spanish_%E2%80%94_Native-4A5568?style=for-the-badge)
+![Italian — Intermediate](https://img.shields.io/badge/Italian_%E2%80%94_Intermediate-4A5568?style=for-the-badge)
 
 ---
+
 
 ### Connect
 
