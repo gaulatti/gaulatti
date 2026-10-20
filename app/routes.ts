@@ -6,6 +6,7 @@ export default [
   route('success-cases/fifthbell', 'routes/success-cases/fifthbell.tsx'),
   route('success-cases/sanremo', 'routes/success-cases/sanremo.tsx'),
   route('portfolio', 'routes/portfolio.tsx'),
+  route('portfolio/:projectId', 'routes/project.tsx'),
   route('journey', 'routes/journey.tsx'),
   route('contact', 'routes/contact.tsx')
 ] satisfies RouteConfig;

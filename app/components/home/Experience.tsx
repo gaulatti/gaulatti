@@ -7,7 +7,7 @@ export function Experience() {
         <div className='mx-auto max-w-4xl'>
           <div className='mb-16 text-center'>
             <h2 className='mb-6 text-3xl font-semibold leading-tight tracking-refined md:text-4xl'>Experience</h2>
-            <p className='font-secondary text-text-secondary text-xl'>Building production systems at scale</p>
+            <p className='font-secondary text-text-secondary text-xl'>AI infrastructure, developer platforms, and production reliability</p>
           </div>
 
           <div className='grid gap-8 md:grid-cols-3'>
@@ -22,8 +22,8 @@ export function Experience() {
                   />
                 </svg>
               </div>
-              <h4 className='mb-2 font-semibold'>Platform Engineering</h4>
-              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Designing scalable infrastructure and developer platforms</p>
+              <h4 className='mb-2 font-semibold'>Medsender</h4>
+              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Building an LLM Gateway, MCP services, developer tooling, and engineering automation.</p>
             </div>
             <div className='text-center'>
               <div className='light:bg-sea dark:bg-accent-blue mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white'>
@@ -36,8 +36,8 @@ export function Experience() {
                   />
                 </svg>
               </div>
-              <h4 className='mb-2 font-semibold'>Media Infrastructure</h4>
-              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Building broadcast, streaming, and content delivery systems</p>
+              <h4 className='mb-2 font-semibold'>CNN</h4>
+              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Staff engineering across design systems, performance, and developer platforms.</p>
             </div>
             <div className='text-center'>
               <div className='light:bg-sea dark:bg-accent-blue mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full text-white'>
@@ -45,8 +45,8 @@ export function Experience() {
                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M13 10V3L4 14h7v7l9-11h-7z' />
                 </svg>
               </div>
-              <h4 className='mb-2 font-semibold'>Real-Time Systems</h4>
-              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Operating low-latency event-driven architectures</p>
+              <h4 className='mb-2 font-semibold'>Amazon</h4>
+              <p className='font-secondary text-text-secondary text-sm text-gray-600'>Reduced catastrophic Amazon Explore session failures from 40% to 1.3% over six months.</p>
             </div>
           </div>
 

@@ -10,8 +10,8 @@ export function FeaturedOperation() {
             <div>
               <h2 className='mb-6 text-2xl font-semibold tracking-refined md:text-3xl'>Sanremo Festival Coverage</h2>
               <p className='font-secondary text-text-secondary mb-6 text-lg'>
-                Executive production and live operations leadership for a joint media venture covering the Sanremo Festival. Includes crisis response,
-                production redesign, editorial direction, and multi-hour live broadcasts from Italy.
+                I led technical production and live operations for coverage spanning three countries. When the original setup failed, I rebuilt the broadcast
+                architecture in approximately three days and ran multi-hour broadcasts with distributed contributors.
               </p>
               <div className='mb-8 flex flex-wrap gap-4'>
                 <div className='flex items-center gap-2'>

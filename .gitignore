@@ -5,3 +5,6 @@
 # React Router
 /.react-router/
 /build/
+public/og/projects/
+public/project-links.csv
+app/data/public-projects.generated.ts

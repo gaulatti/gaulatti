@@ -29,7 +29,7 @@ export const featuredItems: HeroItem[] = [
   {
     type: 'post',
     title: 'Beach Heading: The Urgency of Getting There.',
-    description: 'From Normandy to product launches: why speed, not polish, wins the first battle..',
+    description: 'Lessons on getting a product into users’ hands early.',
     image: '/hero/normandy.avif',
     link: 'https://medium.com/http418/beach-heading-the-urgency-of-getting-there-f9577507b57f',
     tags: ['Product Management', 'Agile', 'Software Development', 'Business Strategy']
@@ -54,7 +54,7 @@ export const featuredItems: HeroItem[] = [
     type: 'post',
     title: 'Nobody can agree on how to estimate story points, so here’s my approach.',
     description:
-      "Struggling with story points? Here's a fresh, grounded approach to estimation that embraces complexity, team dynamics, and practical planning strategies.",
+      "A practical approach to estimation based on complexity, team dynamics, and planning.",
     image: '/hero/points.avif',
     link: 'https://medium.com/http418/nobody-can-agree-on-how-to-estimate-story-points-so-heres-my-approach-e2f499324103',
     tags: ['Agile', 'Planning', 'Estimation']
