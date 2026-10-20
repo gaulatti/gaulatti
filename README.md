@@ -113,7 +113,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![CSS](https://img.shields.io/badge/CSS-3178C6?style=for-the-badge)
 ![Sass](https://img.shields.io/badge/Sass-3178C6?style=for-the-badge)
 ![QML](https://img.shields.io/badge/QML-3178C6?style=for-the-badge)
-
 ![C](https://img.shields.io/badge/C-3178C6?style=for-the-badge)
 ![C++](https://img.shields.io/badge/C%2B%2B-3178C6?style=for-the-badge)
 ![Dart](https://img.shields.io/badge/Dart-3178C6?style=for-the-badge)
@@ -129,7 +128,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white&style=for-the-badge)
 ![Vite](https://img.shields.io/badge/Vite-61DAFB?style=for-the-badge)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
-
 ![Responsive interfaces](https://img.shields.io/badge/Responsive_interfaces-06B6D4?style=for-the-badge)
 ![Accessibility](https://img.shields.io/badge/Accessibility-06B6D4?style=for-the-badge)
 ![Browser performance](https://img.shields.io/badge/Browser_performance-06B6D4?style=for-the-badge)
@@ -151,7 +149,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![.NET](https://img.shields.io/badge/.NET-43853D?style=for-the-badge)
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white&style=for-the-badge)
 ![gRPC](https://img.shields.io/badge/gRPC-4488CC?logo=grpc&logoColor=white&style=for-the-badge)
-
 ![REST APIs](https://img.shields.io/badge/REST_APIs-4488CC?style=for-the-badge)
 ![Asynchronous processing](https://img.shields.io/badge/Asynchronous_processing-4488CC?style=for-the-badge)
 ![Background workers](https://img.shields.io/badge/Background_workers-4488CC?style=for-the-badge)
@@ -170,7 +167,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-6B57FF?style=for-the-badge)
 ![WinUI 3](https://img.shields.io/badge/WinUI_3-6B57FF?style=for-the-badge)
 ![Qt Quick](https://img.shields.io/badge/Qt_Quick-6B57FF?style=for-the-badge)
-
 ![Cross-platform Components](https://img.shields.io/badge/Cross--platform_Components-6B57FF?style=for-the-badge)
 ![Platform-specific Interaction](https://img.shields.io/badge/Platform--specific_Interaction-6B57FF?style=for-the-badge)
 
@@ -182,7 +178,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![MCP](https://img.shields.io/badge/MCP-D97757?style=for-the-badge)
 ![PyTorch](https://img.shields.io/badge/PyTorch-D97757?style=for-the-badge)
 ![Transformers.js](https://img.shields.io/badge/Transformers.js-D97757?style=for-the-badge)
-
 ![LLM gateways](https://img.shields.io/badge/LLM_gateways-D97757?style=for-the-badge)
 ![MCP services](https://img.shields.io/badge/MCP_services-D97757?style=for-the-badge)
 ![AI-assisted code review and engineering automation](https://img.shields.io/badge/AI--assisted_code_review_and_engineering_automation-D97757?style=for-the-badge)
@@ -205,7 +200,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![SQLite](https://img.shields.io/badge/SQLite-4169E1?style=for-the-badge)
 ![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=for-the-badge)
 ![Qdrant](https://img.shields.io/badge/Qdrant-4169E1?style=for-the-badge)
-
 ![Relational modeling](https://img.shields.io/badge/Relational_modeling-4169E1?style=for-the-badge)
 ![Vector storage](https://img.shields.io/badge/Vector_storage-4169E1?style=for-the-badge)
 ![Caching](https://img.shields.io/badge/Caching-4169E1?style=for-the-badge)
@@ -239,7 +233,6 @@ I designed and built these projects independently, using my own resources. Each 
 **Developer Platforms & Delivery**
 
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge)
-
 ![Developer portals](https://img.shields.io/badge/Developer_portals-2088FF?style=for-the-badge)
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-2088FF?style=for-the-badge)
 ![Infrastructure as code](https://img.shields.io/badge/Infrastructure_as_code-2088FF?style=for-the-badge)
@@ -270,7 +263,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Figma API](https://img.shields.io/badge/Figma_API-F24E1E?style=for-the-badge)
 ![Style Dictionary](https://img.shields.io/badge/Style_Dictionary-F24E1E?style=for-the-badge)
 ![Storybook](https://img.shields.io/badge/Storybook-F24E1E?style=for-the-badge)
-
 ![Design tokens](https://img.shields.io/badge/Design_tokens-F24E1E?style=for-the-badge)
 ![Token generation](https://img.shields.io/badge/Token_generation-F24E1E?style=for-the-badge)
 ![React component libraries](https://img.shields.io/badge/React_component_libraries-F24E1E?style=for-the-badge)
@@ -285,7 +277,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge)
 ![Lighthouse CI](https://img.shields.io/badge/Lighthouse_CI-F46800?style=for-the-badge)
 ![PageSpeed Insights](https://img.shields.io/badge/PageSpeed_Insights-F46800?style=for-the-badge)
-
 ![CloudWatch](https://img.shields.io/badge/CloudWatch-F46800?style=for-the-badge)
 ![Real-user monitoring](https://img.shields.io/badge/Real--user_monitoring-F46800?style=for-the-badge)
 ![Operational dashboards](https://img.shields.io/badge/Operational_dashboards-F46800?style=for-the-badge)
@@ -311,7 +302,6 @@ I designed and built these projects independently, using my own resources. Each 
 ![Amazon Polly](https://img.shields.io/badge/Amazon_Polly-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![AWS Transcribe](https://img.shields.io/badge/Amazon_Transcribe-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
 ![Amazon Translate](https://img.shields.io/badge/Amazon_Translate-FF9900?logo=amazonaws&logoColor=white&style=for-the-badge)
-
 ![FTP/FTPS ingestion](https://img.shields.io/badge/FTP%2FFTPS_ingestion-FF9900?style=for-the-badge)
 ![Multi-destination streaming](https://img.shields.io/badge/Multi--destination_streaming-FF9900?style=for-the-badge)
 ![Broadcast continuity](https://img.shields.io/badge/Broadcast_continuity-FF9900?style=for-the-badge)
